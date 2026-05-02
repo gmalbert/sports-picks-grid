@@ -156,7 +156,7 @@ tabs = st.tabs(list(sports))
 for tab, sport in zip(tabs, sports):
     with tab:
         sport_df = today_df[today_df["_label"] == sport]
-        st.dataframe(sport_df, use_container_width=True)
+        st.dataframe(sport_df, width='stretch')
 ```
 
 ---

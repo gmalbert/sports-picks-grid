@@ -47,24 +47,24 @@ with tab_elite:
     if elite.empty:
         st.info("No Elite picks today.")
     else:
-        st.dataframe(elite, use_container_width=True, hide_index=True)
+        st.dataframe(elite, width='stretch', hide_index=True)
 
 with tab_strong:
     strong = display_df[display_df["Tier"].str.contains("Strong", na=False)]
     if strong.empty:
         st.info("No Strong picks today.")
     else:
-        st.dataframe(strong, use_container_width=True, hide_index=True)
+        st.dataframe(strong, width='stretch', hide_index=True)
 
 with tab_good:
     good = display_df[display_df["Tier"].str.contains("Good", na=False)]
     if good.empty:
         st.info("No Good picks today.")
     else:
-        st.dataframe(good, use_container_width=True, hide_index=True)
+        st.dataframe(good, width='stretch', hide_index=True)
 
 with tab_all:
     if display_df.empty:
         st.info("No picks today.")
     else:
-        st.dataframe(display_df, use_container_width=True, hide_index=True)
+        st.dataframe(display_df, width='stretch', hide_index=True)

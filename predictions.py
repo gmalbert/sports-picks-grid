@@ -28,7 +28,7 @@ with st.sidebar:
     st.caption("Daily picks from all Betting Oracle models")
     st.divider()
 
-    if st.button("🔄 Refresh picks", use_container_width=True):
+    if st.button("🔄 Refresh picks", width='stretch'):
         st.cache_data.clear()
         if "all_bets_df" in st.session_state:
             del st.session_state["all_bets_df"]

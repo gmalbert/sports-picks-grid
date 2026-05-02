@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 from datetime import date
 
-from utils.formatter import upcoming_bets, sort_by_tier, TIER_EMOJI, SPORT_EMOJI, format_confidence, format_edge, format_odds
+from utils.formatter import upcoming_bets, sort_by_tier, TIER_EMOJI, SPORT_EMOJI, format_confidence, format_edge, format_odds, _format_time
 
 df: pd.DataFrame = st.session_state.get("all_bets_df", pd.DataFrame())
 view_df = upcoming_bets(df)  # today + next 7 days
@@ -46,10 +46,12 @@ for _, row in best.iterrows():
         header_parts = [f"**{badge} {tier}**", f"{icon} {sport}"]
         if league and str(league) not in ("nan", "None", ""):
             header_parts.append(f"*{league}*")
-        if game_date and game_date != today:
-            header_parts.append(f"📆 {game_date}")
-        if game_time and str(game_time) not in ("nan", "None", ""):
-            header_parts.append(f"🕐 {game_time}")
+        if game_date:
+            date_str = game_date.strftime("%b %d, %Y") if hasattr(game_date, "strftime") else str(game_date)
+            header_parts.append(f"📆 {date_str}")
+        time_str = _format_time(game_time)
+        if time_str and time_str != "—":
+            header_parts.append(f"🕐 {time_str}")
         st.markdown("  ·  ".join(header_parts))
 
         c1, c2, c3 = st.columns([2, 3, 2])
