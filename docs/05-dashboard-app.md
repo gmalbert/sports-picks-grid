@@ -50,7 +50,7 @@ with st.sidebar:
     st.caption("Daily picks from all Betting Oracle models")
     st.divider()
 
-    if st.button("🔄 Refresh picks", use_container_width=True):
+    if st.button("🔄 Refresh picks", width='stretch'):
         st.cache_data.clear()
         st.rerun()
 
@@ -318,21 +318,21 @@ with tab_elite:
     if elite.empty:
         st.info("No Elite picks today.")
     else:
-        st.dataframe(elite, use_container_width=True, hide_index=True)
+        st.dataframe(elite, width='stretch', hide_index=True)
 
 with tab_strong:
     strong = display_df[display_df["Tier"].str.contains("Strong")]
     if strong.empty:
         st.info("No Strong picks today.")
     else:
-        st.dataframe(strong, use_container_width=True, hide_index=True)
+        st.dataframe(strong, width='stretch', hide_index=True)
 
 with tab_good:
     good = display_df[display_df["Tier"].str.contains("Good")]
-    st.dataframe(good, use_container_width=True, hide_index=True)
+    st.dataframe(good, width='stretch', hide_index=True)
 
 with tab_all:
-    st.dataframe(display_df, use_container_width=True, hide_index=True)
+    st.dataframe(display_df, width='stretch', hide_index=True)
 ```
 
 ---
@@ -370,7 +370,7 @@ if today_df.empty:
 else:
     st.dataframe(
         display_columns(sort_by_tier(today_df)),
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
     )
 ```

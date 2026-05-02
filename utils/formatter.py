@@ -5,6 +5,7 @@ Formatting helpers for the picks DataFrame.
 """
 import pandas as pd
 from datetime import date, timedelta
+from datetime import datetime as _dt
 
 TIER_EMOJI: dict[str, str] = {
     "Elite":    "🔥",
@@ -69,7 +70,11 @@ def format_confidence(c) -> str:
 def format_edge(e) -> str:
     if e is None or (isinstance(e, float) and pd.isna(e)):
         return "—"
-    val = float(e) * 100
+    raw = float(e)
+    # If abs value > 1, the value is already in percentage form (e.g. 17.5 → "17.5%")
+    # rather than decimal form (e.g. 0.175 → "17.5%").  No real edge can exceed ±100%.
+    val = raw if abs(raw) > 1 else raw * 100
+    val = max(-99.9, min(99.9, val))  # guard against any remaining data corruption
     sign = "+" if val >= 0 else ""
     return f"{sign}{val:.1f}%"
 
@@ -122,5 +127,41 @@ def display_columns(df: pd.DataFrame) -> pd.DataFrame:
         out["Odds"] = out["Odds"].apply(format_odds)
     if "Tier" in out.columns:
         out["Tier"] = out["Tier"].apply(tier_badge)
+    if "Date" in out.columns:
+        out["Date"] = out["Date"].apply(
+            lambda d: d.strftime("%b %d, %Y") if hasattr(d, "strftime") else (str(d) if d else "—")
+        )
+    if "Time" in out.columns:
+        out["Time"] = out["Time"].apply(_format_time)
 
     return out
+
+
+def _format_time(t) -> str:
+    """Normalize game_time to a human-readable time string.
+
+    Handles:
+      - Plain strings already formatted: "7:05 PM ET" → returned as-is
+      - ISO datetime strings: "2026-05-02T19:00:00Z" → "7:00 PM UTC"
+      - NaN / None → "—"
+    """
+    if t is None or (isinstance(t, float) and pd.isna(t)):
+        return "—"
+    s = str(t).strip()
+    if not s or s in ("nan", "None"):
+        return "—"
+    # If it looks like an ISO datetime (contains 'T'), parse and reformat
+    if "T" in s:
+        for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%dT%H:%MZ", "%Y-%m-%dT%H:%M"):
+            try:
+                dt = _dt.strptime(s.rstrip("Z").split("+")[0], fmt.rstrip("Z"))
+                hour = dt.strftime("%I").lstrip("0") or "12"
+                minute = dt.strftime("%M")
+                ampm = dt.strftime("%p")
+                time_str = f"{hour}:{minute} {ampm} UTC" if minute != "00" else f"{hour} {ampm} UTC"
+                return time_str
+            except ValueError:
+                continue
+        # fallback: strip the date portion
+        return s.split("T")[1].rstrip("Z")[:5]
+    return s

@@ -51,7 +51,7 @@ for sport, (cache_key, repo) in REPOS.items():
 
 if rows:
     perf_df = pd.DataFrame(rows)
-    st.dataframe(perf_df, use_container_width=True, hide_index=True)
+    st.dataframe(perf_df, width='stretch', hide_index=True)
 else:
     st.info(
         "Performance data is not yet available. Each sport repo needs a "
@@ -67,4 +67,4 @@ cols = st.columns(4)
 for idx, (sport, url) in enumerate(SPORT_APP_URLS.items()):
     icon = SPORT_EMOJI.get(sport, "🎯")
     with cols[idx % 4]:
-        st.link_button(f"{icon} {sport}", url, use_container_width=True)
+        st.link_button(f"{icon} {sport}", url, width='stretch')

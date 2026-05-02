@@ -50,7 +50,7 @@ if view_df.empty:
         st.info(f"No picks for today or upcoming. Showing most recent picks ({latest_date}).")
         st.dataframe(
             display_columns(sort_by_tier(recent)),
-            use_container_width=True,
+            width='stretch',
             hide_index=True,
         )
 else:
@@ -61,6 +61,6 @@ else:
 
     st.dataframe(
         display_columns(sort_by_tier(view_df)),
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
     )
