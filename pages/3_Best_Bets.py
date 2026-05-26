@@ -5,10 +5,10 @@ import pandas as pd
 import streamlit as st
 from datetime import date
 
-from utils.formatter import upcoming_bets, sort_by_tier, TIER_EMOJI, SPORT_EMOJI, format_confidence, format_edge, format_odds, _format_time
+from utils.formatter import apply_settings, sort_by_tier, TIER_EMOJI, SPORT_EMOJI, format_confidence, format_edge, format_odds, _format_time
 
 df: pd.DataFrame = st.session_state.get("all_bets_df", pd.DataFrame())
-view_df = upcoming_bets(df)  # today + next 7 days
+view_df = apply_settings(df)  # today + next 7 days, filtered by user settings
 
 today = date.today()
 

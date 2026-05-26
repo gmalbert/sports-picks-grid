@@ -5,10 +5,10 @@ import pandas as pd
 import streamlit as st
 from datetime import date
 
-from utils.formatter import upcoming_bets, sort_by_tier, display_columns
+from utils.formatter import apply_settings, sort_by_tier, display_columns
 
 df: pd.DataFrame = st.session_state.get("all_bets_df", pd.DataFrame())
-view_df = upcoming_bets(df)  # today + up to 7 days ahead (covers NCAAB/NCAAF tournaments)
+view_df = apply_settings(df)  # today + up to 7 days ahead, filtered by user settings
 
 today = date.today()
 today_count = int((view_df["game_date"] == today).sum()) if not view_df.empty else 0

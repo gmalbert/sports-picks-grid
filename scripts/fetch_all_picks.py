@@ -29,6 +29,10 @@ REPOS: dict[str, str] = {
     "ncaaf":       "college-football-predictions",
     "tennis":      "tennis-predictions",
     "ncaab":       "march-madness",
+    "cricket":     "cricket",
+    "tabletennis": "table-tennis",
+    "boxing":      "boxing",
+    "darts":       "darts",
 }
 
 BASE_URL  = "https://raw.githubusercontent.com/gmalbert/{repo}/main/data_files/{filename}"

@@ -4,7 +4,7 @@ pages/2_By_Sport.py — Filter picks by sport.
 import pandas as pd
 import streamlit as st
 
-from utils.formatter import upcoming_bets, sort_by_tier, display_columns, SPORT_EMOJI
+from utils.formatter import apply_settings, sort_by_tier, display_columns, SPORT_EMOJI
 
 df: pd.DataFrame = st.session_state.get("all_bets_df", pd.DataFrame())
 
@@ -29,8 +29,9 @@ selected_label = st.selectbox(
 )
 selected = label_to_sport[selected_label]
 
-sport_df  = df[df["sport"] == selected]
-view_df   = upcoming_bets(sport_df)  # today + next 7 days
+# Apply global settings first, then filter to the selected sport
+all_filtered = apply_settings(df)
+view_df = all_filtered[all_filtered["sport"] == selected]
 
 # Last model run timestamp (now populated by fetcher from JSON meta)
 if "generated_at" in df.columns:
@@ -42,7 +43,8 @@ st.divider()
 
 if view_df.empty:
     # Show most recent picks even if not today (off-season / no games)
-    recent = sport_df.sort_values("game_date", ascending=False).head(20) if not sport_df.empty else pd.DataFrame()
+    sport_df_raw = df[df["sport"] == selected]
+    recent = sport_df_raw.sort_values("game_date", ascending=False).head(20) if not sport_df_raw.empty else pd.DataFrame()
     if recent.empty:
         st.info(f"No picks for {selected}. The sport may be in off-season.")
     else:
