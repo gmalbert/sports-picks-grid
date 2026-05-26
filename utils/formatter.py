@@ -3,6 +3,7 @@ utils/formatter.py
 ------------------
 Formatting helpers for the picks DataFrame.
 """
+import copy
 import pandas as pd
 from datetime import date, timedelta
 from datetime import datetime as _dt
@@ -15,22 +16,104 @@ TIER_EMOJI: dict[str, str] = {
 }
 
 SPORT_EMOJI: dict[str, str] = {
-    "NFL":        "🏈",
-    "NHL":        "🏒",
-    "NBA":        "🏀",
-    "MLB":        "⚾",
-    "MLS":        "⚽",
-    "EPL":        "⚽",
-    "LaLiga":     "⚽",
-    "Bundesliga": "⚽",
-    "Ligue1":     "⚽",
-    "Rugby":      "🏉",
-    "NCAAF":      "🏈",
-    "Tennis":     "🎾",
-    "NCAAB":      "🏀",
+    "NFL":         "🏈",
+    "NHL":         "🏒",
+    "NBA":         "🏀",
+    "MLB":         "⚾",
+    "MLS":         "⚽",
+    "EPL":         "⚽",
+    "LaLiga":      "⚽",
+    "Bundesliga":  "⚽",
+    "Ligue1":      "⚽",
+    "Rugby":       "🏉",
+    "NCAAF":       "🏈",
+    "Tennis":      "🎾",
+    "NCAAB":       "🏀",
+    "Cricket":     "🏏",
+    "TableTennis": "🏓",
+    "Boxing":      "🥊",
+    "Darts":       "🎯",
 }
 
 TIER_ORDER = ["Elite", "Strong", "Good", "Standard"]
+
+# ── Default filter settings ────────────────────────────────────────────────
+# These are the out-of-the-box values. Users can override them via the
+# Settings page; values are persisted in st.session_state["settings"].
+DEFAULT_SETTINGS: dict = {
+    "min_confidence": 0.0,
+    "min_edge": 0.0,
+    "tiers": ["Elite", "Strong", "Good"],
+    "max_picks": {
+        # High-volume sports get lower defaults to avoid flooding the dashboard.
+        # All other sports default to 50 (effectively uncapped for most days).
+        "__default__": 50,
+        "TableTennis": 20,
+        "Cricket":     20,
+        "Darts":       15,
+        "Boxing":      15,
+        "Tennis":      30,
+    },
+}
+
+
+def apply_settings(df: pd.DataFrame, settings: dict | None = None) -> pd.DataFrame:
+    """Return a filtered DataFrame respecting the user's settings.
+
+    Applies (in order):
+    1. upcoming_bets() — only games within the next 7 days
+    2. Tier filter
+    3. Global min-confidence threshold
+    4. Global min-edge threshold
+    5. Per-sport max-picks limit (top N by confidence)
+
+    ``settings`` defaults to ``st.session_state["settings"]`` when running
+    inside Streamlit, falling back to ``DEFAULT_SETTINGS`` otherwise.
+    """
+    if settings is None:
+        try:
+            import streamlit as _st
+            settings = _st.session_state.get("settings", DEFAULT_SETTINGS)
+        except Exception:
+            settings = DEFAULT_SETTINGS
+
+    # 1. Time window
+    out = upcoming_bets(df)
+    if out.empty:
+        return out
+
+    # 2. Tiers
+    tiers = settings.get("tiers", DEFAULT_SETTINGS["tiers"]) or DEFAULT_SETTINGS["tiers"]
+    if "tier" in out.columns:
+        out = out[out["tier"].isin(tiers)]
+
+    # 3. Min confidence
+    min_conf = float(settings.get("min_confidence", 0.0))
+    if min_conf > 0 and "confidence" in out.columns:
+        out = out[out["confidence"].fillna(0) >= min_conf]
+
+    # 4. Min edge
+    min_edge = float(settings.get("min_edge", 0.0))
+    if min_edge > 0 and "edge" in out.columns:
+        out = out[out["edge"].fillna(0) >= min_edge]
+
+    if out.empty:
+        return out
+
+    # 5. Per-sport pick limits (top N by confidence within each sport)
+    max_picks_cfg: dict = {**DEFAULT_SETTINGS["max_picks"], **settings.get("max_picks", {})}
+    default_max: int = int(max_picks_cfg.get("__default__", 50))
+
+    if "sport" in out.columns:
+        pieces = []
+        for sport, grp in out.groupby("sport", sort=False):
+            n = int(max_picks_cfg.get(sport, default_max))
+            if len(grp) > n and "confidence" in grp.columns:
+                grp = grp.sort_values("confidence", ascending=False).head(n)
+            pieces.append(grp)
+        out = pd.concat(pieces) if pieces else out.iloc[:0]
+
+    return out
 
 
 def today_bets(df: pd.DataFrame) -> pd.DataFrame:

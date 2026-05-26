@@ -43,6 +43,12 @@ if "all_bets_df" not in st.session_state:
     with st.spinner("Loading picks from all sport models..."):
         st.session_state["all_bets_df"] = load_all_bets()
 
+# ── Initialize user settings (defaults only; Settings page can override) ──────
+if "settings" not in st.session_state:
+    import copy
+    from utils.formatter import DEFAULT_SETTINGS
+    st.session_state["settings"] = copy.deepcopy(DEFAULT_SETTINGS)
+
 # ── Navigation ────────────────────────────────────────────────────────────────
 pg = st.navigation([
     st.Page("pages/1_Today.py",       title="Today's Picks",   icon="📅"),
@@ -50,6 +56,7 @@ pg = st.navigation([
     st.Page("pages/3_Best_Bets.py",   title="Best Bets",       icon="🔥"),
     st.Page("pages/4_Performance.py", title="Performance",     icon="📊"),
     st.Page("pages/5_About.py",       title="About",           icon="ℹ️"),
+    st.Page("pages/6_Settings.py",    title="Settings",        icon="⚙️"),
 ])
 
 pg.run()

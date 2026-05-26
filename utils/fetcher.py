@@ -18,19 +18,23 @@ import streamlit as st
 
 # repo_key → (cache_file_stem, github_repo_name)
 REPOS: dict[str, tuple[str, str]] = {
-    "MLB":        ("baseball",    "baseball-predictions"),
-    "NHL":        ("hockey",      "hockey-predictions"),
-    "NBA":        ("nba",         "nba-predictions"),
-    "NFL":        ("nfl",         "nfl-predictions"),
-    "MLS":        ("mls",         "mls-predictions"),
-    "EPL":        ("epl",         "premier-league"),
-    "LaLiga":     ("laliga",      "la-liga"),
-    "Bundesliga": ("bundesliga",  "bundesliga"),
-    "Ligue1":     ("ligue1",      "ligue-1"),
-    "Rugby":      ("rugby",       "rugby"),
-    "NCAAF":      ("ncaaf",       "college-football-predictions"),
-    "Tennis":     ("tennis",      "tennis-predictions"),
-    "NCAAB":      ("ncaab",       "march-madness"),
+    "MLB":          ("baseball",    "baseball-predictions"),
+    "NHL":          ("hockey",      "hockey-predictions"),
+    "NBA":          ("nba",         "nba-predictions"),
+    "NFL":          ("nfl",         "nfl-predictions"),
+    "MLS":          ("mls",         "mls-predictions"),
+    "EPL":          ("epl",         "premier-league"),
+    "LaLiga":       ("laliga",      "la-liga"),
+    "Bundesliga":   ("bundesliga",  "bundesliga"),
+    "Ligue1":       ("ligue1",      "ligue-1"),
+    "Rugby":        ("rugby",       "rugby"),
+    "NCAAF":        ("ncaaf",       "college-football-predictions"),
+    "Tennis":       ("tennis",      "tennis-predictions"),
+    "NCAAB":        ("ncaab",       "march-madness"),
+    "Cricket":      ("cricket",     "cricket"),
+    "TableTennis":  ("tabletennis", "table-tennis"),
+    "Boxing":       ("boxing",      "boxing"),
+    "Darts":        ("darts",       "darts"),
 }
 
 RAW_URL = (
