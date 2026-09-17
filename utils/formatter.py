@@ -77,8 +77,17 @@ def apply_settings(df: pd.DataFrame, settings: dict | None = None) -> pd.DataFra
         except Exception:
             settings = DEFAULT_SETTINGS
 
-    # 1. Time window
-    out = upcoming_bets(df)
+    # 1. Canonical dashboard window: today through seven days ahead. Historical
+    #    fallback is handled explicitly by the By Sport page, where the source
+    #    status and age are shown alongside older records.
+    if "game_date" in df.columns and not df.empty:
+        today_d = date.today()
+        future_cutoff = today_d + timedelta(days=7)
+        out = df[
+            (df["game_date"] >= today_d) & (df["game_date"] <= future_cutoff)
+        ].copy()
+    else:
+        out = df.copy() if not df.empty else df
     if out.empty:
         return out
 

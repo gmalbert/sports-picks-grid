@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NHL",
+    "generated_at": "2026-07-21T07:51:24.819025+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No NHL picks for 2026-07-21",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "26aab38e96e8eb4f44155884b2e6ffe030fe887b",
+    "source_repo": "hockey-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/hockey-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

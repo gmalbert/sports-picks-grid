@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "LaLiga",
+    "generated_at": "2026-07-21T08:03:05.422144+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No LaLiga predictions for 2026-07-21",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "4abd595c5f904ab4ae0e4f43940b6275acc1c45e",
+    "source_repo": "la-liga",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/la-liga/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

@@ -138,14 +138,15 @@ Use these exact strings for `bet_type`:
 
 ## Tier Mapping — All Repos
 
-The export script in each repo must translate its internal tier/confidence system to the
-unified 4-tier scale:
+The export script in each repo must translate its internal system to the canonical
+edge-v1 scale. Confidence remains a separate model probability and must not be used as
+a substitute for edge when assigning the shared tier:
 
 | Unified Tier | Badge | Criteria Summary |
 |---|---|---|
-| `"Elite"` | 🔥 | Highest confidence + strongest edge. Reserve for clear value plays. |
-| `"Strong"` | ✅ | Good model confidence + positive edge. Core recommended bets. |
-| `"Good"` | ➡ | Moderate signal. Worth a smaller position. |
+| `"Elite"` | 🔥 | Edge ≥ 6%. Strongest standardized value tier. |
+| `"Strong"` | ✅ | Edge ≥ 3% and < 6%. Positive expected value. |
+| `"Good"` | ➡ | Edge ≥ 1% and < 3%. Smaller signal. |
 | `"Standard"` | ⚪ | Tracked but minimal sizing recommended. |
 
 ### Per-Repo Translation
@@ -217,6 +218,10 @@ When there are no qualifying bets (off-season, no games today, pipeline not run)
   "meta": {
     "sport":        "NFL",
     "generated_at": "2026-04-29T03:00:00Z",
+    "status":        "off_season",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "source_commit": "",
     "season":       "off-season",
     "total_bets":   0,
     "notes":        "NFL off-season. Next season begins September 2026."
@@ -224,6 +229,13 @@ When there are no qualifying bets (off-season, no games today, pipeline not run)
   "bets": []
 }
 ```
+
+### Source Status Contract
+
+Every export must include `meta.status`. Valid values are `ok`, `no_picks`,
+`off_season`, `pipeline_pending`, `pipeline_failed`, `export_missing`,
+`fetch_failed`, and `stale`. Empty `bets` is therefore not interpreted as a
+healthy no-picks result without considering the status and timestamp.
 
 An empty `bets` array is valid. The dashboard renders a "No picks today" card for that
 sport. Never write an invalid JSON file or omit the file entirely — an absent file is

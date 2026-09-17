@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Bundesliga",
+    "generated_at": "2026-07-21T07:54:44.412091+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No Bundesliga predictions for 2026-07-21",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "bfcce3445d8dfb51aa83769d385ee439c1497dfc",
+    "source_repo": "bundesliga",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/bundesliga/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

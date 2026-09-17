@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["sport", "game_date", "game", "pick", "outcome"],
+    "properties": {
+      "sport": {"type": "string"},
+      "game_date": {"type": "string", "format": "date"},
+      "game": {"type": "string"},
+      "pick": {"type": "string"},
+      "outcome": {"enum": ["win", "loss", "push", "void"]},
+      "settled_at": {"type": "string"},
+      "closing_odds": {"type": ["number", "null"]}
+    }
+  }
+}

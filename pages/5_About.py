@@ -8,7 +8,7 @@ st.header("ℹ️ About Sports Picks Grid")
 st.markdown(
     """
     **Sports Picks Grid** is a unified daily dashboard that aggregates
-    betting recommendations from machine learning models across 13 sport-specific
+    betting recommendations from machine learning models across 17 sport-specific
     prediction repositories.
 
     ---
@@ -30,9 +30,9 @@ st.markdown(
 
     | Tier | Badge | Description |
     |---|---|---|
-    | Elite | 🔥 | Highest model confidence + strongest edge vs. market |
-    | Strong | ✅ | Good confidence + positive expected value |
-    | Good | ➡ | Moderate signal — worth tracking with smaller sizing |
+    | Elite | 🔥 | Edge ≥ 6% under the canonical edge-v1 definition |
+    | Strong | ✅ | Edge ≥ 3% and < 6% |
+    | Good | ➡ | Edge ≥ 1% and < 3% |
     | Standard | ⚪ | Tracked internally but not displayed by default |
 
     Edge is defined as **model probability minus the market's implied probability** (derived
@@ -58,6 +58,10 @@ st.markdown(
     | 🏈 NCAAF | College Football | XGBoost — Spread, Totals, Moneyline |
     | 🎾 Tennis | ATP Tour | XGBoost — Match Winner |
     | 🏀 NCAAB | College Basketball / March Madness | Ensemble — Spread, Moneyline |
+    | 🏏 Cricket | Cricket | Match and market predictions |
+    | 🏓 Table Tennis | Table Tennis | Match predictions |
+    | 🥊 Boxing | Boxing | Fight moneyline predictions |
+    | 🎯 Darts | PDC Darts | Match and props modeling |
 
     ---
 
@@ -78,6 +82,10 @@ st.markdown(
     - [college-football-predictions](https://github.com/gmalbert/college-football-predictions)
     - [tennis-predictions](https://github.com/gmalbert/tennis-predictions)
     - [march-madness](https://github.com/gmalbert/march-madness)
+    - [cricket](https://github.com/gmalbert/cricket)
+    - [table-tennis](https://github.com/gmalbert/table-tennis)
+    - [boxing](https://github.com/gmalbert/boxing)
+    - [darts](https://github.com/gmalbert/darts)
 
     ---
 
