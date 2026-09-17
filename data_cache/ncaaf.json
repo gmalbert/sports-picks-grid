@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NCAAF",
+    "generated_at": "2026-04-30T02:04:32.386856+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "NCAAF off-season",
+    "status": "off_season",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "1dead95450886a112c621fd123178d0b12ca06d1",
+    "source_repo": "college-football-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/college-football-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

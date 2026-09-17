@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "MLB",
+    "generated_at": "2026-07-21T12:41:25.754232+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "picks_today.parquet not found — daily pipeline may not have run yet",
+    "status": "pipeline_pending",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "88c97b569b7508bdd21298131b5397a9a9853020",
+    "source_repo": "baseball-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/baseball-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

@@ -2,9 +2,13 @@ name: Aggregate Daily Picks
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # 12:00 PM UTC — after all sport repos have run
+    - cron: '0 15 * * *'   # 3:00 PM UTC — after the 12:00 UTC source workflows
   workflow_dispatch:        # manual trigger
-  repository_dispatch:      # triggered by sport repos after their own run
+  repository_dispatch:
+    types: [sport-data-updated]
+
+permissions:
+  contents: write
 
 jobs:
   aggregate:
@@ -24,10 +28,44 @@ jobs:
 
       - name: Fetch all picks
         run: python scripts/fetch_all_picks.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Write aggregation health summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('data_cache/status_manifest.json').read_text())
+          summary = [
+              f"Aggregation completed: {manifest.get('aggregation_completed_at')}",
+              f"Sources: {manifest.get('source_count')}",
+              "",
+              "| Sport | Status | Generated | Age (h) | Bets | Source commit | Errors |",
+              "|---|---|---|---:|---:|---|---|",
+          ]
+          for source in manifest.get('sources', {}).values():
+              errors = '; '.join(source.get('errors', [])) or ''
+              summary.append(
+                  f"| {source.get('sport')} | {source.get('status')} | "
+                  f"{source.get('generated_at', '')} | {source.get('age_hours', '')} | "
+                  f"{source.get('bets_count', 0)} | {source.get('source_commit', '')[:12]} | {errors} |"
+              )
+          rendered = '\n'.join(summary)
+          Path('/tmp/summary.md').write_text(rendered)
+          print(rendered)
+          PY
+          cat /tmp/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Grade archived results when settlements are available
+        run: python scripts/grade_results.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
 
       - name: Commit cached picks
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh data_cache [skip ci]"
-          file_pattern: data_cache/*.json
+          file_pattern: data_cache/ data_files/model_performance.json data_files/graded_results.json
           commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"

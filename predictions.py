@@ -6,7 +6,8 @@ Run with:
 """
 import streamlit as st
 
-from utils.fetcher import load_all_bets, get_cache_age
+from utils.fetcher import load_all_bets, get_cache_age, get_source_statuses
+from utils.data_quality import status_label
 from footer import add_betting_oracle_footer
 
 st.set_page_config(
@@ -37,6 +38,15 @@ with st.sidebar:
     age = get_cache_age()
     if age:
         st.caption(f"Cache updated: {age}")
+
+    statuses = get_source_statuses()
+    problem_sources = [
+        f"{sport}: {status_label(record.get('status', 'unknown'))}"
+        for sport, record in statuses.items()
+        if record.get("status") not in {"ok", "no_picks", "off_season"}
+    ]
+    if problem_sources:
+        st.warning("Source health issues\n\n" + "\n".join(f"- {item}" for item in problem_sources))
 
 # ── Pre-warm data (loaded once; all pages read from session_state) ────────────
 if "all_bets_df" not in st.session_state:

@@ -16,6 +16,8 @@ import pandas as pd
 import requests
 import streamlit as st
 
+from utils.data_quality import status_label, validate_export
+
 # repo_key → (cache_file_stem, github_repo_name)
 REPOS: dict[str, tuple[str, str]] = {
     "MLB":          ("baseball",    "baseball-predictions"),
@@ -42,6 +44,33 @@ RAW_URL = (
     "/data_files/best_bets_today.json"
 )
 CACHE_DIR = Path("data_cache")
+MANIFEST_FILE = CACHE_DIR / "status_manifest.json"
+
+
+def load_status_manifest() -> dict:
+    """Load the aggregator's authoritative source-health manifest."""
+    if not MANIFEST_FILE.exists():
+        return {"sources": {}, "manifest_missing": True}
+    try:
+        data = json.loads(MANIFEST_FILE.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {"sources": {}, "manifest_invalid": True}
+    except (OSError, json.JSONDecodeError):
+        return {"sources": {}, "manifest_invalid": True}
+
+
+def get_source_statuses() -> dict[str, dict]:
+    """Return status records for all configured sports, including empty ones."""
+    manifest = load_status_manifest()
+    sources = manifest.get("sources", {})
+    result = {}
+    for sport, (cache_key, repo) in REPOS.items():
+        record = dict(sources.get(cache_key, {}))
+        record.setdefault("sport", sport)
+        record.setdefault("repo", repo)
+        record.setdefault("status", "fetch_failed" if manifest.get("manifest_missing") else "unknown")
+        record["status_label"] = status_label(record["status"])
+        result[sport] = record
+    return result
 
 
 @st.cache_data(ttl=3600)
@@ -70,10 +99,16 @@ def load_all_bets() -> pd.DataFrame:
 
 
 def _load_sport(cache_key: str, repo: str) -> list[dict]:
-    """Try local cache first, then GitHub raw URL."""
+    """Load bets for one sport repo.
+
+    Priority:
+      1. data_cache/{key}.json  — committed by the aggregator GitHub Action
+      2. GitHub raw URL         — live fetch (authoritative; pipelines push here)
+    """
+    sport = next((name for name, (key, _) in REPOS.items() if key == cache_key), cache_key)
     data: dict | None = None
 
-    # 1. Local data_cache file
+    # 1. Local data_cache file (committed by the aggregator GitHub Action)
     local = CACHE_DIR / f"{cache_key}.json"
     if local.exists():
         try:
@@ -81,7 +116,8 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
         except Exception:
             pass
 
-    # 2. GitHub raw URL
+    # 2. GitHub raw URL — always fresher than any local sibling file because
+    #    each sport repo's nightly Action commits its latest JSON to GitHub.
     if data is None:
         try:
             url = RAW_URL.format(repo=repo)
@@ -93,6 +129,11 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
 
     if not isinstance(data, dict):
         return []
+
+    validation = validate_export(data, sport, now=datetime.now(timezone.utc))
+    if validation["errors"]:
+        return []
+    data = validation["data"]
 
     # Stamp each bet with meta fields so pages can reference them
     meta = data.get("meta", {})

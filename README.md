@@ -1,8 +1,8 @@
 # Sports Picks Grid
 
-**One dashboard. 13 sports. Every day's best bets — ranked by confidence.**
+**One dashboard. 17 sports. Every day's best bets — ranked by standardized edge.**
 
-Sports Picks Grid pulls together daily betting recommendations from 13 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's picks, sorted by how confident the models are.
+Sports Picks Grid pulls together daily betting recommendations from 17 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's and upcoming picks, sorted by standardized edge tiers.
 
 Part of the **Betting Oracle** suite.
 
@@ -25,7 +25,7 @@ Part of the **Betting Oracle** suite.
 
 ## What It Does
 
-Every night, each of the 13 sport-specific prediction apps runs its machine-learning model, crunches the latest data, and saves a file called `best_bets_today.json` to its GitHub repository. Sports Picks Grid reads all 13 of those files and displays everything in a single dashboard.
+Every night, each of the 17 sport-specific prediction apps runs its machine-learning model, crunches the latest data, and saves a file called `best_bets_today.json` to its GitHub repository. Sports Picks Grid reads all 17 of those files and displays everything in a single dashboard.
 
 **This app contains no models of its own.** It is purely a reader and display layer — think of it as a scoreboard that shows results from the individual sport apps.
 
@@ -68,9 +68,9 @@ Each pick is assigned a tier based on two things: how confident the model is in 
 
 | Tier | Badge | What It Means |
 |---|---|---|
-| Elite | 🔥 | Highest confidence + strongest edge. The model is very sure and the market hasn't caught up. |
-| Strong | ✅ | Good confidence + positive expected value. A solid bet worth considering. |
-| Good | ➡ | Moderate signal. Worth tracking, but size down or treat as secondary. |
+| Elite | 🔥 | Edge ≥ 6%. The strongest standardized value tier. |
+| Strong | ✅ | Edge ≥ 3% and < 6%. Positive expected value. |
+| Good | ➡ | Edge ≥ 1% and < 3%. A smaller signal worth tracking. |
 | Standard | ⚪ | Tracked internally. Not shown in the dashboard by default. |
 
 > **What is "edge"?** If a team has a 60% real chance of winning but the bookmaker's line implies only a 50% chance, the edge is +10%. That gap is where value lives.
@@ -93,6 +93,10 @@ A card-style view of only the Elite and Strong picks. Each card shows the matchu
 ### 📈 Performance
 Model accuracy and record-keeping for each sport app. Shows win rate, ROI, and links back to the individual sport dashboards. (Populated once each sport repo starts writing `model_performance.json`.)
 
+Historical grading reads settled outcomes matching the archived picks. Use
+`data_files/results.example.csv` as the input template; the grader publishes no
+accuracy or ROI until settled results are supplied.
+
 ### ℹ️ About
 Explains how the app works, what the tiers mean, and which sports are covered.
 
@@ -102,13 +106,13 @@ Explains how the app works, what the tiers mean, and which sports are covered.
 
 ## How It Stays Up to Date
 
-A GitHub Action called `aggregate.yml` runs automatically every day at **12:00 PM UTC**:
+A GitHub Action called `aggregate.yml` runs automatically every day at **3:00 PM UTC**:
 
-1. It runs `scripts/fetch_all_picks.py`, which visits each of the 13 sport repos
-2. It downloads the latest `best_bets_today.json` from each one
-3. It saves those files to the `data_cache/` folder in this repo and commits them
+1. It runs `scripts/fetch_all_picks.py`, which visits each of the 17 sport repos
+2. It validates and downloads the latest `best_bets_today.json` from each one
+3. It saves valid files to `data_cache/`, archives daily snapshots, and commits `status_manifest.json`
 
-This means the dashboard always has a local copy of the picks even if GitHub's raw file servers are slow. Individual sport repos can also trigger an early refresh via a `repository_dispatch` event after their own nightly pipeline finishes.
+This means the dashboard retains the last valid copy of the picks even if GitHub's raw file servers are slow. Failed fetches never overwrite valid cache data. Individual sport repos can also trigger an early refresh via a `repository_dispatch` event after their own nightly pipeline finishes.
 
 If you run the app locally without a populated `data_cache/`, it falls back to fetching each sport's JSON live from GitHub.
 
@@ -146,7 +150,7 @@ sports-picks-grid/
 ├── predictions.py              # App entry point — page config, sidebar, navigation
 ├── footer.py                   # Shared Betting Oracle footer
 ├── utils/
-│   ├── fetcher.py              # Loads all 13 JSONs → flat DataFrame (with generated_at)
+│   ├── fetcher.py              # Loads all 17 JSONs → flat DataFrame (with source status)
 │   └── formatter.py            # Tier badges, odds formatting, display columns, sorting
 ├── pages/
 │   ├── 1_Today.py              # Today + upcoming picks by tier (7-day window)
@@ -159,7 +163,7 @@ sports-picks-grid/
 ├── data_cache/                  # Local copies committed by the nightly GitHub Action
 ├── .github/
 │   └── workflows/
-│       └── aggregate.yml       # Daily 12:00 PM UTC fetch + commit
+│       └── aggregate.yml       # Daily 3:00 PM UTC validate + fetch + archive
 └── docs/
     ├── 01-master-architecture.md
     ├── 02-unified-schema.md

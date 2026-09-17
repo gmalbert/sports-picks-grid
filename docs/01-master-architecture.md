@@ -25,6 +25,10 @@ itself — it reads standardized JSON output files that each sport repo publishe
 | 11 | `gmalbert/college-football-predictions` | NCAAF | Aug–Jan | Tue 6:00 AM UTC (season only) | Strong/Moderate/Lean/None | ❌ needs export |
 | 12 | `gmalbert/tennis-predictions` | ATP Tennis | Year-round | 5:00 AM UTC daily | HIGH/MEDIUM/LOW | ❌ needs export |
 | 13 | `gmalbert/march-madness` | NCAAB | Mar–Apr | 6:00 AM UTC daily | None (interval only) | ❌ needs export |
+| 14 | `gmalbert/cricket` | Cricket | Year-round | daily | edge-v1 | ✅ export contract monitored |
+| 15 | `gmalbert/table-tennis` | Table Tennis | Year-round | daily | edge-v1 | ✅ export contract monitored |
+| 16 | `gmalbert/boxing` | Boxing | Year-round | daily | edge-v1 | ✅ export contract monitored |
+| 17 | `gmalbert/darts` | Darts | Year-round | scheduled | edge-v1 | ⚠️ export currently missing |
 
 ---
 
@@ -71,11 +75,12 @@ Actions runs and schedule sports-picks-grid to run last as an aggregator sweep.
 | 9:00 AM | MLS, Premier League, Bundesliga, Ligue-1 |
 | 10:00 AM | NBA predictions write |
 | 11:00 AM | College Football (Tuesdays), March Madness |
-| **12:00 PM UTC** | **Sports Picks Grid aggregator sweep** |
+| **3:00 PM UTC** | **Sports Picks Grid aggregator sweep** |
 
-The aggregator Action (in this repo) at 12:00 PM UTC runs after all sport repos have
-updated. It optionally pre-fetches and caches the JSON files locally so the Streamlit app
-serves instantly without making GitHub API calls at page-load time.
+The aggregator Action (in this repo) at 3:00 PM UTC runs after the scheduled source
+workflows. Source workflows may also dispatch an early refresh. The aggregator validates
+each response, preserves the last valid cache on failure, writes a status manifest, and
+archives each successful daily snapshot.
 
 ---
 
@@ -120,7 +125,7 @@ understand data freshness.
        ├── Writes data_files/best_bets_today.json
        └── GH Action commits and pushes the JSON
 
-2. Sports Picks Grid (this repo) at 12:00 PM UTC
+2. Sports Picks Grid (this repo) at 3:00 PM UTC
    └── Optional: pre-fetch Action downloads all JSONs → data_cache/
    └── Commits data_cache/*.json for offline fallback
 
@@ -138,7 +143,7 @@ understand data freshness.
 sports-picks-grid/
 ├── .github/
 │   └── workflows/
-│       └── aggregate.yml         # Runs at 12:00 PM UTC, fetches all JSONs
+│       └── aggregate.yml         # Runs at 3:00 PM UTC, validates/fetches/archives JSONs
 ├── predictions.py                # Streamlit entry point (st.set_page_config here only)
 ├── pages/
 │   ├── 1_Today.py                # Today's picks grid (all sports)
@@ -186,9 +191,9 @@ unified 4-tier scale:
 
 | Unified Tier | Badge | Description |
 |---|---|---|
-| `Elite` | 🔥 | Highest confidence + strong edge |
-| `Strong` | ✅ | Good confidence + positive edge |
-| `Good` | ➡ | Moderate confidence or edge |
+| `Elite` | 🔥 | Edge ≥ 6% under edge-v1 |
+| `Strong` | ✅ | Edge ≥ 3% and < 6% |
+| `Good` | ➡ | Edge ≥ 1% and < 3% |
 | `Standard` | ⚪ | Worth tracking but minimal sizing |
 
 Mapping rules per repo are documented in `docs/03-repo-export-specs.md`.

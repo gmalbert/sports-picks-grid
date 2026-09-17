@@ -48,8 +48,10 @@ logs/
 *.swp
 *.swo
 
-# Data/cache outputs
-data_cache/
+# Aggregator snapshots are deliberate committed outputs. Ignore only transient
+# files created during atomic writes.
+data_cache/*.tmp
+data_cache/**/*.tmp
 *.sqlite3
 *.db
 

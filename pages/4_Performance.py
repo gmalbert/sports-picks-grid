@@ -6,6 +6,8 @@ used for best_bets_today.json. Falls back gracefully when data is unavailable.
 """
 import pandas as pd
 import streamlit as st
+import json
+from pathlib import Path
 
 from utils.fetcher import REPOS, load_performance
 from utils.formatter import SPORT_EMOJI
@@ -27,8 +29,35 @@ SPORT_APP_URLS: dict[str, str] = {
 }
 
 st.header("📊 Model Performance")
-st.caption("Season-to-date win rates and ROI across all Betting Oracle models.")
+st.caption("Validated performance metrics from settled, archived picks. Unsettled picks are never counted as losses.")
 st.divider()
+
+aggregate_performance = Path("data_files/model_performance.json")
+if aggregate_performance.exists():
+    try:
+        local_perf = json.loads(aggregate_performance.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        local_perf = {}
+    if local_perf.get("status") == "unavailable":
+        st.info(
+            "Historical grading is configured, but no settled-results input is available yet. "
+            "Accuracy and ROI will remain unpublished until results are supplied."
+        )
+    elif local_perf.get("groups"):
+        st.subheader("Validated Archive Grading")
+        local_rows = []
+        for group in local_perf["groups"].values():
+            local_rows.append({
+                "Sport": group.get("sport", "—"),
+                "Tier": group.get("tier", "—"),
+                "Settled Bets": group.get("settled_bets", 0),
+                "Wins": group.get("wins", 0),
+                "Win Rate": f"{group['win_rate'] * 100:.1f}%" if group.get("win_rate") is not None else "—",
+                "Profit (u)": f"{group.get('profit_units', 0):+.2f}",
+                "ROI": f"{group['roi'] * 100:.1f}%" if group.get("roi") is not None else "—",
+            })
+        st.dataframe(pd.DataFrame(local_rows), width="stretch", hide_index=True)
+    st.divider()
 
 rows = []
 for sport, (cache_key, repo) in REPOS.items():

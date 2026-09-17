@@ -3,7 +3,7 @@
 ## Project Overview
 
 **App name:** Sports Picks Grid  
-**Purpose:** Streamlit multi-page aggregator dashboard that displays daily betting picks from 13 sport-specific ML prediction repositories.  
+**Purpose:** Streamlit multi-page aggregator dashboard that displays daily betting picks from 17 sport-specific ML prediction repositories.
 **Entry point:** `streamlit run predictions.py`  
 **Part of:** Betting Oracle suite
 

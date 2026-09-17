@@ -8,19 +8,28 @@ from datetime import date
 from utils.formatter import apply_settings, sort_by_tier, display_columns
 
 df: pd.DataFrame = st.session_state.get("all_bets_df", pd.DataFrame())
-view_df = apply_settings(df)  # today + up to 7 days ahead, filtered by user settings
+view_df = apply_settings(df)  # 30 days back → 7 days ahead, filtered by user settings
 
 today = date.today()
 today_count = int((view_df["game_date"] == today).sum()) if not view_df.empty else 0
 future_count = int((view_df["game_date"] > today).sum()) if not view_df.empty else 0
+past_count = int((view_df["game_date"] < today).sum()) if not view_df.empty else 0
 
 st.header(f"📅 Today's Picks — {today.strftime('%A, %B %d, %Y')}")
+
+caption_parts = []
+if today_count:
+    caption_parts.append(f"{today_count} pick{'s' if today_count != 1 else ''} today")
 if future_count:
-    st.caption(f"{today_count} pick{'s' if today_count != 1 else ''} today · {future_count} upcoming")
+    caption_parts.append(f"{future_count} upcoming")
+if past_count:
+    caption_parts.append(f"{past_count} recent (from prior days — pipelines may not have run today)")
+if caption_parts:
+    st.caption(" · ".join(caption_parts))
 
 if view_df.empty:
     st.info(
-        "No picks available for today. Models may not have run yet, "
+        "No picks available. Models may not have run yet, "
         "or all sports are currently in their off-season."
     )
     st.stop()

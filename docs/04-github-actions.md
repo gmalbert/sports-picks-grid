@@ -341,7 +341,7 @@ name: Aggregate picks from all sport repos
 
 on:
   schedule:
-    - cron: '0 12 * * *'    # 12:00 PM UTC — after all sport repos have run
+    - cron: '0 15 * * *'    # 3:00 PM UTC — after scheduled source workflows
   workflow_dispatch:          # Allow manual trigger
 
 jobs:
