@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Darts",
+    "generated_at": "2026-09-17T07:18:35.436015+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "source_commit": "7396cce094172e69cda237ce21534c4adc431c7a",
+    "total_bets": 0,
+    "dashboard_lookahead_days": 7,
+    "source_repo": "darts",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/darts/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
