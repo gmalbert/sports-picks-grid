@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-06-09T11:05:56.210049+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "stale",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "7637fb2618b071dfc12569a15731387da254024c",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-06-09",
+      "game_time": null,
+      "game": "San Antonio Spurs @ New York Knicks",
+      "home_team": "New York Knicks",
+      "away_team": "San Antonio Spurs",
+      "bet_type": "Moneyline",
+      "pick": "New York Knicks",
+      "confidence": 0.559,
+      "edge": null,
+      "tier": "Good",
+      "odds": null,
+      "line": 3.1,
+      "notes": null
+    }
+  ]
+}
