@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "sport": "TableTennis",
+    "generated_at": "2026-09-30T05:13:43.136370+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "stale",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "a5baa8297f4cb772bb66c6286f37b6a45487133d",
+    "source_repo": "table-tennis",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/table-tennis/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
