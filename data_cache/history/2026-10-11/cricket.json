@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-10-11T12:27:06.437160+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "d2fb53f0e03027a4840ac1118971876cb240ac03",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-11",
+      "game": "Pakistan vs Sri Lanka",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Sri Lanka ML",
+      "confidence": 0.9077,
+      "edge": 0.6066,
+      "odds": 215,
+      "tier": "Elite",
+      "notes": "Kelly stake: 6.5%"
+    },
+    {
+      "game_date": "2026-10-11",
+      "game": "USA vs UAE",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "UAE ML",
+      "confidence": 0.9231,
+      "edge": 0.6025,
+      "odds": 195,
+      "tier": "Elite",
+      "notes": "Kelly stake: 7.1%"
+    },
+    {
+      "game_date": "2026-10-11",
+      "game": "India vs West Indies",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "India ML",
+      "confidence": 0.9925,
+      "edge": 0.2329,
+      "odds": -400,
+      "tier": "Elite",
+      "notes": "Kelly stake: 18.4%"
+    }
+  ]
+}
