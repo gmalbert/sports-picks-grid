@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-11T14:39:16.667919+00:00",
+    "generated_at": "2026-10-12T17:23:03.138187+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "270a6958ccdcc12944a573c663e3718d86e9b2e1",
+    "source_commit": "94d3629db607526ef54e83d30b03f6f5171da91c",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -44,8 +44,8 @@
       "bet_type": "moneyline",
       "pick": "Louie O'Doherty",
       "confidence": 0.9383,
-      "edge": 0.1511,
-      "odds": -370,
+      "edge": 0.2015,
+      "odds": -280,
       "tier": "Elite",
       "notes": ""
     },

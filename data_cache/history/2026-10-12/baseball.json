@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "sport": "MLB",
+    "generated_at": "2026-10-12T20:56:27.117234+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 0,
+    "source_commit": "7d1493606ccd2f9e2cf3c55ec826b639f33fb160",
+    "total_bets": 0,
+    "notes": "No MLB picks for 2026-10-12",
+    "target_date": "2026-10-12",
+    "picks_count": 0,
+    "dashboard_lookahead_days": 7,
+    "source_repo": "baseball-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/baseball-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
