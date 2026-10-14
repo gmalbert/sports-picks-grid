@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-10-14T11:32:08.448592+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "495716407d74b219005f8cf14892cb371179c67f",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-14",
+      "game": "India vs West Indies",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "India ML",
+      "confidence": 0.9925,
+      "edge": 0.271,
+      "odds": -320,
+      "tier": "Elite",
+      "notes": "Kelly stake: 17.6%"
+    }
+  ]
+}
