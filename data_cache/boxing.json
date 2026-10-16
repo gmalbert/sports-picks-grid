@@ -1,30 +1,18 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-15T13:04:58.490001+00:00",
+    "generated_at": "2026-10-16T13:01:47.935949+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "a0870032c24f0202a6c6bbaa2309aed7ff22a0be",
+    "source_commit": "097bc51df612075d2c828546a0ab8884e9477838",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
   "bets": [
-    {
-      "game_date": "2026-10-16",
-      "game": "Charles Harris Jr vs Misael Cabrera",
-      "game_time": "",
-      "bet_type": "moneyline",
-      "pick": "Charles Harris Jr",
-      "confidence": 0.5,
-      "edge": 0.0935,
-      "odds": 146,
-      "tier": "Elite",
-      "notes": ""
-    },
     {
       "game_date": "2026-10-17",
       "game": "Daniel Dubois vs Fabio Wardley",
@@ -56,8 +44,8 @@
       "bet_type": "moneyline",
       "pick": "Louie O'Doherty",
       "confidence": 0.9383,
-      "edge": 0.2662,
-      "odds": -205,
+      "edge": 0.2831,
+      "odds": -190,
       "tier": "Elite",
       "notes": ""
     },
@@ -68,9 +56,9 @@
       "bet_type": "moneyline",
       "pick": "Nelson Birchall",
       "confidence": 0.9657,
-      "edge": 0.061,
-      "odds": -950,
-      "tier": "Elite",
+      "edge": 0.0567,
+      "odds": -1000,
+      "tier": "Strong",
       "notes": ""
     },
     {
@@ -80,8 +68,8 @@
       "bet_type": "moneyline",
       "pick": "Braulio Matias Ferreira",
       "confidence": 0.5,
-      "edge": 0.4333,
-      "odds": 1400,
+      "edge": 0.4411,
+      "odds": 1600,
       "tier": "Elite",
       "notes": ""
     },
@@ -104,8 +92,8 @@
       "bet_type": "moneyline",
       "pick": "Ermal Hadribeaj",
       "confidence": 0.4782,
-      "edge": 0.3998,
-      "odds": 1175,
+      "edge": 0.3449,
+      "odds": 650,
       "tier": "Elite",
       "notes": ""
     },
@@ -116,8 +104,8 @@
       "bet_type": "moneyline",
       "pick": "Koen Mazoudier",
       "confidence": 0.5,
-      "edge": 0.3333,
-      "odds": 500,
+      "edge": 0.3461,
+      "odds": 550,
       "tier": "Elite",
       "notes": ""
     },
@@ -152,8 +140,8 @@
       "bet_type": "moneyline",
       "pick": "Maxi Hughes",
       "confidence": 0.5,
-      "edge": 0.3442,
-      "odds": 542,
+      "edge": 0.3571,
+      "odds": 600,
       "tier": "Elite",
       "notes": ""
     },
