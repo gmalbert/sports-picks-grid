@@ -1,32 +1,32 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-16T11:03:21.532243+00:00",
+    "generated_at": "2026-10-17T10:25:09.147313+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "43ad85bb807d8791bfdf24bfd18f26ec1d2ea4d5",
+    "source_commit": "748308548b80128b2a2aa4506894deab25d3a587",
     "source_repo": "cricket",
     "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
   },
   "bets": [
     {
-      "game_date": "2026-10-16",
+      "game_date": "2026-10-17",
       "game": "Canada vs Nepal",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Canada ML",
       "confidence": 0.9822,
-      "edge": 0.6304,
-      "odds": 170,
+      "edge": 0.6945,
+      "odds": 230,
       "tier": "Elite",
-      "notes": "Kelly stake: 8.6%"
+      "notes": "Kelly stake: 7.0%"
     },
     {
-      "game_date": "2026-10-16",
+      "game_date": "2026-10-17",
       "game": "Pakistan vs Sri Lanka",
       "game_time": "",
       "bet_type": "Match Winner",
@@ -38,7 +38,7 @@
       "notes": "Kelly stake: 7.0%"
     },
     {
-      "game_date": "2026-10-16",
+      "game_date": "2026-10-17",
       "game": "Bangladesh vs Zimbabwe",
       "game_time": "",
       "bet_type": "Match Winner",
@@ -50,16 +50,16 @@
       "notes": "Kelly stake: 15.4%"
     },
     {
-      "game_date": "2026-10-16",
+      "game_date": "2026-10-17",
       "game": "India vs West Indies",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.9925,
-      "edge": 0.271,
-      "odds": -320,
+      "edge": 0.2936,
+      "odds": -280,
       "tier": "Elite",
-      "notes": "Kelly stake: 17.6%"
+      "notes": "Kelly stake: 17.0%"
     }
   ]
 }
