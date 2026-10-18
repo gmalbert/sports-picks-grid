@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "Rugby",
-    "generated_at": "2026-10-17T07:33:04.413995+00:00",
+    "generated_at": "2026-10-18T07:50:19.462875+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No scheduled rugby matches for 2026-10-17",
+    "notes": "No scheduled rugby matches for 2026-10-18",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "cd30e3955786e3ddf7d5f6ce32f3383078390679",
+    "source_commit": "572441d634def39eb0334afdaa53cbb5666c6f2c",
     "source_repo": "rugby",
     "source_url": "https://raw.githubusercontent.com/gmalbert/rugby/main/data_files/best_bets_today.json"
   },
