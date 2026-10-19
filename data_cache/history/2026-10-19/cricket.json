@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-10-19T12:41:20.874413+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "6a4b4c98338d06df64701ded3a9835334ec6a5a4",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-19",
+      "game": "Pakistan vs England",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "England ML",
+      "confidence": 0.9784,
+      "edge": 0.3896,
+      "odds": -165,
+      "tier": "Elite",
+      "notes": "Kelly stake: 13.9%"
+    },
+    {
+      "game_date": "2026-10-19",
+      "game": "Afghanistan vs Zimbabwe",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Afghanistan ML",
+      "confidence": 0.9831,
+      "edge": 0.129,
+      "odds": -900,
+      "tier": "Elite",
+      "notes": "Kelly stake: 18.9%"
+    }
+  ]
+}

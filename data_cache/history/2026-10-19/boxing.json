@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "sport": "Boxing",
+    "generated_at": "2026-10-19T15:17:47.771213+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "dc8a1c4395cb6b5f3624de316c01a6bd33b30d7d",
+    "source_repo": "boxing",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-24",
+      "game": "Dalton Smith vs Alberto Puello",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Dalton Smith",
+      "confidence": 0.8927,
+      "edge": 0.2436,
+      "odds": -185,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-24",
+      "game": "Shannon Ryan vs Emma Dolan",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Emma Dolan",
+      "confidence": 0.5,
+      "edge": 0.131,
+      "odds": 171,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-24",
+      "game": "Giorgio Visoli vs Maxi Hughes",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Maxi Hughes",
+      "confidence": 0.5,
+      "edge": 0.3889,
+      "odds": 800,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-25",
+      "game": "Emanuel Navarrete vs O'Shaquie Foster",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Emanuel Navarrete",
+      "confidence": 0.6529,
+      "edge": 0.2448,
+      "odds": 145,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-25",
+      "game": "Albert Gonzalez vs Edward Vazquez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Albert Gonzalez",
+      "confidence": 0.9735,
+      "edge": 0.0644,
+      "odds": -1000,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-31",
+      "game": "Canelo Álvarez vs Christian Mbilli",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Christian Mbilli",
+      "confidence": 0.5017,
+      "edge": 0.2076,
+      "odds": 240,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-31",
+      "game": "Lindolfo Delgado vs Arthur Biyarslanov",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Lindolfo Delgado",
+      "confidence": 0.5,
+      "edge": 0.0935,
+      "odds": 146,
+      "tier": "Elite",
+      "notes": ""
+    }
+  ]
+}
