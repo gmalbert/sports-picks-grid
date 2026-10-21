@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Darts",
-    "generated_at": "2026-10-20T12:35:36.967900+00:00",
+    "generated_at": "2026-10-21T12:47:04.957546+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
-    "source_commit": "bb8a4b4ff6acec01950cc60343c82fd8282bfde5",
+    "source_commit": "8b6e4c3bbdc5c0266d6c093c0c7091e2e1416fe6",
     "total_bets": 11,
     "dashboard_lookahead_days": 7,
     "source_repo": "darts",
@@ -93,8 +93,8 @@
       "bet_type": "moneyline",
       "pick": "Nathan Aspinall",
       "confidence": 0.8482,
-      "edge": 0.1946,
-      "odds": -189,
+      "edge": 0.2458,
+      "odds": -152,
       "tier": "Elite",
       "notes": "European Championship"
     },
@@ -117,8 +117,8 @@
       "bet_type": "moneyline",
       "pick": "Martin Schindler",
       "confidence": 0.6039,
-      "edge": 0.2706,
-      "odds": 200,
+      "edge": 0.2222,
+      "odds": 162,
       "tier": "Elite",
       "notes": "European Championship"
     },
