@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-10-22T11:28:36.043834+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "0a61bac5b0e79ec169f7e7a56b0b2e705cb558fe",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-22",
+      "game": "Sri Lanka vs England",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Sri Lanka ML",
+      "confidence": 0.3005,
+      "edge": 0.2414,
+      "odds": 1500,
+      "tier": "Elite",
+      "notes": "Kelly stake: 0.4%"
+    },
+    {
+      "game_date": "2026-10-22",
+      "game": "Namibia vs Ireland",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Namibia ML",
+      "confidence": 0.9798,
+      "edge": 0.2329,
+      "odds": -370,
+      "tier": "Elite",
+      "notes": "Kelly stake: 17.2%"
+    }
+  ]
+}
