@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-22T13:28:15.109274+00:00",
+    "generated_at": "2026-10-23T13:05:02.667009+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "9fcc2530ccb66c75577d277b5febe472852b03ad",
+    "source_commit": "50b113cfcf2ef95eba9d5f923a2931907783f21c",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -20,8 +20,8 @@
       "bet_type": "moneyline",
       "pick": "Dalton Smith",
       "confidence": 0.8927,
-      "edge": 0.2375,
-      "odds": -190,
+      "edge": 0.226,
+      "odds": -200,
       "tier": "Elite",
       "notes": ""
     },
@@ -32,8 +32,8 @@
       "bet_type": "moneyline",
       "pick": "Emma Dolan",
       "confidence": 0.5,
-      "edge": 0.1666,
-      "odds": 200,
+      "edge": 0.1875,
+      "odds": 220,
       "tier": "Elite",
       "notes": ""
     },
@@ -44,8 +44,8 @@
       "bet_type": "moneyline",
       "pick": "Maxi Hughes",
       "confidence": 0.5,
-      "edge": 0.3461,
-      "odds": 550,
+      "edge": 0.3437,
+      "odds": 540,
       "tier": "Elite",
       "notes": ""
     },
@@ -92,8 +92,8 @@
       "bet_type": "moneyline",
       "pick": "Ross Driscoll",
       "confidence": 0.9659,
-      "edge": 0.6582,
-      "odds": 225,
+      "edge": 0.6326,
+      "odds": 200,
       "tier": "Elite",
       "notes": ""
     },
