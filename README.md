@@ -6,6 +6,23 @@ Sports Picks Grid pulls together daily betting recommendations from 17 separate 
 
 Part of the **Betting Oracle** suite.
 
+## React / Cloudflare Workers
+
+The dashboard has been migrated to React with a Cloudflare Worker API, retaining
+the Streamlit page structure and appearance. The Python aggregation and grading
+jobs continue to supply the same JSON exports.
+
+```sh
+npm ci
+npm run dev
+```
+
+Open `http://localhost:8787`. Run `npm run check` to validate the migration and
+`npm run deploy` to build and publish after `npx wrangler login`.
+See [Cloudflare migration guide](docs/cloudflare-migration.md) for deployment,
+data freshness, fallback behavior, and development details. The Streamlit
+instructions below remain available for the original reference implementation.
+
 ---
 
 ## Table of Contents
