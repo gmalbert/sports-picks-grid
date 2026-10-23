@@ -3,6 +3,11 @@
   "name": "sports-picks-grid",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "sportspickgrid.com/*", "zone_name": "sportspickgrid.com" },
+    { "pattern": "sportspicksgrid.com/*", "zone_name": "sportspicksgrid.com" }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

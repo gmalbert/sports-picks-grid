@@ -40,6 +40,12 @@ Python runtime, or application secrets are required. Configure a custom domain
 in Cloudflare after the first deployment if desired.
 
 The Worker name and data repository/branch are configured in `wrangler.jsonc`.
+The production domains are `sportspickgrid.com` and `sportspicksgrid.com`.
+Their `/*` Worker routes take precedence over the existing proxied website DNS
+records, preserving those DNS records and verification records. Keep the apex
+records proxied in Cloudflare; these hostnames use Worker routes rather than
+the Custom Domains binding because Cloudflare rejected replacing the existing
+externally managed DNS records. The `workers.dev` address remains enabled.
 Only `/api/*` invokes the Worker before asset routing. Unknown API routes return
 JSON 404s; normal frontend navigation uses the SPA fallback.
 
