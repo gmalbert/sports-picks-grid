@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sports-picks-grid",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "sportspickgrid.com/*", "zone_name": "sportspickgrid.com" },
+    { "pattern": "sportspicksgrid.com/*", "zone_name": "sportspicksgrid.com" }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": { "DATA_REPO": "gmalbert/sports-picks-grid", "DATA_BRANCH": "main" },
+  "observability": { "enabled": true }
+}
