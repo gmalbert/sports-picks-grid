@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Ligue1",
+    "generated_at": "2026-10-24T12:33:18.962120+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No qualifying Ligue1 picks for 2026-10-24",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "a0037c70382becf16241eddc48e0ccfec20eb0ab",
+    "source_repo": "ligue-1",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/ligue-1/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

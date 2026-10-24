@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NFL",
+    "generated_at": "2026-10-24T07:46:52.149002+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No picks for 2026-10-24",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "6430478c68c709e350d60ace8698acec4de57208",
+    "source_repo": "nfl-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nfl-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

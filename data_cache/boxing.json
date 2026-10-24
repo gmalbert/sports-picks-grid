@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-23T13:05:02.667009+00:00",
+    "generated_at": "2026-10-24T12:27:21.889782+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "50b113cfcf2ef95eba9d5f923a2931907783f21c",
+    "source_commit": "ffcb0581645c4156f697fb7aeb1a208db621f826",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -68,8 +68,8 @@
       "bet_type": "moneyline",
       "pick": "Emanuel Navarrete",
       "confidence": 0.6529,
-      "edge": 0.2529,
-      "odds": 150,
+      "edge": 0.2448,
+      "odds": 145,
       "tier": "Elite",
       "notes": ""
     },
@@ -118,6 +118,54 @@
       "confidence": 0.5,
       "edge": 0.0935,
       "odds": 146,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Zak Miller vs Gully Powar",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Zak Miller",
+      "confidence": 0.5,
+      "edge": 0.0834,
+      "odds": 140,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Zach Parker vs Umar Dzambekov",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Zach Parker",
+      "confidence": 0.5,
+      "edge": 0.1722,
+      "odds": 205,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Denzel Bentley vs Shane Mosley Jr",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Shane Mosley Jr",
+      "confidence": 0.5,
+      "edge": 0.1124,
+      "odds": 158,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Chris Billam-Smith vs Cheavon Clarke",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Cheavon Clarke",
+      "confidence": 0.6094,
+      "edge": 0.3317,
+      "odds": 260,
       "tier": "Elite",
       "notes": ""
     }
