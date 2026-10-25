@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "LaLiga",
-    "generated_at": "2026-10-24T12:01:54.071013+00:00",
+    "generated_at": "2026-10-25T12:34:04.962826+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No qualifying LaLiga picks for 2026-10-24",
+    "notes": "No qualifying LaLiga picks for 2026-10-25",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "d6a190e9e27518ec256d24572a763575b1252867",
+    "source_commit": "4a4da0c58eb05dc676b22d8db2603b9768af6e39",
     "source_repo": "la-liga",
     "source_url": "https://raw.githubusercontent.com/gmalbert/la-liga/main/data_files/best_bets_today.json"
   },

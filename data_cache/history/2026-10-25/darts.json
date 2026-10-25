@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "sport": "Darts",
+    "generated_at": "2026-10-25T12:24:10.965643+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "source_commit": "7633835e45ff292a2ceb17c9c0e9b4a39951b2ad",
+    "total_bets": 2,
+    "dashboard_lookahead_days": 7,
+    "source_repo": "darts",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/darts/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-25",
+      "game": "Martin Schindler vs Jonny Clayton",
+      "game_time": "14:15",
+      "bet_type": "moneyline",
+      "pick": "Jonny Clayton",
+      "confidence": 0.7493,
+      "edge": 0.035,
+      "odds": -250,
+      "tier": "Strong",
+      "notes": "European Championship"
+    },
+    {
+      "game_date": "2026-10-25",
+      "game": "Krzysztof Ratajski vs Luke Littler",
+      "game_time": "15:15",
+      "bet_type": "moneyline",
+      "pick": "Krzysztof Ratajski",
+      "confidence": 0.1559,
+      "edge": 0.0448,
+      "odds": 800,
+      "tier": "Strong",
+      "notes": "European Championship"
+    }
+  ]
+}
