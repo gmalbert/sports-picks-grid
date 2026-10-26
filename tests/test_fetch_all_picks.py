@@ -15,6 +15,19 @@ class FetchAllPicksTests(unittest.TestCase):
         self.assertEqual(fetch_all_picks.REPOS['esports'], 'esports')
         self.assertEqual(fetch_all_picks.DISPLAY_NAMES['esports'], 'Esports')
 
+    def test_esports_reads_public_api_without_private_github_access(self):
+        urls = []
+        def fetch(session, url):
+            urls.append(url)
+            return {"meta": {"sport": "Esports", "generated_at": NOW.isoformat()}, "bets": []}, 200, None
+        fetch_all_picks.fetch_json = fetch
+        fetch_all_picks.fetch_source_sha = lambda *args: self.fail('No private GitHub request expected')
+        result = fetch_all_picks.fetch_one('esports', 'esports', object(), NOW)
+        self.assertEqual(result['status'], 'no_picks')
+        self.assertEqual(urls, ['https://api.sidequestbets.com/api/grid-picks'])
+        cached = json.loads((self.temp_dir / 'esports.json').read_text())
+        self.assertEqual(cached['meta']['source_url'], urls[0])
+
     def setUp(self):
         self.temp_dir = Path(tempfile.mkdtemp())
         self.original_cache_dir = fetch_all_picks.CACHE_DIR

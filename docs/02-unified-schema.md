@@ -1,5 +1,8 @@
 # Unified Best Bets JSON Schema
 
+Esports uses this same contract at `https://api.sidequestbets.com/api/grid-picks`
+because its source repository is private. Other sources retain the file transport below.
+
 ## File Location
 
 Every sport repo writes this file at the end of its nightly pipeline:
