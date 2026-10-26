@@ -1,8 +1,8 @@
 # Sports Picks Grid
 
-**One dashboard. 17 sports. Every day's best bets — ranked by standardized edge.**
+**One dashboard. 18 sports. Every day's best bets — ranked by standardized edge.**
 
-Sports Picks Grid pulls together daily betting recommendations from 17 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's and upcoming picks, sorted by standardized edge tiers.
+Sports Picks Grid pulls together daily betting recommendations from 18 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's and upcoming picks, sorted by standardized edge tiers.
 
 Part of the **Betting Oracle** suite.
 
@@ -42,7 +42,7 @@ instructions below remain available for the original reference implementation.
 
 ## What It Does
 
-Every night, each of the 17 sport-specific prediction apps runs its machine-learning model, crunches the latest data, and saves a file called `best_bets_today.json` to its GitHub repository. Sports Picks Grid reads all 17 of those files and displays everything in a single dashboard.
+Every night, each of the 18 sport-specific prediction apps runs its machine-learning model, crunches the latest data, and saves a file called `best_bets_today.json` to its GitHub repository. Sports Picks Grid reads all 18 of those files and displays everything in a single dashboard.
 
 **This app contains no models of its own.** It is purely a reader and display layer — think of it as a scoreboard that shows results from the individual sport apps.
 
@@ -125,7 +125,7 @@ Explains how the app works, what the tiers mean, and which sports are covered.
 
 A GitHub Action called `aggregate.yml` runs automatically every day at **3:00 PM UTC**:
 
-1. It runs `scripts/fetch_all_picks.py`, which visits each of the 17 sport repos
+1. It runs `scripts/fetch_all_picks.py`, which visits each of the 18 sport repos
 2. It validates and downloads the latest `best_bets_today.json` from each one
 3. It saves valid files to `data_cache/`, archives daily snapshots, and commits `status_manifest.json`
 
@@ -167,7 +167,7 @@ sports-picks-grid/
 ├── predictions.py              # App entry point — page config, sidebar, navigation
 ├── footer.py                   # Shared Betting Oracle footer
 ├── utils/
-│   ├── fetcher.py              # Loads all 17 JSONs → flat DataFrame (with source status)
+│   ├── fetcher.py              # Loads all 18 JSONs → flat DataFrame (with source status)
 │   └── formatter.py            # Tier badges, odds formatting, display columns, sorting
 ├── pages/
 │   ├── 1_Today.py              # Today + upcoming picks by tier (7-day window)
@@ -238,3 +238,7 @@ Detailed planning and design documents live in the [`docs/`](docs/) folder:
 ## License
 
 MIT — see individual sport repos for their own licenses.
+
+## Esports integration
+
+Esports match-winner picks now use the same validated export contract. See [Esports integration](docs/esports-integration.md) for schedules, pricing, source filters, and quote expiration.

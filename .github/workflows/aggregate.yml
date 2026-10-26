@@ -3,6 +3,7 @@ name: Aggregate Daily Picks
 on:
   schedule:
     - cron: '0 15 * * *'   # 3:00 PM UTC — after the 12:00 UTC source workflows
+    - cron: '30 0,12 * * *' # Refresh after the scheduled esports quote exports
   workflow_dispatch:        # manual trigger
   repository_dispatch:
     types: [sport-data-updated]

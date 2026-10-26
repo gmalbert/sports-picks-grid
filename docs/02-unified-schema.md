@@ -54,6 +54,7 @@ Use these exact strings for the `sport` field throughout:
 
 | Repo | `sport` value |
 |---|---|
+| esports | `"Esports"` |
 | baseball-predictions | `"MLB"` |
 | hockey-predictions | `"NHL"` |
 | nba-predictions | `"NBA"` |
