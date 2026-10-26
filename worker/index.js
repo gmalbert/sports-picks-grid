@@ -72,7 +72,13 @@ export default {
     }
     try {
       const data = url.pathname === '/api/picks' ? await loadPicks(env, ctx, cache) : await loadPerformance(env);
-      const response = Response.json(data, { headers: { 'Cache-Control': 'public, max-age=3600', 'X-Content-Type-Options': 'nosniff' } });
+      // Never cache a recommendation beyond its quote expiry or match start.
+      let maxAge = 3600;
+      for (const pick of data.picks || []) if (pick.sport === 'Esports') {
+        const expiry = Math.min(Date.parse(pick.quote_observed_at) + 13 * 3600000, Date.parse(pick.game_time));
+        maxAge = Math.min(maxAge, Math.max(0, Math.floor((expiry - Date.now()) / 1000)));
+      }
+      const response = Response.json(data, { headers: { 'Cache-Control': `public, max-age=${maxAge}`, 'X-Content-Type-Options': 'nosniff' } });
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
       // Browsers should revalidate via the Worker cache so Refresh always works.
       const result = new Response(response.body, response);

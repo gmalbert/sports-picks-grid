@@ -11,6 +11,10 @@ NOW = datetime(2026, 7, 21, 12, tzinfo=timezone.utc)
 
 
 class FetchAllPicksTests(unittest.TestCase):
+    def test_esports_export_is_registered(self):
+        self.assertEqual(fetch_all_picks.REPOS['esports'], 'esports')
+        self.assertEqual(fetch_all_picks.DISPLAY_NAMES['esports'], 'Esports')
+
     def setUp(self):
         self.temp_dir = Path(tempfile.mkdtemp())
         self.original_cache_dir = fetch_all_picks.CACHE_DIR

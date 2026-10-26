@@ -27,6 +27,7 @@ from utils.data_quality import (
 )
 
 REPOS: dict[str, str] = {
+    "esports": "esports",
     "baseball": "baseball-predictions",
     "hockey": "hockey-predictions",
     "nba": "nba-predictions",
@@ -47,6 +48,7 @@ REPOS: dict[str, str] = {
 }
 
 DISPLAY_NAMES = {
+    "esports": "Esports",
     "baseball": "MLB", "hockey": "NHL", "nba": "NBA", "nfl": "NFL",
     "mls": "MLS", "epl": "EPL", "laliga": "LaLiga", "bundesliga": "Bundesliga",
     "ligue1": "Ligue1", "rugby": "Rugby", "ncaaf": "NCAAF", "tennis": "Tennis",

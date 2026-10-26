@@ -5,6 +5,16 @@ import { DEFAULT_SETTINGS, applySettings, validateExport, edge, odds, confidence
 const now = new Date('2026-10-23T16:00:00Z');
 const bet = (overrides = {}) => ({ sport: 'MLB', game_date: '2026-10-23', pick: 'Home', tier: 'Elite', confidence: .7, edge: .08, odds: 120, ...overrides });
 const payload = bets => ({ meta: { generated_at: now.toISOString() }, bets });
+
+test('esports never displays expired quotes, future quote timestamps, or started matches', () => {
+  const good = bet({ sport: 'Esports', quote_observed_at: '2026-10-23T12:00:00Z', game_time: '2026-10-23T22:00:00Z' });
+  const data = payload([good, { ...good, quote_observed_at: '2026-10-22T12:00:00Z' },
+    { ...good, quote_observed_at: '2026-10-24T12:00:00Z' }, { ...good, game_time: '2026-10-23T15:00:00Z' }]);
+  const record = validateExport(data, 'Esports', now);
+  assert.equal(record.errors.length, 0);
+  assert.equal(record.bets.length, 1);
+  assert.equal(record.bets[0].sport, 'Esports');
+});
 test('window includes today through day seven and excludes historical and day eight', () => {
   const dates = ['2026-10-22', '2026-10-23', '2026-10-30', '2026-10-31'];
   assert.deepEqual(applySettings(dates.map(game_date => bet({ game_date })), DEFAULT_SETTINGS, '2026-10-23').map(b => b.game_date), dates.slice(1, 3));

@@ -1,4 +1,5 @@
 export const SOURCES = {
+  Esports: { key: 'esports', repo: 'esports', icon: '🎮', league: 'LoL, CS2, Dota 2, VALORANT, R6, Overwatch', model: 'Historical Elo — match winner vs saved Kalshi asks' },
   MLB: { key: 'baseball', repo: 'baseball-predictions', icon: '⚾', app: 'baseball-predictions', league: 'Major League Baseball', model: 'XGBoost — Moneyline, Run Line, Over/Under' },
   NHL: { key: 'hockey', repo: 'hockey-predictions', icon: '🏒', app: 'hockey-predictions', league: 'National Hockey League', model: 'Elo + Dixon-Coles — ML, Puck Line, Totals' },
   NBA: { key: 'nba', repo: 'nba-predictions', icon: '🏀', app: 'nba-predictions', league: 'National Basketball Association', model: 'XGBoost Ensemble — ML, Spread, Totals' },
@@ -66,7 +67,7 @@ export function validateExport(data, sport, now = new Date()) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return { status: 'pipeline_failed', errors: ['export is not a JSON object'], bets: [] };
   const meta = data.meta && typeof data.meta === 'object' && !Array.isArray(data.meta) ? data.meta : {};
   if (meta !== data.meta) errors.push('meta must be an object');
-  const bets = Array.isArray(data.bets) ? data.bets : [];
+  let bets = Array.isArray(data.bets) ? data.bets : [];
   if (!Array.isArray(data.bets)) errors.push('bets must be an array');
   const generated = Date.parse(meta.generated_at);
   if (!Number.isFinite(generated)) errors.push('meta.generated_at must be a valid ISO-8601 timestamp');
@@ -82,6 +83,13 @@ export function validateExport(data, sport, now = new Date()) {
     }
   });
   const notes = String(meta.notes || '').toLowerCase();
+  // A daily export can outlive its quote or its match. Never display those
+  // esports recommendations from a retained cache, even when the file is valid.
+  if (sport === 'Esports') bets = bets.filter(bet => {
+    const quote = Date.parse(bet?.quote_observed_at);
+    const start = Date.parse(bet?.game_time);
+    return Number.isFinite(quote) && quote <= now.getTime() && now.getTime() - quote <= 13 * 3600000 && Number.isFinite(start) && start > now.getTime();
+  });
   let status = STATUS_LABELS[meta.status] ? meta.status : /off[- ]season/.test(notes) ? 'off_season' : /not found|pending|may not have run/.test(notes) ? 'pipeline_pending' : /failed|error/.test(notes) ? 'pipeline_failed' : bets.length ? 'ok' : 'no_picks';
   const age_hours = Number.isFinite(generated) ? Math.max(0, (now.getTime() - generated) / 3600000) : null;
   if (['ok', 'no_picks'].includes(status) && age_hours > (['TableTennis', 'Cricket', 'Darts', 'Tennis'].includes(sport) ? 18 : 36)) status = 'stale';
