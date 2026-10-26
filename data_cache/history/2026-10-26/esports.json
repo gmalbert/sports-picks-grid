@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "sport": "Esports",
+    "generated_at": "2026-10-26T20:50:37.309561+00:00",
+    "total_bets": 0,
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "source_quote_at": "2026-10-26T12:00:42.096226+00:00",
+    "excluded": {
+      "insufficient_model_history": 8,
+      "unlinked_or_ambiguous": 2581,
+      "market_fixture_date_mismatch": 6,
+      "not_upcoming_verified_fixture": 8
+    },
+    "notes": "Saved scheduled quotes only; verified history, medium/high model confidence, maximum quote age 13h, minimum edge 1% after $0.02 contract cost allowance. No qualifying picks today.",
+    "dashboard_lookahead_days": 7,
+    "source_commit": "",
+    "source_repo": "esports",
+    "source_url": "https://api.sidequestbets.com/api/grid-picks"
+  },
+  "bets": []
+}
