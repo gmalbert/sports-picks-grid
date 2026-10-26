@@ -1,6 +1,8 @@
 # Esports source
 
-Esports is sourced from `gmalbert/esports/main/data_files/best_bets_today.json`.
+Esports is sourced from `https://api.sidequestbets.com/api/grid-picks`.
+The esports repository is private; the public API shares the exact same
+selection code as its scheduled JSON exporter. No GitHub token is exposed.
 The source's GitHub Action publishes at 00:10 and 12:10 UTC, using saved quotes
 from Sidequest's existing Cloudflare capture. Grid aggregation additionally runs
 at 00:30 and 12:30 UTC; its existing 15:00 UTC refresh remains active.

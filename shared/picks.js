@@ -1,5 +1,5 @@
 export const SOURCES = {
-  Esports: { key: 'esports', repo: 'esports', icon: '🎮', league: 'LoL, CS2, Dota 2, VALORANT, R6, Overwatch', model: 'Historical Elo — match winner vs saved Kalshi asks' },
+  Esports: { key: 'esports', repo: 'esports', picksUrl: 'https://api.sidequestbets.com/api/grid-picks', icon: '🎮', league: 'LoL, CS2, Dota 2, VALORANT, R6, Overwatch', model: 'Historical Elo — match winner vs saved Kalshi asks' },
   MLB: { key: 'baseball', repo: 'baseball-predictions', icon: '⚾', app: 'baseball-predictions', league: 'Major League Baseball', model: 'XGBoost — Moneyline, Run Line, Over/Under' },
   NHL: { key: 'hockey', repo: 'hockey-predictions', icon: '🏒', app: 'hockey-predictions', league: 'National Hockey League', model: 'Elo + Dixon-Coles — ML, Puck Line, Totals' },
   NBA: { key: 'nba', repo: 'nba-predictions', icon: '🏀', app: 'nba-predictions', league: 'National Basketball Association', model: 'XGBoost Ensemble — ML, Spread, Totals' },

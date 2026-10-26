@@ -16,12 +16,12 @@ export async function loadPicks(env, ctx, cache) {
   const liveManifest = await optionalJSON(raw(repo, 'data_cache/status_manifest.json', branch));
   const manifest = liveManifest?.sources && typeof liveManifest.sources === 'object' ? liveManifest : snapshots.manifest;
   const sources = {};
-  const picks = await Promise.all(Object.entries(SOURCES).map(async ([sport, { key, repo: sourceRepo }]) => {
+  const picks = await Promise.all(Object.entries(SOURCES).map(async ([sport, { key, repo: sourceRepo, picksUrl }]) => {
     const cacheKey = new Request(`https://sports-picks-grid.internal/last-valid/${key}`);
     let candidate = await optionalJSON(raw(repo, `data_cache/${key}.json`, branch));
     let record = validateExport(candidate, sport);
     if (record.errors.length) {
-      candidate = await optionalJSON(raw(`gmalbert/${sourceRepo}`, 'data_files/best_bets_today.json'));
+      candidate = await optionalJSON(picksUrl || raw(`gmalbert/${sourceRepo}`, 'data_files/best_bets_today.json'));
       record = validateExport(candidate, sport);
     }
     const live = record.errors.length === 0;

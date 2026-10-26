@@ -57,6 +57,7 @@ DISPLAY_NAMES = {
 }
 
 BASE_URL = "https://raw.githubusercontent.com/gmalbert/{repo}/main/data_files/best_bets_today.json"
+SOURCE_URLS = {"esports": "https://api.sidequestbets.com/api/grid-picks"}
 PERF_URL = "https://raw.githubusercontent.com/gmalbert/{repo}/main/data_files/model_performance.json"
 CONTENT_URL = "https://api.github.com/repos/gmalbert/{repo}/contents/data_files/best_bets_today.json?ref=main"
 CACHE_DIR = Path("data_cache")
@@ -96,7 +97,8 @@ def fetch_source_sha(session: requests.Session, repo: str) -> str:
 
 def fetch_one(key: str, repo: str, session: requests.Session, now: datetime) -> dict[str, Any]:
     sport = DISPLAY_NAMES[key]
-    data, http_status, error = fetch_json(session, BASE_URL.format(repo=repo))
+    source_url = SOURCE_URLS.get(key, BASE_URL.format(repo=repo))
+    data, http_status, error = fetch_json(session, source_url)
     if error:
         status = STATUS_EXPORT_MISSING if http_status == 404 else STATUS_FETCH_FAILED
         return {
@@ -109,10 +111,10 @@ def fetch_one(key: str, repo: str, session: requests.Session, now: datetime) -> 
     source_commit = ""
     if not record["errors"] and record["status"] not in {STATUS_EXPORT_MISSING, STATUS_FETCH_FAILED}:
         payload = record["data"]
-        source_commit = fetch_source_sha(session, repo)
+        source_commit = fetch_source_sha(session, repo) if key not in SOURCE_URLS else ""
         payload["meta"]["source_commit"] = source_commit
         payload["meta"]["source_repo"] = repo
-        payload["meta"]["source_url"] = BASE_URL.format(repo=repo)
+        payload["meta"]["source_url"] = source_url
         atomic_write(CACHE_DIR / f"{key}.json", payload)
 
         archive_date = now.date().isoformat()
