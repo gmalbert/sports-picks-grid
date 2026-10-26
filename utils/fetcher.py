@@ -18,31 +18,11 @@ import streamlit as st
 
 from utils.data_quality import status_label, validate_export
 
-# repo_key → (cache_file_stem, github_repo_name)
-REPOS: dict[str, tuple[str, str]] = {
-    "MLB":          ("baseball",    "baseball-predictions"),
-    "NHL":          ("hockey",      "hockey-predictions"),
-    "NBA":          ("nba",         "nba-predictions"),
-    "NFL":          ("nfl",         "nfl-predictions"),
-    "MLS":          ("mls",         "mls-predictions"),
-    "EPL":          ("epl",         "premier-league"),
-    "LaLiga":       ("laliga",      "la-liga"),
-    "Bundesliga":   ("bundesliga",  "bundesliga"),
-    "Ligue1":       ("ligue1",      "ligue-1"),
-    "Rugby":        ("rugby",       "rugby"),
-    "NCAAF":        ("ncaaf",       "college-football-predictions"),
-    "Tennis":       ("tennis",      "tennis-predictions"),
-    "NCAAB":        ("ncaab",       "march-madness"),
-    "Cricket":      ("cricket",     "cricket"),
-    "TableTennis":  ("tabletennis", "table-tennis"),
-    "Boxing":       ("boxing",      "boxing"),
-    "Darts":        ("darts",       "darts"),
-}
+from utils.sources import SOURCES, source_url
+from utils.source_adapters import normalize_source
 
-RAW_URL = (
-    "https://raw.githubusercontent.com/gmalbert/{repo}/main"
-    "/data_files/best_bets_today.json"
-)
+REPOS = {sport: (source["key"], source["repo"]) for sport, source in SOURCES.items()}
+
 CACHE_DIR = Path("data_cache")
 MANIFEST_FILE = CACHE_DIR / "status_manifest.json"
 
@@ -120,7 +100,7 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
     #    each sport repo's nightly Action commits its latest JSON to GitHub.
     if data is None:
         try:
-            url = RAW_URL.format(repo=repo)
+            url = source_url(repo)
             r = requests.get(url, timeout=10)
             r.raise_for_status()
             data = r.json()
@@ -130,7 +110,7 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
     if not isinstance(data, dict):
         return []
 
-    validation = validate_export(data, sport, now=datetime.now(timezone.utc))
+    validation = validate_export(normalize_source(data, repo), sport, now=datetime.now(timezone.utc))
     if validation["errors"]:
         return []
     data = validation["data"]

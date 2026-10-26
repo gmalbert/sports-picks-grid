@@ -1,0 +1,342 @@
+[
+  {
+    "name": "Portugal legacy tier",
+    "repo": "portugal-soccer",
+    "sport": "Portugal",
+    "data": {
+      "meta": {
+        "generated_at": "2026-10-26T16:00:00Z"
+      },
+      "bets": [
+        {
+          "game_date": "2026-10-26",
+          "pick": "Home",
+          "confidence": 0.65,
+          "edge": 0.0561,
+          "odds": 120,
+          "tier": "Good"
+        }
+      ]
+    },
+    "status": "ok",
+    "tiers": [
+      "Strong"
+    ],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "stale horse-racing tier stays stale",
+    "repo": "horse-racing-predictions",
+    "sport": "HorseRacing",
+    "data": {
+      "meta": {
+        "generated_at": "2026-06-01T10:35:00Z"
+      },
+      "bets": [
+        {
+          "game_date": "2026-10-26",
+          "pick": "Home",
+          "confidence": 0.65,
+          "edge": 0.0287,
+          "odds": 120,
+          "tier": "Standard"
+        }
+      ]
+    },
+    "status": "stale",
+    "tiers": [
+      "Good"
+    ],
+    "generated_at": "2026-06-01T10:35:00Z"
+  },
+  {
+    "name": "missing market odds is pending",
+    "repo": "netherlands-soccer",
+    "sport": "Netherlands",
+    "data": {
+      "meta": {
+        "generated_at": "2026-10-26T16:00:00Z",
+        "notes": "No odds artifact; best bets require market prices"
+      },
+      "bets": []
+    },
+    "status": "pipeline_pending",
+    "tiers": [],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "empty golf export stays stale",
+    "repo": "golf-predictions",
+    "sport": "Golf",
+    "data": {
+      "meta": {
+        "generated_at": "2026-06-01T10:34:00Z"
+      },
+      "bets": []
+    },
+    "status": "stale",
+    "tiers": [],
+    "generated_at": "2026-06-01T10:34:00Z"
+  },
+  {
+    "name": "percentage legacy edge",
+    "repo": "portugal-soccer",
+    "sport": "Portugal",
+    "data": {
+      "meta": {
+        "generated_at": "2026-10-26T16:00:00Z"
+      },
+      "bets": [
+        {
+          "game_date": "2026-10-26",
+          "pick": "Home",
+          "confidence": 0.65,
+          "edge": 4,
+          "odds": 120,
+          "tier": "Good"
+        }
+      ]
+    },
+    "status": "ok",
+    "tiers": [
+      "Strong"
+    ],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "negative edge remains Standard",
+    "repo": "horse-racing-predictions",
+    "sport": "HorseRacing",
+    "data": {
+      "meta": {
+        "generated_at": "2026-10-26T16:00:00Z"
+      },
+      "bets": [
+        {
+          "game_date": "2026-10-26",
+          "pick": "Home",
+          "confidence": 0.65,
+          "edge": -0.02,
+          "odds": 120,
+          "tier": "Elite"
+        }
+      ]
+    },
+    "status": "ok",
+    "tiers": [
+      "Standard"
+    ],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "other source tier errors remain errors",
+    "repo": "nba-predictions",
+    "sport": "NBA",
+    "data": {
+      "meta": {
+        "generated_at": "2026-10-26T16:00:00Z"
+      },
+      "bets": [
+        {
+          "game_date": "2026-10-26",
+          "pick": "Home",
+          "confidence": 0.65,
+          "edge": 0.04,
+          "odds": 120,
+          "tier": "Elite"
+        }
+      ]
+    },
+    "status": "pipeline_failed",
+    "tiers": [
+      "Elite"
+    ],
+    "generated_at": "2026-10-26T16:00:00Z",
+    "errors": 1
+  },
+  {
+    "name": "WNBA released away-side pick",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": [
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "paper_only": false,
+          "release_gate_status": "production_ready"
+        }
+      ]
+    },
+    "status": "ok",
+    "tiers": [
+      "Elite"
+    ],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "WNBA paper-only and no-bet restrictions",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": [
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "paper_only": true,
+          "release_gate_status": "production_ready"
+        },
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "no_bet",
+          "paper_only": false,
+          "release_gate_status": "production_ready"
+        },
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "paper_only": false,
+          "release_gate_status": "shadow_only"
+        },
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "release_gate_status": "production_ready"
+        }
+      ]
+    },
+    "status": "no_picks",
+    "tiers": [],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "WNBA missing market probability is withheld",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": [
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": null,
+          "status": "ready",
+          "paper_only": false,
+          "release_gate_status": "production_ready"
+        }
+      ]
+    },
+    "status": "no_picks",
+    "tiers": [],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "WNBA rejects invalid probabilities",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": [
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-10-26T16:00:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 1.1,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "paper_only": false,
+          "release_gate_status": "production_ready"
+        }
+      ]
+    },
+    "status": "no_picks",
+    "tiers": [],
+    "generated_at": "2026-10-26T16:00:00Z"
+  },
+  {
+    "name": "WNBA underlying model age is retained",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": [
+        {
+          "game_id": "1",
+          "game_date": "2026-10-26",
+          "scheduled_start": "2026-10-26T22:00Z",
+          "generated_at": "2026-08-26T01:30:00Z",
+          "home_team": "Home",
+          "away_team": "Away",
+          "home_win_prob": 0.35,
+          "market_home_prob": 0.45,
+          "status": "ready",
+          "paper_only": false,
+          "release_gate_status": "production_ready"
+        }
+      ]
+    },
+    "status": "stale",
+    "tiers": [
+      "Elite"
+    ],
+    "generated_at": "2026-08-26T01:30:00Z"
+  },
+  {
+    "name": "malformed WNBA envelope",
+    "repo": "wnba-predictions",
+    "sport": "WNBA",
+    "data": {
+      "generated_at": "2026-10-26T16:00:00Z",
+      "games": {}
+    },
+    "status": "pipeline_failed",
+    "tiers": [],
+    "generated_at": null,
+    "errors": 3
+  }
+]

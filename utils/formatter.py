@@ -15,25 +15,9 @@ TIER_EMOJI: dict[str, str] = {
     "Standard": "⚪",
 }
 
-SPORT_EMOJI: dict[str, str] = {
-    "NFL":         "🏈",
-    "NHL":         "🏒",
-    "NBA":         "🏀",
-    "MLB":         "⚾",
-    "MLS":         "⚽",
-    "EPL":         "⚽",
-    "LaLiga":      "⚽",
-    "Bundesliga":  "⚽",
-    "Ligue1":      "⚽",
-    "Rugby":       "🏉",
-    "NCAAF":       "🏈",
-    "Tennis":      "🎾",
-    "NCAAB":       "🏀",
-    "Cricket":     "🏏",
-    "TableTennis": "🏓",
-    "Boxing":      "🥊",
-    "Darts":       "🎯",
-}
+from utils.sources import SOURCES
+
+SPORT_EMOJI = {sport: source["icon"] for sport, source in SOURCES.items()}
 
 TIER_ORDER = ["Elite", "Strong", "Good", "Standard"]
 
