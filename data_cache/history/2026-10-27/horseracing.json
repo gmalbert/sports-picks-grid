@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "sport": "HorseRacing",
+    "generated_at": "2026-06-01T10:35:08.804019+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "",
+    "tier_definition": "edge-v1",
+    "normalized_tier_count": 3,
+    "status": "stale",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "3abac450f6c069102720ca522b8d83f28be34feb",
+    "source_repo": "horse-racing-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/horse-racing-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-05-19",
+      "game": "Tattersalls Online Handicap Chase (Huntingdon)",
+      "game_time": "18:30",
+      "bet_type": "win",
+      "pick": "Cloudy Wednesday",
+      "confidence": 0.3621,
+      "edge": 0.0287,
+      "odds": 200,
+      "tier": "Good",
+      "notes": "jockey: Lewis Stones  |  distance_f: 20.0  |  race_class: 5",
+      "source_tier": "Standard"
+    },
+    {
+      "game_date": "2026-05-19",
+      "game": "Tattersalls Online Handicap Chase (Huntingdon)",
+      "game_time": "18:30",
+      "bet_type": "win",
+      "pick": "Jack Doyen",
+      "confidence": 0.3561,
+      "edge": 0.0228,
+      "odds": 200,
+      "tier": "Good",
+      "notes": "jockey: Jack Quinlan  |  distance_f: 20.0  |  race_class: 5",
+      "source_tier": "Standard"
+    },
+    {
+      "game_date": "2026-05-19",
+      "game": "Tattersalls Online Handicap Hurdle (Huntingdon)",
+      "game_time": "19:30",
+      "bet_type": "win",
+      "pick": "Billy Boi Blue",
+      "confidence": 0.3073,
+      "edge": 0.0216,
+      "odds": 250,
+      "tier": "Good",
+      "notes": "jockey: Nick Slatter  |  distance_f: 25.0  |  race_class: 3",
+      "source_tier": "Standard"
+    }
+  ]
+}

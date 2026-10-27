@@ -1,17 +1,17 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-10-26T21:13:23.276020+00:00",
+    "generated_at": "2026-10-27T05:28:37.412158+00:00",
     "total_bets": 0,
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
-    "source_quote_at": "2026-10-26T12:00:42.096226+00:00",
+    "source_quote_at": "2026-10-27T00:01:25.472404+00:00",
     "excluded": {
-      "insufficient_model_history": 8,
-      "unlinked_or_ambiguous": 2583,
+      "insufficient_model_history": 32,
+      "unlinked_or_ambiguous": 2376,
       "market_fixture_date_mismatch": 6,
-      "not_upcoming_verified_fixture": 6
+      "not_upcoming_verified_fixture": 4
     },
     "notes": "Saved scheduled quotes only; verified history, medium/high model confidence, maximum quote age 13h, minimum edge 1% after $0.02 contract cost allowance. No qualifying picks today.",
     "dashboard_lookahead_days": 7,
