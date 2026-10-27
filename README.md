@@ -1,8 +1,8 @@
 # Sports Picks Grid
 
-**One dashboard. 18 sports. Every day's best bets — ranked by standardized edge.**
+**One dashboard. 26 sources. Every day's best bets — ranked by standardized edge.**
 
-Sports Picks Grid pulls together daily betting recommendations from 18 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's and upcoming picks, sorted by standardized edge tiers.
+Sports Picks Grid pulls together daily betting recommendations from 26 separate machine-learning prediction apps and shows them all in one clean, easy-to-read place. No spreadsheets, no bouncing between tabs — just today's and upcoming picks, sorted by standardized edge tiers.
 
 Part of the **Betting Oracle** suite.
 
@@ -42,7 +42,7 @@ instructions below remain available for the original reference implementation.
 
 ## What It Does
 
-Every night, each of the 18 sport-specific prediction apps runs its machine-learning model, crunches the latest data, and saves a file called `best_bets_today.json` to its GitHub repository. Sports Picks Grid reads all 18 of those files and displays everything in a single dashboard.
+The 26 source repositories publish prediction JSON to GitHub. Most use `data_files/best_bets_today.json`; WNBA publishes a web prediction feed that the grid adapts while preserving its release restrictions. Sports Picks Grid reads these exports and displays qualifying picks in a single dashboard.
 
 **This app contains no models of its own.** It is purely a reader and display layer — think of it as a scoreboard that shows results from the individual sport apps.
 
@@ -61,19 +61,32 @@ Key behaviors:
 
 | Sport | League | Prediction App |
 |---|---|---|
+| 🎮 Esports | LoL, CS2, Dota 2, VALORANT, R6, Overwatch | [esports](https://github.com/gmalbert/esports) |
 | ⚾ MLB | Major League Baseball | [baseball-predictions](https://github.com/gmalbert/baseball-predictions) |
 | 🏒 NHL | National Hockey League | [hockey-predictions](https://github.com/gmalbert/hockey-predictions) |
 | 🏀 NBA | National Basketball Association | [nba-predictions](https://github.com/gmalbert/nba-predictions) |
 | 🏈 NFL | National Football League | [nfl-predictions](https://github.com/gmalbert/nfl-predictions) |
 | ⚽ MLS | Major League Soccer | [mls-predictions](https://github.com/gmalbert/mls-predictions) |
 | ⚽ EPL | English Premier League | [premier-league](https://github.com/gmalbert/premier-league) |
-| ⚽ La Liga | Spanish La Liga | [la-liga](https://github.com/gmalbert/la-liga) |
+| ⚽ LaLiga | Spanish La Liga | [la-liga](https://github.com/gmalbert/la-liga) |
 | ⚽ Bundesliga | German Bundesliga | [bundesliga](https://github.com/gmalbert/bundesliga) |
-| ⚽ Ligue 1 | French Ligue 1 | [ligue-1](https://github.com/gmalbert/ligue-1) |
+| ⚽ Ligue1 | French Ligue 1 | [ligue-1](https://github.com/gmalbert/ligue-1) |
 | 🏉 Rugby | Multi-league | [rugby](https://github.com/gmalbert/rugby) |
 | 🏈 NCAAF | College Football | [college-football-predictions](https://github.com/gmalbert/college-football-predictions) |
 | 🎾 Tennis | ATP Tour | [tennis-predictions](https://github.com/gmalbert/tennis-predictions) |
 | 🏀 NCAAB | College Basketball / March Madness | [march-madness](https://github.com/gmalbert/march-madness) |
+| 🏏 Cricket | Cricket | [cricket](https://github.com/gmalbert/cricket) |
+| 🏓 TableTennis | Table Tennis | [table-tennis](https://github.com/gmalbert/table-tennis) |
+| 🥊 Boxing | Boxing | [boxing](https://github.com/gmalbert/boxing) |
+| 🎯 Darts | PDC Darts | [darts](https://github.com/gmalbert/darts) |
+| ⚽ Portugal | Portuguese Primeira Liga | [portugal-soccer](https://github.com/gmalbert/portugal-soccer) |
+| ⚽ Netherlands | Dutch Eredivisie | [netherlands-soccer](https://github.com/gmalbert/netherlands-soccer) |
+| ⚽ Belgium | Belgian Pro League | [belgium-soccer](https://github.com/gmalbert/belgium-soccer) |
+| ⚽ Scotland | Scottish Premiership | [scotland-premiership](https://github.com/gmalbert/scotland-premiership) |
+| ⚽ Turkey | Turkish Süper Lig | [turkey-soccer](https://github.com/gmalbert/turkey-soccer) |
+| 🏇 HorseRacing | Horse Racing | [horse-racing-predictions](https://github.com/gmalbert/horse-racing-predictions) |
+| ⛳ Golf | Golf | [golf-predictions](https://github.com/gmalbert/golf-predictions) |
+| 🏀 WNBA | Women's National Basketball Association | [wnba-predictions](https://github.com/gmalbert/wnba-predictions) |
 
 <p align="right"><a href="#table-of-contents">▲ Back to Top</a></p>
 
@@ -125,7 +138,7 @@ Explains how the app works, what the tiers mean, and which sports are covered.
 
 A GitHub Action called `aggregate.yml` runs automatically every day at **3:00 PM UTC**:
 
-1. It runs `scripts/fetch_all_picks.py`, which visits each of the 18 sport repos
+1. It runs `scripts/fetch_all_picks.py`, which visits each of the 26 sport repos
 2. It validates and downloads the latest `best_bets_today.json` from each one
 3. It saves valid files to `data_cache/`, archives daily snapshots, and commits `status_manifest.json`
 
@@ -167,7 +180,7 @@ sports-picks-grid/
 ├── predictions.py              # App entry point — page config, sidebar, navigation
 ├── footer.py                   # Shared Betting Oracle footer
 ├── utils/
-│   ├── fetcher.py              # Loads all 18 JSONs → flat DataFrame (with source status)
+│   ├── fetcher.py              # Loads all 26 JSONs → flat DataFrame (with source status)
 │   └── formatter.py            # Tier badges, odds formatting, display columns, sorting
 ├── pages/
 │   ├── 1_Today.py              # Today + upcoming picks by tier (7-day window)
@@ -238,6 +251,10 @@ Detailed planning and design documents live in the [`docs/`](docs/) folder:
 ## License
 
 MIT — see individual sport repos for their own licenses.
+
+## Source compatibility
+
+The shared registry is `data_files/sources.json`. The grid connects 26 sources. WNBA uses its existing `frontend/public/data/predictions.json` web export; paper-only, no-bet, and unreleased rows are withheld. Its model timestamps are preserved. The seven other new sources use their standard `best_bets_today.json` exports. Known legacy tier labels are normalized from the published edge, retaining `source_tier` when changed. No source timestamps are refreshed by adaptation. Stale horse-racing and golf exports remain visibly stale; missing soccer market odds are reported as pipeline pending.
 
 ## Esports integration
 

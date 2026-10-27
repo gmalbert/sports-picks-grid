@@ -1,23 +1,6 @@
-export const SOURCES = {
-  Esports: { key: 'esports', repo: 'esports', picksUrl: 'https://api.sidequestbets.com/api/grid-picks', icon: '🎮', league: 'LoL, CS2, Dota 2, VALORANT, R6, Overwatch', model: 'Historical Elo — match winner vs saved Kalshi asks' },
-  MLB: { key: 'baseball', repo: 'baseball-predictions', icon: '⚾', app: 'baseball-predictions', league: 'Major League Baseball', model: 'XGBoost — Moneyline, Run Line, Over/Under' },
-  NHL: { key: 'hockey', repo: 'hockey-predictions', icon: '🏒', app: 'hockey-predictions', league: 'National Hockey League', model: 'Elo + Dixon-Coles — ML, Puck Line, Totals' },
-  NBA: { key: 'nba', repo: 'nba-predictions', icon: '🏀', app: 'nba-predictions', league: 'National Basketball Association', model: 'XGBoost Ensemble — ML, Spread, Totals' },
-  NFL: { key: 'nfl', repo: 'nfl-predictions', icon: '🏈', app: 'nfl-predictions', league: 'National Football League', model: 'XGBoost — Spread, Moneyline, Totals, Props' },
-  MLS: { key: 'mls', repo: 'mls-predictions', icon: '⚽', app: 'mls-predictions', league: 'Major League Soccer', model: 'VotingClassifier — H/D/A' },
-  EPL: { key: 'epl', repo: 'premier-league', icon: '⚽', app: 'premier-league-predictions', league: 'English Premier League', model: 'VotingClassifier — H/D/A' },
-  LaLiga: { key: 'laliga', repo: 'la-liga', icon: '⚽', app: 'la-liga-linea', league: 'Spanish La Liga', model: 'VotingClassifier — H/D/A' },
-  Bundesliga: { key: 'bundesliga', repo: 'bundesliga', icon: '⚽', app: 'bundesliga-predictions', league: 'German Bundesliga', model: 'VotingClassifier — H/D/A' },
-  Ligue1: { key: 'ligue1', repo: 'ligue-1', icon: '⚽', app: 'ligue1-predictions', league: 'French Ligue 1', model: 'VotingClassifier — H/D/A' },
-  Rugby: { key: 'rugby', repo: 'rugby', icon: '🏉', app: 'scrumbet', league: 'Multi-league', model: 'Elo + Dixon-Coles — ML, Spread, Totals' },
-  NCAAF: { key: 'ncaaf', repo: 'college-football-predictions', icon: '🏈', app: 'college-football-predictions', league: 'College Football', model: 'XGBoost — Spread, Totals, Moneyline' },
-  Tennis: { key: 'tennis', repo: 'tennis-predictions', icon: '🎾', app: 'tennis-predictions', league: 'ATP Tour', model: 'XGBoost — Match Winner' },
-  NCAAB: { key: 'ncaab', repo: 'march-madness', icon: '🏀', app: 'march-madness-predictions', league: 'College Basketball / March Madness', model: 'Ensemble — Spread, Moneyline' },
-  Cricket: { key: 'cricket', repo: 'cricket', icon: '🏏', league: 'Cricket', model: 'Match and market predictions' },
-  TableTennis: { key: 'tabletennis', repo: 'table-tennis', icon: '🏓', league: 'Table Tennis', model: 'Match predictions' },
-  Boxing: { key: 'boxing', repo: 'boxing', icon: '🥊', league: 'Boxing', model: 'Fight moneyline predictions' },
-  Darts: { key: 'darts', repo: 'darts', icon: '🎯', league: 'PDC Darts', model: 'Match and props modeling' },
-};
+import sources from '../data_files/sources.json' with { type: 'json' };
+
+export const SOURCES = sources;
 export const TIERS = ['Elite', 'Strong', 'Good', 'Standard'];
 export const BADGES = { Elite: '🔥', Strong: '✅', Good: '➡', Standard: '⚪' };
 export const DEFAULT_SETTINGS = { min_confidence: 0, min_edge: 0, tiers: TIERS.slice(0, 3), max_picks: { __default__: 50, TableTennis: 20, Cricket: 20, Darts: 15, Boxing: 15, Tennis: 30 } };

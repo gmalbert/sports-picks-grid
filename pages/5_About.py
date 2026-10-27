@@ -8,7 +8,7 @@ st.header("ℹ️ About Sports Picks Grid")
 st.markdown(
     """
     **Sports Picks Grid** is a unified daily dashboard that aggregates
-    betting recommendations from machine learning models across 17 sport-specific
+    betting recommendations from machine learning models across 26 sport-specific
     prediction repositories.
 
     ---
@@ -21,7 +21,8 @@ st.markdown(
     2. Re-runs the prediction model
     3. Writes a standardized `best_bets_today.json` to its `data_files/` folder
 
-    Sports Picks Grid reads those JSON files and displays today's top picks in one place.
+    WNBA uses its web JSON feed; paper-only, no-bet, and unreleased predictions are withheld.
+    Sports Picks Grid reads source JSON files and displays today's top picks in one place.
     **No models run here** — this app is a reader and aggregator only.
 
     ---
@@ -62,6 +63,15 @@ st.markdown(
     | 🏓 Table Tennis | Table Tennis | Match predictions |
     | 🥊 Boxing | Boxing | Fight moneyline predictions |
     | 🎯 Darts | PDC Darts | Match and props modeling |
+    | ⚽ Portugal | Portuguese Primeira Liga | Poisson goal and match-result models |
+    | ⚽ Netherlands | Dutch Eredivisie | Poisson goal and match-result models |
+    | ⚽ Belgium | Belgian Pro League | Poisson goal and match-result models |
+    | ⚽ Scotland | Scottish Premiership | Poisson goal and match-result models |
+    | ⚽ Turkey | Turkish Süper Lig | Poisson goal and match-result models |
+    | 🏇 HorseRacing | Horse Racing | Race win predictions |
+    | ⛳ Golf | Golf | Tournament predictions |
+    | 🏀 WNBA | Women's National Basketball Association | Calibrated ensemble — release-gated moneyline predictions |
+    | 🎮 Esports | LoL, CS2, Dota 2, VALORANT, R6, Overwatch | Historical Elo — match winner vs saved Kalshi asks |
 
     ---
 
@@ -85,7 +95,16 @@ st.markdown(
     - [cricket](https://github.com/gmalbert/cricket)
     - [table-tennis](https://github.com/gmalbert/table-tennis)
     - [boxing](https://github.com/gmalbert/boxing)
+    - [esports](https://github.com/gmalbert/esports)
     - [darts](https://github.com/gmalbert/darts)
+    - [portugal-soccer](https://github.com/gmalbert/portugal-soccer)
+    - [netherlands-soccer](https://github.com/gmalbert/netherlands-soccer)
+    - [belgium-soccer](https://github.com/gmalbert/belgium-soccer)
+    - [scotland-premiership](https://github.com/gmalbert/scotland-premiership)
+    - [turkey-soccer](https://github.com/gmalbert/turkey-soccer)
+    - [horse-racing-predictions](https://github.com/gmalbert/horse-racing-predictions)
+    - [golf-predictions](https://github.com/gmalbert/golf-predictions)
+    - [wnba-predictions](https://github.com/gmalbert/wnba-predictions)
 
     ---
 

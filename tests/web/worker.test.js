@@ -21,8 +21,8 @@ test('live data is normalized, ordered, validated, and retained; failures reuse 
     assert.equal(live.picks.length, Object.keys(SOURCES).length);
     assert.deepEqual(Object.keys(live.sources), Object.keys(SOURCES));
     assert.equal(live.sources.MLB.status, 'ok');
-    assert.equal(live.picks.find(p => p.sport === 'NFL').sport, 'NFL');
     assert.equal(live.picks.find(p => p.sport === 'Esports').sport, 'Esports');
+    assert.equal(live.picks.find(p => p.sport === 'NFL').sport, 'NFL');
     await Promise.all(pending);
     globalThis.fetch = async () => { throw new Error('Network unavailable'); };
     const offline = await loadPicks({}, ctx, cache);
@@ -41,6 +41,32 @@ test('invalid new exports do not replace retained valid picks', async () => {
     const result = await loadPicks({}, ctx, cache);
     assert.equal(result.picks.find(p => p.sport === 'MLB').pick, 'Home');
     assert.equal(result.sources.MLB.status, 'fetch_failed');
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test('new sources normalize legacy tiers and read the WNBA web feed with release restrictions', async () => {
+  const originalFetch = globalThis.fetch;
+  const { cache, ctx, pending } = harness();
+  const calls = [];
+  globalThis.fetch = async url => {
+    calls.push(String(url));
+    if (String(url).includes('status_manifest')) return Response.json({ sources: {} });
+    if (String(url).endsWith('data_cache/wnba.json')) return new Response('', { status: 404 });
+    if (String(url).includes('wnba-predictions/main/frontend/public/data/predictions.json')) return Response.json({ generated_at: new Date().toISOString(), games: [{ status: 'no_bet', paper_only: true }] });
+    const data = exportData();
+    if (String(url).endsWith('data_cache/horseracing.json')) data.bets[0].tier = 'Standard';
+    return Response.json(data);
+  };
+  try {
+    const result = await loadPicks({}, ctx, cache);
+    assert.equal(Object.keys(result.sources).length, 26);
+    assert.equal(result.sources.HorseRacing.status, 'ok');
+    assert.equal(result.picks.find(p => p.sport === 'HorseRacing').tier, 'Elite');
+    assert.equal(result.sources.WNBA.status, 'no_picks');
+    assert.equal(result.picks.filter(p => p.sport === 'WNBA').length, 0);
+    assert.ok(calls.some(url => url.endsWith('wnba-predictions/main/frontend/public/data/predictions.json')));
+    assert.ok(!calls.some(url => url.endsWith('wnba-predictions/main/data_files/best_bets_today.json')));
+    await Promise.all(pending);
   } finally { globalThis.fetch = originalFetch; }
 });
 test('API dispatch preserves JSON 404s, method restrictions, caching and refresh bypass', async () => {

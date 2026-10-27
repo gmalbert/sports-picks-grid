@@ -130,10 +130,10 @@ def validate_export(
         edge = bet.get("edge")
         if isinstance(edge, (int, float)) and edge == edge:
             edge_value = edge / 100 if abs(edge) > 1 else edge
-            expected = next(
+            expected = next((
                 tier for tier, threshold in TIER_THRESHOLDS.items()
                 if edge_value >= threshold
-            )
+            ), "Standard")
             if bet.get("tier") != expected:
                 errors.append(
                     f"bets[{index}].tier={bet.get('tier')} disagrees with edge-v1 ({expected})"

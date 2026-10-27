@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "sport": "Portugal",
+    "generated_at": "2026-10-26T14:23:25.739466+00:00",
+    "model_version": "core-1.4.3",
+    "season": "2026",
+    "tier_definition": "edge-v1",
+    "normalized_tier_count": 1,
+    "status": "ok",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "2931ea6477f003fa6e761de22cf15ed4e856fbe9",
+    "source_repo": "portugal-soccer",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/portugal-soccer/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-26",
+      "game_time": "18:45",
+      "game": "Benfica @ Santa Clara",
+      "home_team": "Santa Clara",
+      "away_team": "Benfica",
+      "bet_type": "Match Result",
+      "pick": "Home Win",
+      "confidence": 0.4576,
+      "edge": 0.3436,
+      "market_probability": 0.114,
+      "expected_value": 2.7386,
+      "tier": "Elite",
+      "odds": 717,
+      "line": null,
+      "league": "Primeira Liga"
+    },
+    {
+      "game_date": "2026-10-26",
+      "game_time": "18:45",
+      "game": "Benfica @ Santa Clara",
+      "home_team": "Santa Clara",
+      "away_team": "Benfica",
+      "bet_type": "Match Result",
+      "pick": "Draw",
+      "confidence": 0.2462,
+      "edge": 0.0454,
+      "market_probability": 0.2008,
+      "expected_value": 0.1423,
+      "tier": "Strong",
+      "odds": 364,
+      "line": null,
+      "league": "Primeira Liga",
+      "source_tier": "Elite"
+    }
+  ]
+}

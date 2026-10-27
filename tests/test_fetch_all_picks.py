@@ -68,6 +68,25 @@ class FetchAllPicksTests(unittest.TestCase):
         self.assertEqual(cached["meta"]["source_commit"], "test-sha")
         self.assertTrue((self.temp_dir / "history" / "2026-07-21" / "boxing.json").exists())
 
+    def test_wnba_uses_web_feed_and_preserves_restrictions_in_cache(self):
+        calls = []
+        payload = {"generated_at": NOW.isoformat(), "games": [{
+            "generated_at": NOW.isoformat(), "status": "no_bet", "paper_only": True,
+            "home_win_prob": .7, "market_home_prob": .5,
+        }]}
+        def fetch(session, url):
+            calls.append(url)
+            return payload, 200, None
+        fetch_all_picks.fetch_json = fetch
+        fetch_all_picks.fetch_source_sha = lambda session, repo: "wnba-sha"
+        record = fetch_all_picks.fetch_one("wnba", "wnba-predictions", object(), NOW)
+        self.assertTrue(calls[0].endswith("frontend/public/data/predictions.json"))
+        self.assertEqual(record["status"], "no_picks")
+        cached = json.loads((self.temp_dir / "wnba.json").read_text())
+        self.assertEqual(cached["bets"], [])
+        self.assertEqual(cached["meta"]["withheld_games"], 1)
+        self.assertEqual(cached["meta"]["source_url"], calls[0])
+
 
 if __name__ == "__main__":
     unittest.main()

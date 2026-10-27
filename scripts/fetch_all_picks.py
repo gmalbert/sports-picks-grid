@@ -26,40 +26,11 @@ from utils.data_quality import (
     validate_export,
 )
 
-REPOS: dict[str, str] = {
-    "esports": "esports",
-    "baseball": "baseball-predictions",
-    "hockey": "hockey-predictions",
-    "nba": "nba-predictions",
-    "nfl": "nfl-predictions",
-    "mls": "mls-predictions",
-    "epl": "premier-league",
-    "laliga": "la-liga",
-    "bundesliga": "bundesliga",
-    "ligue1": "ligue-1",
-    "rugby": "rugby",
-    "ncaaf": "college-football-predictions",
-    "tennis": "tennis-predictions",
-    "ncaab": "march-madness",
-    "cricket": "cricket",
-    "tabletennis": "table-tennis",
-    "boxing": "boxing",
-    "darts": "darts",
-}
+from utils.sources import REPOS, DISPLAY_NAMES, SOURCE_PATHS, SOURCE_URLS, source_url
+from utils.source_adapters import normalize_source
 
-DISPLAY_NAMES = {
-    "esports": "Esports",
-    "baseball": "MLB", "hockey": "NHL", "nba": "NBA", "nfl": "NFL",
-    "mls": "MLS", "epl": "EPL", "laliga": "LaLiga", "bundesliga": "Bundesliga",
-    "ligue1": "Ligue1", "rugby": "Rugby", "ncaaf": "NCAAF", "tennis": "Tennis",
-    "ncaab": "NCAAB", "cricket": "Cricket", "tabletennis": "TableTennis",
-    "boxing": "Boxing", "darts": "Darts",
-}
-
-BASE_URL = "https://raw.githubusercontent.com/gmalbert/{repo}/main/data_files/best_bets_today.json"
-SOURCE_URLS = {"esports": "https://api.sidequestbets.com/api/grid-picks"}
 PERF_URL = "https://raw.githubusercontent.com/gmalbert/{repo}/main/data_files/model_performance.json"
-CONTENT_URL = "https://api.github.com/repos/gmalbert/{repo}/contents/data_files/best_bets_today.json?ref=main"
+CONTENT_URL = "https://api.github.com/repos/gmalbert/{repo}/contents/{path}?ref=main"
 CACHE_DIR = Path("data_cache")
 MANIFEST_FILE = CACHE_DIR / "status_manifest.json"
 
@@ -87,7 +58,7 @@ def fetch_json(session: requests.Session, url: str) -> tuple[Any | None, int | N
 def fetch_source_sha(session: requests.Session, repo: str) -> str:
     """Read the Git blob SHA when the public Contents API is available."""
     try:
-        response = session.get(CONTENT_URL.format(repo=repo), timeout=10)
+        response = session.get(CONTENT_URL.format(repo=repo, path=SOURCE_PATHS[repo]), timeout=10)
         response.raise_for_status()
         payload = response.json()
         return str(payload.get("sha", ""))
@@ -97,8 +68,7 @@ def fetch_source_sha(session: requests.Session, repo: str) -> str:
 
 def fetch_one(key: str, repo: str, session: requests.Session, now: datetime) -> dict[str, Any]:
     sport = DISPLAY_NAMES[key]
-    source_url = SOURCE_URLS.get(key, BASE_URL.format(repo=repo))
-    data, http_status, error = fetch_json(session, source_url)
+    data, http_status, error = fetch_json(session, source_url(repo))
     if error:
         status = STATUS_EXPORT_MISSING if http_status == 404 else STATUS_FETCH_FAILED
         return {
@@ -107,14 +77,14 @@ def fetch_one(key: str, repo: str, session: requests.Session, now: datetime) -> 
             "last_valid_cache": (CACHE_DIR / f"{key}.json").exists(),
         }
 
-    record = validate_export(data, sport, now=now, http_status=http_status)
+    record = validate_export(normalize_source(data, repo), sport, now=now, http_status=http_status)
     source_commit = ""
     if not record["errors"] and record["status"] not in {STATUS_EXPORT_MISSING, STATUS_FETCH_FAILED}:
         payload = record["data"]
-        source_commit = fetch_source_sha(session, repo) if key not in SOURCE_URLS else ""
+        source_commit = fetch_source_sha(session, repo) if repo not in SOURCE_URLS else ""
         payload["meta"]["source_commit"] = source_commit
         payload["meta"]["source_repo"] = repo
-        payload["meta"]["source_url"] = source_url
+        payload["meta"]["source_url"] = source_url(repo)
         atomic_write(CACHE_DIR / f"{key}.json", payload)
 
         archive_date = now.date().isoformat()

@@ -5,9 +5,14 @@ on:
     paths:
       - 'src/**'
       - 'shared/**'
+      - 'data_files/sources.json'
       - 'worker/**'
       - 'public/**'
       - 'tests/web/**'
+      - 'tests/fixtures/**'
+      - 'tests/*.py'
+      - 'utils/**'
+      - 'scripts/fetch_all_picks.py'
       - 'scripts/prepare-web-data.mjs'
       - 'package*.json'
       - 'index.html'
@@ -19,9 +24,14 @@ on:
     paths:
       - 'src/**'
       - 'shared/**'
+      - 'data_files/sources.json'
       - 'worker/**'
       - 'public/**'
       - 'tests/web/**'
+      - 'tests/fixtures/**'
+      - 'tests/*.py'
+      - 'utils/**'
+      - 'scripts/fetch_all_picks.py'
       - 'scripts/prepare-web-data.mjs'
       - 'package*.json'
       - 'index.html'
@@ -33,6 +43,16 @@ permissions:
   contents: read
 
 jobs:
+  python-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python -m unittest discover -s tests -v
+
   check:
     runs-on: ubuntu-latest
     steps:

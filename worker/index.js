@@ -1,5 +1,6 @@
 import snapshots from './snapshots.json' with { type: 'json' };
 import { SOURCES, validateExport } from '../shared/picks.js';
+import { normalizeSource } from '../shared/source-adapters.js';
 
 const json = (data, status = 200) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
 const raw = (repo, path, branch = 'main') => `https://raw.githubusercontent.com/${repo}/${branch}/${path}`;
@@ -16,12 +17,13 @@ export async function loadPicks(env, ctx, cache) {
   const liveManifest = await optionalJSON(raw(repo, 'data_cache/status_manifest.json', branch));
   const manifest = liveManifest?.sources && typeof liveManifest.sources === 'object' ? liveManifest : snapshots.manifest;
   const sources = {};
-  const picks = await Promise.all(Object.entries(SOURCES).map(async ([sport, { key, repo: sourceRepo, picksUrl }]) => {
+  const picks = await Promise.all(Object.entries(SOURCES).map(async ([sport, { key, repo: sourceRepo, picksUrl, path = 'data_files/best_bets_today.json' }]) => {
     const cacheKey = new Request(`https://sports-picks-grid.internal/last-valid/${key}`);
     let candidate = await optionalJSON(raw(repo, `data_cache/${key}.json`, branch));
+    candidate = normalizeSource(candidate, sourceRepo);
     let record = validateExport(candidate, sport);
     if (record.errors.length) {
-      candidate = await optionalJSON(picksUrl || raw(`gmalbert/${sourceRepo}`, 'data_files/best_bets_today.json'));
+      candidate = normalizeSource(await optionalJSON(picksUrl || raw(`gmalbert/${sourceRepo}`, path)), sourceRepo);
       record = validateExport(candidate, sport);
     }
     const live = record.errors.length === 0;
