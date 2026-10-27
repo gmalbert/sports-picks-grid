@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-26T14:51:33.356117+00:00",
+    "generated_at": "2026-10-27T13:58:46.719508+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "0ec97edb47a5e9d6d81a21cb38de8283490d4c94",
+    "source_commit": "f72c4e61e1186f7b9d7529b14aeda1935eb0ca21",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -20,8 +20,8 @@
       "bet_type": "moneyline",
       "pick": "Sho Nogami",
       "confidence": 0.5,
-      "edge": 0.0885,
-      "odds": 143,
+      "edge": 0.0834,
+      "odds": 140,
       "tier": "Elite",
       "notes": ""
     },
@@ -32,8 +32,8 @@
       "bet_type": "moneyline",
       "pick": "Ryuya Nihei",
       "confidence": 0.5,
-      "edge": 0.3144,
-      "odds": 439,
+      "edge": 0.3181,
+      "odds": 450,
       "tier": "Elite",
       "notes": ""
     },
@@ -50,26 +50,26 @@
       "notes": ""
     },
     {
+      "game_date": "2026-10-29",
+      "game": "Arar Andales vs Raito Kataoka",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Arar Andales",
+      "confidence": 0.5,
+      "edge": 0.2917,
+      "odds": 380,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
       "game_date": "2026-10-31",
       "game": "Canelo Álvarez vs Christian Mbilli",
       "game_time": "",
       "bet_type": "moneyline",
       "pick": "Christian Mbilli",
       "confidence": 0.5017,
-      "edge": 0.2076,
-      "odds": 240,
-      "tier": "Elite",
-      "notes": ""
-    },
-    {
-      "game_date": "2026-10-31",
-      "game": "Lindolfo Delgado vs Arthur Biyarslanov",
-      "game_time": "",
-      "bet_type": "moneyline",
-      "pick": "Lindolfo Delgado",
-      "confidence": 0.5,
-      "edge": 0.0935,
-      "odds": 146,
+      "edge": 0.224,
+      "odds": 260,
       "tier": "Elite",
       "notes": ""
     },
