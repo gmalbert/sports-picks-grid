@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-27T13:58:46.719508+00:00",
+    "generated_at": "2026-10-28T14:52:01.667638+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "f72c4e61e1186f7b9d7529b14aeda1935eb0ca21",
+    "source_commit": "9fc8a5b31c7abc985e14002a8dfdb275bf498289",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -70,6 +70,18 @@
       "confidence": 0.5017,
       "edge": 0.224,
       "odds": 260,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-31",
+      "game": "Bek Nurmaganbet vs Marcos Vazquez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Marcos Vazquez",
+      "confidence": 0.5,
+      "edge": 0.4336,
+      "odds": 1408,
       "tier": "Elite",
       "notes": ""
     },
