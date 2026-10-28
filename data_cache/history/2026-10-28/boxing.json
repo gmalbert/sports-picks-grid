@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "sport": "Boxing",
+    "generated_at": "2026-10-27T13:58:46.719508+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "f72c4e61e1186f7b9d7529b14aeda1935eb0ca21",
+    "source_repo": "boxing",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-29",
+      "game": "Sho Nogami vs Shogo Tanaka",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Sho Nogami",
+      "confidence": 0.5,
+      "edge": 0.0834,
+      "odds": 140,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-29",
+      "game": "Toshiya Ishii vs Ryuya Nihei",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Ryuya Nihei",
+      "confidence": 0.5,
+      "edge": 0.3181,
+      "odds": 450,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-29",
+      "game": "Tasana Salapat vs Yuta Sakai",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Yuta Sakai",
+      "confidence": 0.9674,
+      "edge": 0.1007,
+      "odds": -650,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-29",
+      "game": "Arar Andales vs Raito Kataoka",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Arar Andales",
+      "confidence": 0.5,
+      "edge": 0.2917,
+      "odds": 380,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-10-31",
+      "game": "Canelo Álvarez vs Christian Mbilli",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Christian Mbilli",
+      "confidence": 0.5017,
+      "edge": 0.224,
+      "odds": 260,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Zak Miller vs Gully Powar",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Zak Miller",
+      "confidence": 0.5,
+      "edge": 0.0834,
+      "odds": 140,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Zach Parker vs Umar Dzambekov",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Zach Parker",
+      "confidence": 0.5,
+      "edge": 0.1722,
+      "odds": 205,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Denzel Bentley vs Shane Mosley Jr",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Shane Mosley Jr",
+      "confidence": 0.5,
+      "edge": 0.1124,
+      "odds": 158,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-07",
+      "game": "Chris Billam-Smith vs Cheavon Clarke",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Cheavon Clarke",
+      "confidence": 0.6094,
+      "edge": 0.3317,
+      "odds": 260,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-09",
+      "game": "Elif Nur Turhan vs Alycia Baumgardner",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Elif Nur Turhan",
+      "confidence": 0.5,
+      "edge": 0.2728,
+      "odds": 340,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-09",
+      "game": "Ramla Ali vs Mikiah Kreps",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Ramla Ali",
+      "confidence": 0.5,
+      "edge": 0.2176,
+      "odds": 254,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-09",
+      "game": "Skye Nicolson vs Miyo Yoshida",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Miyo Yoshida",
+      "confidence": 0.5,
+      "edge": 0.3806,
+      "odds": 738,
+      "tier": "Elite",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "sport": "Portugal",
+    "generated_at": "2026-10-27T13:19:07.251554+00:00",
+    "model_version": "core-1.4.3",
+    "season": "2026",
+    "tier_definition": "edge-v1",
+    "status": "ok",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "1536418c6c70cf009b7ac3f90bfd68159dd2bb8a",
+    "source_repo": "portugal-soccer",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/portugal-soccer/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-30",
+      "game_time": "20:15",
+      "game": "Sp Lisbon @ Casa Pia",
+      "home_team": "Casa Pia",
+      "away_team": "Sp Lisbon",
+      "bet_type": "Match Result",
+      "pick": "Home Win",
+      "confidence": 0.4235,
+      "edge": 0.3407,
+      "market_probability": 0.0828,
+      "expected_value": 3.6585,
+      "tier": "Elite",
+      "odds": 1000,
+      "line": null,
+      "league": "Primeira Liga"
+    },
+    {
+      "game_date": "2026-10-30",
+      "game_time": "20:15",
+      "game": "Sp Lisbon @ Casa Pia",
+      "home_team": "Casa Pia",
+      "away_team": "Sp Lisbon",
+      "bet_type": "Match Result",
+      "pick": "Draw",
+      "confidence": 0.2401,
+      "edge": 0.0883,
+      "market_probability": 0.1518,
+      "expected_value": 0.4408,
+      "tier": "Elite",
+      "odds": 500,
+      "line": null,
+      "league": "Primeira Liga"
+    }
+  ]
+}

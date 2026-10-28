@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NCAAB",
+    "generated_at": "2026-10-27T11:58:12.047481+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "NCAAB off-season",
+    "status": "off_season",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "c7fc4b8f57e07622f8c5b1da1b558b02740f3361",
+    "source_repo": "march-madness",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/march-madness/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

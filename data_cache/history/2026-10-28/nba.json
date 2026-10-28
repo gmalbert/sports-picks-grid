@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-10-27T15:40:27.919527+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "pipeline_pending",
+    "tier_definition": "edge-v1",
+    "notes": "No predictions artifact for 2026-10-27; upstream pipeline has not produced current data",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "f2f22ed1c53736a736046c734daea5573d11b51d",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
