@@ -1,77 +1,65 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-10-26T12:35:19.987924+00:00",
+    "generated_at": "2026-10-29T12:37:03.435137+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "f5fc759088da35889142de59ad9737848603f333",
+    "source_commit": "a2db941f2f7164ab7dee4d90a982d694b9d9057c",
     "source_repo": "cricket",
     "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
   },
   "bets": [
     {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-29",
       "game": "Namibia vs Ireland",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Namibia ML",
       "confidence": 0.9827,
-      "edge": 0.5742,
-      "odds": 130,
+      "edge": 0.5603,
+      "odds": 125,
       "tier": "Elite",
-      "notes": "Kelly stake: 9.9%"
+      "notes": "Kelly stake: 10.2%"
     },
     {
-      "game_date": "2026-10-26",
-      "game": "Pakistan vs Sri Lanka",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Sri Lanka ML",
-      "confidence": 0.9077,
-      "edge": 0.5633,
-      "odds": 175,
-      "tier": "Elite",
-      "notes": "Kelly stake: 7.4%"
-    },
-    {
-      "game_date": "2026-10-26",
-      "game": "Netherlands vs Oman",
-      "game_time": "",
-      "bet_type": "Match Winner",
-      "pick": "Netherlands ML",
-      "confidence": 0.9844,
-      "edge": 0.3956,
-      "odds": -165,
-      "tier": "Elite",
-      "notes": "Kelly stake: 14.2%"
-    },
-    {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-29",
       "game": "Afghanistan vs Zimbabwe",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "Afghanistan ML",
-      "confidence": 0.9836,
-      "edge": 0.2549,
-      "odds": -330,
+      "confidence": 0.9968,
+      "edge": 0.2222,
+      "odds": -450,
       "tier": "Elite",
-      "notes": "Kelly stake: 17.1%"
+      "notes": "Kelly stake: 19.1%"
     },
     {
-      "game_date": "2026-10-26",
+      "game_date": "2026-10-29",
+      "game": "Sri Lanka vs England",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "Sri Lanka ML",
+      "confidence": 0.3005,
+      "edge": 0.1442,
+      "odds": 500,
+      "tier": "Elite",
+      "notes": "Kelly stake: 0.7%"
+    },
+    {
+      "game_date": "2026-10-29",
       "game": "New Zealand vs India",
       "game_time": "",
       "bet_type": "Match Winner",
       "pick": "India ML",
       "confidence": 0.6903,
-      "edge": 0.1398,
-      "odds": -140,
+      "edge": 0.1127,
+      "odds": -155,
       "tier": "Elite",
-      "notes": "Kelly stake: 4.3%"
+      "notes": "Kelly stake: 3.9%"
     }
   ]
 }

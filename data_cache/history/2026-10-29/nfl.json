@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "NFL",
-    "generated_at": "2026-10-28T09:10:16.626543+00:00",
+    "generated_at": "2026-10-29T09:04:29.129748+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No picks for 2026-10-28",
+    "notes": "No picks for 2026-10-29",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "a3e2dfb8f4054b99d350036d8144cbc5ce6cabf3",
+    "source_commit": "db49fdaa9809706e8f0516ff88723942e21b9271",
     "source_repo": "nfl-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/nfl-predictions/main/data_files/best_bets_today.json"
   },
