@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Belgium",
+    "generated_at": "2026-10-28T14:11:24.537365+00:00",
+    "model_version": "core-1.4.3",
+    "season": "2026",
+    "notes": "No odds artifact; best bets require market prices",
+    "tier_definition": "edge-v1",
+    "status": "pipeline_pending",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "909bb5f7ac314707641a584249e862bd1ce49046",
+    "source_repo": "belgium-soccer",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/belgium-soccer/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
