@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-10-29T14:57:48.749079+00:00",
+    "generated_at": "2026-10-30T14:50:12.136153+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "cd48236ab3ce148538ba67b242d50f1bb5da4520",
+    "source_commit": "97552b028eee1d5828a476a4969ced3ebee2ef6a",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -80,8 +80,8 @@
       "bet_type": "moneyline",
       "pick": "Nikita Zon",
       "confidence": 0.9629,
-      "edge": 0.8629,
-      "odds": 900,
+      "edge": 0.8576,
+      "odds": 850,
       "tier": "Elite",
       "notes": ""
     },
@@ -190,6 +190,18 @@
       "confidence": 0.5,
       "edge": 0.3806,
       "odds": 738,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-13",
+      "game": "Jhon Orobio vs Hendri Cedeno",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Hendri Cedeno",
+      "confidence": 0.5,
+      "edge": 0.3333,
+      "odds": 500,
       "tier": "Elite",
       "notes": ""
     }
