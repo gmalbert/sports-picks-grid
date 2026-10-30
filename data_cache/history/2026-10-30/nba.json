@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-10-29T16:34:38.168158+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "00e451ecd84bdc36d604632bec0545edbd30fd28",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-10-29",
+      "game_time": null,
+      "game": "Cleveland Cavaliers @ Atlanta Hawks",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "bet_type": "Moneyline",
+      "pick": "Cleveland Cavaliers",
+      "confidence": 0.536,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-10-29",
+      "game_time": null,
+      "game": "Sacramento Kings @ New Orleans Pelicans",
+      "home_team": "New Orleans Pelicans",
+      "away_team": "Sacramento Kings",
+      "bet_type": "Moneyline",
+      "pick": "New Orleans Pelicans",
+      "confidence": 0.626,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-10-29",
+      "game_time": null,
+      "game": "Memphis Grizzlies @ Portland Trail Blazers",
+      "home_team": "Portland Trail Blazers",
+      "away_team": "Memphis Grizzlies",
+      "bet_type": "Moneyline",
+      "pick": "Portland Trail Blazers",
+      "confidence": 0.731,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
