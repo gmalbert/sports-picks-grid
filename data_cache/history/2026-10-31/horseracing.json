@@ -12,7 +12,7 @@
     "notes": "Current GB predictions unavailable; only current US inputs were considered",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "7cfe60aae25a54ec5d0e7452a995bc47bfa27988",
+    "source_commit": "",
     "source_repo": "horse-racing-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/horse-racing-predictions/main/data_files/best_bets_today.json"
   },

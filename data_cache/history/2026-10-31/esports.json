@@ -1,16 +1,16 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-10-31T17:20:41.457633+00:00",
-    "total_bets": 3,
+    "generated_at": "2026-10-31T19:03:19.495294+00:00",
+    "total_bets": 2,
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "source_quote_at": "2026-10-31T12:00:43.497138+00:00",
     "excluded": {
-      "unlinked_or_ambiguous": 1729,
-      "no_positive_net_edge": 15,
-      "insufficient_model_history": 4
+      "unlinked_or_ambiguous": 1735,
+      "no_positive_net_edge": 12,
+      "insufficient_model_history": 2
     },
     "notes": "One YES pick per verified fixture; edge and equivalent odds include $0.02 contract cost allowance.",
     "dashboard_lookahead_days": 7,
@@ -19,33 +19,6 @@
     "source_url": "https://api.sidequestbets.com/api/grid-picks"
   },
   "bets": [
-    {
-      "sport": "Esports",
-      "league": "League of Legends",
-      "game": "LOS vs LYON",
-      "home_team": "LOS",
-      "away_team": "LYON",
-      "game_date": "2026-10-31",
-      "game_time": "2026-10-31T20:00:00+00:00",
-      "bet_type": "Match Winner",
-      "pick": "LOS YES",
-      "confidence": 0.71,
-      "edge": 0.43,
-      "tier": "Elite",
-      "odds": 257.14,
-      "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-10-31T17:20:41.457633+00:00",
-      "source_match_id": "1711008",
-      "market_ticker": "KXLOLGAME-26OCT311300LYLOS-LOS",
-      "quote_captured_at": "2026-10-31T12:00:43.497138+00:00",
-      "forecast_captured_at": "2026-10-31T12:00:14.949638+00:00",
-      "quote_observed_at": "2026-10-31T12:00:29.039302+00:00",
-      "market_url": "https://kalshi.com/markets/KXLOLGAME-26OCT311300LYLOS-LOS",
-      "yes_ask": 0.26,
-      "fee_allowance": 0.02,
-      "effective_contract_cost": 0.28,
-      "notes": "Kalshi YES at saved ask + $0.02 fee allowance per $1 contract; odds are cost-equivalent, not a sportsbook quote. Teams use display order, not venue home/away. Recheck price before betting."
-    },
     {
       "sport": "Esports",
       "league": "League of Legends",
@@ -61,7 +34,7 @@
       "tier": "Elite",
       "odds": 132.56,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-10-31T17:20:41.457633+00:00",
+      "generated_at": "2026-10-31T19:03:19.495294+00:00",
       "source_match_id": "1711010",
       "market_ticker": "KXLOLGAME-26OCT311900BLGHLE-BLG",
       "quote_captured_at": "2026-10-31T12:00:43.497138+00:00",
@@ -88,7 +61,7 @@
       "tier": "Elite",
       "odds": -426.32,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-10-31T17:20:41.457633+00:00",
+      "generated_at": "2026-10-31T19:03:19.495294+00:00",
       "source_match_id": "1713105",
       "market_ticker": "KXOWGAME-26NOV010500CHET1-T1",
       "quote_captured_at": "2026-10-31T12:00:43.497138+00:00",
