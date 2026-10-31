@@ -5,7 +5,7 @@
     "model_version": "1.0.0",
     "season": "2026",
     "notes": "No qualifying Tennis picks for 2026-10-30",
-    "status": "no_picks",
+    "status": "stale",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,

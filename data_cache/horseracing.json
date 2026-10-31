@@ -5,7 +5,7 @@
     "model_version": "1.0.0",
     "tier_definition": "edge-v1",
     "season": "2026",
-    "status": "ok",
+    "status": "stale",
     "source_files": [
       "us_predictions_2026-10-29.csv"
     ],
