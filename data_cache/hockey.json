@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "NHL",
-    "generated_at": "2026-10-30T13:54:15.176655+00:00",
+    "generated_at": "2026-10-31T13:26:01.012873+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "notes": "Source file not found: data_files/recommendations.json",
@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "8c8af42215351e51744a58b2901051ed3050a520",
+    "source_commit": "70ac655fc6da154923097ebce02105cd536557c5",
     "source_repo": "hockey-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/hockey-predictions/main/data_files/best_bets_today.json"
   },
