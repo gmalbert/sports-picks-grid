@@ -8,7 +8,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "d67acef6508c05a9264931f99b4bbeadbce0e264",
+    "source_commit": "",
     "source_repo": "cricket",
     "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
   },

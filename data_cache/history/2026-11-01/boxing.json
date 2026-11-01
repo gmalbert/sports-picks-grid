@@ -8,7 +8,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "4d07cdaefc2a06dde22e6e159d1cbffa96b36d36",
+    "source_commit": "",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },

@@ -9,7 +9,7 @@
     "status": "no_picks",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "026c9ee0450a5b409abda5fcb756a150c6a17f47",
+    "source_commit": "",
     "source_repo": "scotland-premiership",
     "source_url": "https://raw.githubusercontent.com/gmalbert/scotland-premiership/main/data_files/best_bets_today.json"
   },
