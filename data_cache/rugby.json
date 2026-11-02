@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "a5843b05d18e40a794b53b1f3a8e7e3b1248ebdc",
     "source_repo": "rugby",
     "source_url": "https://raw.githubusercontent.com/gmalbert/rugby/main/data_files/best_bets_today.json"
   },

@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-01T16:34:56.819300+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "b922878574ef724afec9f0391ce9ffcedbc9a47a",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-01",
+      "game_time": null,
+      "game": "Boston Celtics @ Orlando Magic",
+      "home_team": "Orlando Magic",
+      "away_team": "Boston Celtics",
+      "bet_type": "Moneyline",
+      "pick": "Boston Celtics",
+      "confidence": 0.591,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-01",
+      "game_time": null,
+      "game": "Brooklyn Nets @ Indiana Pacers",
+      "home_team": "Indiana Pacers",
+      "away_team": "Brooklyn Nets",
+      "bet_type": "Moneyline",
+      "pick": "Indiana Pacers",
+      "confidence": 0.607,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-01",
+      "game_time": null,
+      "game": "Toronto Raptors @ Los Angeles Lakers",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Toronto Raptors",
+      "bet_type": "Moneyline",
+      "pick": "Los Angeles Lakers",
+      "confidence": 0.702,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}

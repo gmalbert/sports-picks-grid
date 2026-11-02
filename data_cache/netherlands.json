@@ -9,7 +9,7 @@
     "status": "pipeline_pending",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "1eb4448289437281e3409c9e00da53ed9cbfd5b8",
     "source_repo": "netherlands-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/netherlands-soccer/main/data_files/best_bets_today.json"
   },
