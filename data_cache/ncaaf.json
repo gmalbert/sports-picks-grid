@@ -18,7 +18,7 @@
     "status": "ok",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "ed16d1155993c33ee6e8347c3838e56a95fa37f6",
     "source_repo": "college-football-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/college-football-predictions/main/data_files/best_bets_today.json"
   },
