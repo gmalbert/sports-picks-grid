@@ -9,7 +9,7 @@
     "status": "stale",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "9fac397b7c31aa99055b81318da3f2a03f9381af",
+    "source_commit": "",
     "source_repo": "golf-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/golf-predictions/main/data_files/best_bets_today.json"
   },

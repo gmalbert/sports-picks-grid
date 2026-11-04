@@ -9,7 +9,7 @@
     "notes": "No NBA games in prediction artifact for 2026-11-03",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "de9dac0080b85e0bd5b6524f213bc15432b49cc0",
+    "source_commit": "",
     "source_repo": "nba-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
   },

@@ -7,7 +7,7 @@
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 0,
-    "source_commit": "3934caca709d756433f7814e52e472ef810099b3",
+    "source_commit": "",
     "total_bets": 0,
     "notes": "No games were found on the target date.",
     "target_date": "2026-11-03",
