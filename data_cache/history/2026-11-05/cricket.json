@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-11-04T14:03:27.561014+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "fe92bbd521e7019b6a90dbd23f0300b65ca6bb6b",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-04",
+      "game": "New Zealand vs India",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "India ML",
+      "confidence": 0.6903,
+      "edge": 0.1398,
+      "odds": -140,
+      "tier": "Elite",
+      "notes": "Kelly stake: 4.3%"
+    }
+  ]
+}
