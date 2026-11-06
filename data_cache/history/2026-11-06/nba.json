@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-05T17:49:07.436284+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "139785bebfbf6a5de15760332098f47d7e0b8aa1",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-05",
+      "game_time": null,
+      "game": "Orlando Magic @ Phoenix Suns",
+      "home_team": "Phoenix Suns",
+      "away_team": "Orlando Magic",
+      "bet_type": "Moneyline",
+      "pick": "Phoenix Suns",
+      "confidence": 0.528,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-05",
+      "game_time": null,
+      "game": "Miami Heat @ Golden State Warriors",
+      "home_team": "Golden State Warriors",
+      "away_team": "Miami Heat",
+      "bet_type": "Moneyline",
+      "pick": "Golden State Warriors",
+      "confidence": 0.72,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
