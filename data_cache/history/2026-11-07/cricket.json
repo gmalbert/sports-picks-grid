@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-11-06T14:00:48.360255+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "484905cb710c7212fc7faa719839a59fd47e51e6",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-06",
+      "game": "Australia vs England",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "England ML",
+      "confidence": 0.9761,
+      "edge": 0.5266,
+      "odds": 110,
+      "tier": "Elite",
+      "notes": "Kelly stake: 10.7%"
+    },
+    {
+      "game_date": "2026-11-06",
+      "game": "New Zealand vs India",
+      "game_time": "",
+      "bet_type": "Match Winner",
+      "pick": "India ML",
+      "confidence": 0.8306,
+      "edge": 0.2584,
+      "odds": -155,
+      "tier": "Elite",
+      "notes": "Kelly stake: 8.6%"
+    }
+  ]
+}
