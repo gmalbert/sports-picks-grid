@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-11-08T18:02:26.487628+00:00",
+    "generated_at": "2026-11-08T19:18:17.127463+00:00",
     "total_bets": 1,
     "status": "ok",
     "tier_definition": "edge-v1",
@@ -35,7 +35,7 @@
       "tier": "Elite",
       "odds": -143.9,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-11-08T18:02:26.487628+00:00",
+      "generated_at": "2026-11-08T19:18:17.127463+00:00",
       "source_match_id": "1711019",
       "market_ticker": "KXLOLGAME-26NOV081700T1BLG-BLG",
       "quote_captured_at": "2026-11-08T12:00:42.032238+00:00",
