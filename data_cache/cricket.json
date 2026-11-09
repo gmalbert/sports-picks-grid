@@ -4,7 +4,7 @@
     "generated_at": "2026-11-08T13:02:03.705357+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "status": "ok",
+    "status": "stale",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
