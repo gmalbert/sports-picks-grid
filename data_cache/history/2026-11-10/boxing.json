@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "sport": "Boxing",
+    "generated_at": "2026-11-09T18:20:05.398280+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "1c2a41dec300a6a8247b6c3e071e65a90988ddcc",
+    "source_repo": "boxing",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-13",
+      "game": "Jhon Orobio vs Hendri Cedeno",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Hendri Cedeno",
+      "confidence": 0.5,
+      "edge": 0.3341,
+      "odds": 503,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-13",
+      "game": "Steven Butler vs Erik Bazinyan",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Erik Bazinyan",
+      "confidence": 0.5,
+      "edge": 0.1551,
+      "odds": 190,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-14",
+      "game": "Zelfa Barrett vs Gavin Gwynne",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Zelfa Barrett",
+      "confidence": 0.9658,
+      "edge": 0.2991,
+      "odds": -200,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-14",
+      "game": "Carlos Adames vs Gerome Warburton",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Gerome Warburton",
+      "confidence": 0.5827,
+      "edge": 0.4918,
+      "odds": 1000,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-14",
+      "game": "Nishant Dev vs Sona Akale",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Nishant Dev",
+      "confidence": 0.9669,
+      "edge": 0.0502,
+      "odds": -1100,
+      "tier": "Strong",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-14",
+      "game": "Bruno Surace vs Kamil Bednarek",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Kamil Bednarek",
+      "confidence": 0.5,
+      "edge": 0.2142,
+      "odds": 250,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-14",
+      "game": "Kyosuke Takami vs Angel Geovanny Meza Morales",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Angel Geovanny Meza Morales",
+      "confidence": 0.5,
+      "edge": 0.3795,
+      "odds": 730,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-15",
+      "game": "Charlie Sheehy vs Gabriel Flores Jr",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Charlie Sheehy",
+      "confidence": 0.966,
+      "edge": 0.1722,
+      "odds": -385,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-15",
+      "game": "Diego Pacheco vs Darius Fulghum",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Darius Fulghum",
+      "confidence": 0.5942,
+      "edge": 0.4513,
+      "odds": 600,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-15",
+      "game": "Zaquin Moses vs Manuel Lerma",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Manuel Lerma",
+      "confidence": 0.5,
+      "edge": 0.3901,
+      "odds": 810,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-15",
+      "game": "David Adeleye vs Alexander Flores",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Alexander Flores",
+      "confidence": 0.1888,
+      "edge": 0.0555,
+      "odds": 650,
+      "tier": "Strong",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-15",
+      "game": "Anthony Olascuaga vs Yuberjen Martinez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Yuberjen Martinez",
+      "confidence": 0.5,
+      "edge": 0.3,
+      "odds": 400,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-20",
+      "game": "Lauren Price vs Michaela Kotaskova",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Michaela Kotaskova",
+      "confidence": 0.5,
+      "edge": 0.4091,
+      "odds": 1000,
+      "tier": "Elite",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Golf",
+    "generated_at": "2026-06-01T10:34:16.539091+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "",
+    "tier_definition": "edge-v1",
+    "status": "stale",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "9fac397b7c31aa99055b81318da3f2a03f9381af",
+    "source_repo": "golf-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/golf-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

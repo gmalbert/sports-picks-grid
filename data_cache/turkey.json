@@ -6,7 +6,7 @@
     "season": "2026",
     "notes": "No qualifying Süper Lig picks",
     "tier_definition": "edge-v1",
-    "status": "no_picks",
+    "status": "stale",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
     "source_commit": "8c19c0bfb41bf3ca789718353ad04b414263a83d",
