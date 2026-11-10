@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "Ligue1",
-    "generated_at": "2026-11-09T17:45:21.049061+00:00",
+    "generated_at": "2026-11-10T16:02:04.551956+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No Ligue1 predictions for 2026-11-09",
+    "notes": "No Ligue1 predictions for 2026-11-10",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "2ee46a5b3412e34f9a44cdd8cb1f0e7e2e1b230e",
+    "source_commit": "224797393e2ad378775034cb72b50c298a8a0577",
     "source_repo": "ligue-1",
     "source_url": "https://raw.githubusercontent.com/gmalbert/ligue-1/main/data_files/best_bets_today.json"
   },
