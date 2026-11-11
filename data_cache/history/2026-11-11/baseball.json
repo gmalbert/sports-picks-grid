@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "sport": "MLB",
+    "generated_at": "2026-11-10T19:23:15.086871+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 0,
+    "source_commit": "d51ce4837449c5f93028d3c84e01a4dbb2ee45a7",
+    "total_bets": 0,
+    "notes": "No games were found on the target date.",
+    "target_date": "2026-11-10",
+    "picks_count": 0,
+    "dashboard_lookahead_days": 7,
+    "source_repo": "baseball-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/baseball-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
