@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-11-12T20:19:46.902873+00:00",
+    "generated_at": "2026-11-12T21:42:39.473515+00:00",
     "total_bets": 2,
     "status": "ok",
     "tier_definition": "edge-v1",
@@ -35,7 +35,7 @@
       "tier": "Elite",
       "odds": 150.0,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-11-12T20:19:46.902873+00:00",
+      "generated_at": "2026-11-12T21:42:39.473515+00:00",
       "source_match_id": "1711021",
       "market_ticker": "KXLOLGAME-26NOV141400GENBLG-BLG",
       "quote_captured_at": "2026-11-12T12:00:42.904015+00:00",
@@ -62,7 +62,7 @@
       "tier": "Strong",
       "odds": 150.0,
       "model": "history-elo-v2",
-      "generated_at": "2026-11-12T20:19:46.902873+00:00",
+      "generated_at": "2026-11-12T21:42:39.473515+00:00",
       "source_match_id": "1801583",
       "market_ticker": "KXR6GAME-26NOV122230DZLIQUID-DZ",
       "quote_captured_at": "2026-11-12T12:00:42.904015+00:00",
