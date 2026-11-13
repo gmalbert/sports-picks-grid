@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-12T17:52:22.301088+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "375b617c6a864ac357cd547c2d31fbc05c394a28",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-12",
+      "game_time": null,
+      "game": "Toronto Raptors @ Philadelphia 76ers",
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Toronto Raptors",
+      "bet_type": "Moneyline",
+      "pick": "Philadelphia 76ers",
+      "confidence": 0.707,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-12",
+      "game_time": null,
+      "game": "Detroit Pistons @ Washington Wizards",
+      "home_team": "Washington Wizards",
+      "away_team": "Detroit Pistons",
+      "bet_type": "Moneyline",
+      "pick": "Detroit Pistons",
+      "confidence": 0.787,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-12",
+      "game_time": null,
+      "game": "Dallas Mavericks @ Minnesota Timberwolves",
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Dallas Mavericks",
+      "bet_type": "Moneyline",
+      "pick": "Minnesota Timberwolves",
+      "confidence": 0.845,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-12",
+      "game_time": null,
+      "game": "Charlotte Hornets @ Phoenix Suns",
+      "home_team": "Phoenix Suns",
+      "away_team": "Charlotte Hornets",
+      "bet_type": "Moneyline",
+      "pick": "Charlotte Hornets",
+      "confidence": 0.558,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
