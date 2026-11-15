@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-14T16:17:44.145198+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "5da2d5d23d95b713c8ebce3e1196888c0595d54b",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-14",
+      "game_time": null,
+      "game": "Denver Nuggets @ New Orleans Pelicans",
+      "home_team": "New Orleans Pelicans",
+      "away_team": "Denver Nuggets",
+      "bet_type": "Moneyline",
+      "pick": "Denver Nuggets",
+      "confidence": 0.677,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-14",
+      "game_time": null,
+      "game": "Dallas Mavericks @ Cleveland Cavaliers",
+      "home_team": "Cleveland Cavaliers",
+      "away_team": "Dallas Mavericks",
+      "bet_type": "Moneyline",
+      "pick": "Cleveland Cavaliers",
+      "confidence": 0.581,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-14",
+      "game_time": null,
+      "game": "Detroit Pistons @ Miami Heat",
+      "home_team": "Miami Heat",
+      "away_team": "Detroit Pistons",
+      "bet_type": "Moneyline",
+      "pick": "Detroit Pistons",
+      "confidence": 0.5489999999999999,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-14",
+      "game_time": null,
+      "game": "Brooklyn Nets @ Memphis Grizzlies",
+      "home_team": "Memphis Grizzlies",
+      "away_team": "Brooklyn Nets",
+      "bet_type": "Moneyline",
+      "pick": "Memphis Grizzlies",
+      "confidence": 0.81,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-14",
+      "game_time": null,
+      "game": "Chicago Bulls @ Minnesota Timberwolves",
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Chicago Bulls",
+      "bet_type": "Moneyline",
+      "pick": "Minnesota Timberwolves",
+      "confidence": 0.917,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
