@@ -4,11 +4,11 @@
     "generated_at": "2026-11-15T12:31:39.342519+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "status": "no_picks",
+    "status": "stale",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "543a3f3623fb16e377a68d66e8b7fd6fb5357577",
+    "source_commit": "",
     "source_repo": "table-tennis",
     "source_url": "https://raw.githubusercontent.com/gmalbert/table-tennis/main/data_files/best_bets_today.json"
   },

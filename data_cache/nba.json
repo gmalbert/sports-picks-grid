@@ -8,7 +8,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "85a721da941f05ae432967827a28dec060e94687",
+    "source_commit": "",
     "source_repo": "nba-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
   },

@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "sport": "Boxing",
+    "generated_at": "2026-11-15T15:21:28.390909+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "",
+    "source_repo": "boxing",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-18",
+      "game": "Teremoana Junior vs Hemi Ahio",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Hemi Ahio",
+      "confidence": 0.5,
+      "edge": 0.4215,
+      "odds": 1175,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-20",
+      "game": "Lauren Price vs Michaela Kotaskova",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Michaela Kotaskova",
+      "confidence": 0.5,
+      "edge": 0.4091,
+      "odds": 1000,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-20",
+      "game": "Rhys Edwards vs Lee McGregor",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Rhys Edwards",
+      "confidence": 0.9744,
+      "edge": 0.1546,
+      "odds": -455,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-20",
+      "game": "Willy Gilheaney vs Alberto Ignacio Palmetta",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Alberto Ignacio Palmetta",
+      "confidence": 0.5,
+      "edge": 0.1254,
+      "odds": 167,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-20",
+      "game": "Kyran Jones vs Sean Arkwright",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Sean Arkwright",
+      "confidence": 0.5,
+      "edge": 0.0867,
+      "odds": 142,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-21",
+      "game": "Gabriela Fundora vs Jasmina Zapotoczna",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Jasmina Zapotoczna",
+      "confidence": 0.5,
+      "edge": 0.4,
+      "odds": 900,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "David Jimenez vs Seigo Yuri Akui",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "David Jimenez",
+      "confidence": 0.9813,
+      "edge": 0.4886,
+      "odds": 103,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "Riku Masuda vs Seiya Tsutsumi",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Seiya Tsutsumi",
+      "confidence": 0.5,
+      "edge": 0.1254,
+      "odds": 167,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "Kenshiro Teraji vs Jassiel Amador",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Jassiel Amador",
+      "confidence": 0.8155,
+      "edge": 0.644,
+      "odds": 483,
+      "tier": "Elite",
+      "notes": ""
+    }
+  ]
+}
