@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-17T18:56:44.202670+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "2181edba4ff8567ce5bb935fb7068840c686e8bc",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-17",
+      "game_time": null,
+      "game": "New York Knicks @ Toronto Raptors",
+      "home_team": "Toronto Raptors",
+      "away_team": "New York Knicks",
+      "bet_type": "Moneyline",
+      "pick": "New York Knicks",
+      "confidence": 0.673,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-17",
+      "game_time": null,
+      "game": "Portland Trail Blazers @ Minnesota Timberwolves",
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Portland Trail Blazers",
+      "bet_type": "Moneyline",
+      "pick": "Minnesota Timberwolves",
+      "confidence": 0.683,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-17",
+      "game_time": null,
+      "game": "Detroit Pistons @ San Antonio Spurs",
+      "home_team": "San Antonio Spurs",
+      "away_team": "Detroit Pistons",
+      "bet_type": "Moneyline",
+      "pick": "San Antonio Spurs",
+      "confidence": 0.831,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-17",
+      "game_time": null,
+      "game": "Utah Jazz @ LA Clippers",
+      "home_team": "LA Clippers",
+      "away_team": "Utah Jazz",
+      "bet_type": "Moneyline",
+      "pick": "LA Clippers",
+      "confidence": 0.65,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-17",
+      "game_time": null,
+      "game": "Charlotte Hornets @ Los Angeles Lakers",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Charlotte Hornets",
+      "bet_type": "Moneyline",
+      "pick": "Los Angeles Lakers",
+      "confidence": 0.713,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
