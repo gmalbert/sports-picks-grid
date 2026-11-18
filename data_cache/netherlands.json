@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Netherlands",
-    "generated_at": "2026-11-17T16:59:19.177787+00:00",
+    "generated_at": "2026-11-18T16:35:14.504164+00:00",
     "model_version": "core-1.4.3",
     "season": "2026",
     "notes": "No odds artifact; best bets require market prices",
@@ -9,7 +9,7 @@
     "status": "pipeline_pending",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "af6b8b0dbcf420ef4cea3085b83e1a38d82b9c02",
+    "source_commit": "129b7da2d5e24a7abc25eb20d93cb3c20b9acf1c",
     "source_repo": "netherlands-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/netherlands-soccer/main/data_files/best_bets_today.json"
   },

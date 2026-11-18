@@ -1,20 +1,20 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-11-17T15:45:33.961897+00:00",
+    "generated_at": "2026-11-18T15:24:55.029245+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "373a50285151b33690b3bb3ca696f2a20f8f9565",
+    "source_commit": "ffa92fe6988ed4bce8e6c861a2dd1deed618be47",
     "source_repo": "cricket",
     "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
   },
   "bets": [
     {
-      "game_date": "2026-11-17",
+      "game_date": "2026-11-18",
       "game": "Australia vs England",
       "game_time": "",
       "bet_type": "Match Winner",
