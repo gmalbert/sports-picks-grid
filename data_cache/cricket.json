@@ -1,29 +1,29 @@
 {
   "meta": {
     "sport": "Cricket",
-    "generated_at": "2026-11-18T15:24:55.029245+00:00",
+    "generated_at": "2026-11-19T15:32:08.266839+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "ffa92fe6988ed4bce8e6c861a2dd1deed618be47",
+    "source_commit": "2cac063c9d42804ace81f22838a44376398a43ac",
     "source_repo": "cricket",
     "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
   },
   "bets": [
     {
-      "game_date": "2026-11-18",
+      "game_date": "2026-11-19",
       "game": "Australia vs England",
       "game_time": "",
       "bet_type": "Match Winner",
-      "pick": "England ML",
-      "confidence": 0.9401,
-      "edge": 0.4809,
-      "odds": 105,
+      "pick": "Australia ML",
+      "confidence": 0.9856,
+      "edge": 0.4593,
+      "odds": -125,
       "tier": "Elite",
-      "notes": "Kelly stake: 10.2%"
+      "notes": "Kelly stake: 12.8%"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "NCAAB",
-    "generated_at": "2026-11-18T15:38:07.829731+00:00",
+    "generated_at": "2026-11-19T15:42:39.373347+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "notes": "No qualifying NCAAB picks in next 7 days",
@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "eed06984253167a03e76c058e4716063eb98a872",
+    "source_commit": "2570a780df6967663e56c55e217f528181e86069",
     "source_repo": "march-madness",
     "source_url": "https://raw.githubusercontent.com/gmalbert/march-madness/main/data_files/best_bets_today.json"
   },

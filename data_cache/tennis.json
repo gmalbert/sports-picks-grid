@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "Tennis",
-    "generated_at": "2026-11-18T13:34:02.473489+00:00",
+    "generated_at": "2026-11-19T14:01:25.120653+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No qualifying Tennis picks for 2026-11-18",
-    "status": "stale",
+    "notes": "No qualifying Tennis picks for 2026-11-19",
+    "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "90bdea5ca5b9a9d77fd81eaa416544fbadd79dd7",
+    "source_commit": "ea4ef42855d24db2aacf35da3b979fb5ea36ead5",
     "source_repo": "tennis-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/tennis-predictions/main/data_files/best_bets_today.json"
   },

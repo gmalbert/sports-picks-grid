@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Portugal",
-    "generated_at": "2026-11-18T16:34:13.461777+00:00",
+    "generated_at": "2026-11-19T16:39:34.913981+00:00",
     "model_version": "core-1.4.3",
     "season": "2026",
     "notes": "No qualifying Primeira Liga picks",
@@ -9,7 +9,7 @@
     "status": "no_picks",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "d0ba8221f6be773bdb3ebdf83a6e907f30e4e26a",
+    "source_commit": "5c5711323d0f8bdd58f71be6a2b2a15a11cc7c02",
     "source_repo": "portugal-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/portugal-soccer/main/data_files/best_bets_today.json"
   },
