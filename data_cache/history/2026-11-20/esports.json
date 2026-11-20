@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-11-20T20:40:00.717840+00:00",
+    "generated_at": "2026-11-20T22:05:48.432542+00:00",
     "total_bets": 1,
     "status": "ok",
     "tier_definition": "edge-v1",
@@ -9,7 +9,8 @@
     "source_quote_at": "2026-11-20T12:00:42.416509+00:00",
     "excluded": {
       "unlinked_or_ambiguous": 2140,
-      "insufficient_model_history": 12,
+      "insufficient_model_history": 4,
+      "not_upcoming_verified_fixture": 8,
       "market_fixture_date_mismatch": 2,
       "no_positive_net_edge": 1
     },
@@ -35,7 +36,7 @@
       "tier": "Good",
       "odds": -233.33,
       "model": "history-elo-v2",
-      "generated_at": "2026-11-20T20:40:00.717840+00:00",
+      "generated_at": "2026-11-20T22:05:48.432542+00:00",
       "source_match_id": "1816467",
       "market_ticker": "KXDOTA2GAME-26NOV210600AIAUR-AUR",
       "quote_captured_at": "2026-11-20T12:00:42.416509+00:00",
