@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-19T18:48:18.296519+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "0e74aeceadda1fbd844803e8ec0d4ec9f3da1cb2",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-19",
+      "game_time": null,
+      "game": "Golden State Warriors @ Memphis Grizzlies",
+      "home_team": "Memphis Grizzlies",
+      "away_team": "Golden State Warriors",
+      "bet_type": "Moneyline",
+      "pick": "Memphis Grizzlies",
+      "confidence": 0.619,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-19",
+      "game_time": null,
+      "game": "Portland Trail Blazers @ Milwaukee Bucks",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Portland Trail Blazers",
+      "bet_type": "Moneyline",
+      "pick": "Portland Trail Blazers",
+      "confidence": 0.716,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-19",
+      "game_time": null,
+      "game": "New York Knicks @ Minnesota Timberwolves",
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "New York Knicks",
+      "bet_type": "Moneyline",
+      "pick": "New York Knicks",
+      "confidence": 0.5609999999999999,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-19",
+      "game_time": null,
+      "game": "LA Clippers @ San Antonio Spurs",
+      "home_team": "San Antonio Spurs",
+      "away_team": "LA Clippers",
+      "bet_type": "Moneyline",
+      "pick": "San Antonio Spurs",
+      "confidence": 0.874,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
