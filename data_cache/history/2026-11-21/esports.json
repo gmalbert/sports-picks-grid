@@ -1,16 +1,16 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-11-21T19:41:19.025325+00:00",
+    "generated_at": "2026-11-21T20:45:19.772227+00:00",
     "total_bets": 1,
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "source_quote_at": "2026-11-21T12:00:42.440169+00:00",
     "excluded": {
-      "unlinked_or_ambiguous": 2214,
+      "unlinked_or_ambiguous": 2216,
       "insufficient_model_history": 2,
-      "no_positive_net_edge": 3
+      "no_positive_net_edge": 1
     },
     "notes": "One YES pick per verified fixture; edge and equivalent odds include $0.02 contract cost allowance.",
     "dashboard_lookahead_days": 7,
@@ -34,7 +34,7 @@
       "tier": "Elite",
       "odds": 143.9,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-11-21T19:41:19.025325+00:00",
+      "generated_at": "2026-11-21T20:45:19.772227+00:00",
       "source_match_id": "1820218",
       "market_ticker": "KXVALORANTGAME-26NOV211700NVFQ-FQ",
       "quote_captured_at": "2026-11-21T12:00:42.440169+00:00",
