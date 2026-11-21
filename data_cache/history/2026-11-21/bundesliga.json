@@ -1,15 +1,15 @@
 {
   "meta": {
     "sport": "Bundesliga",
-    "generated_at": "2026-11-20T15:58:40.545702+00:00",
+    "generated_at": "2026-11-21T15:09:53.000613+00:00",
     "model_version": "1.0.0",
     "season": "2026",
-    "notes": "No qualifying Bundesliga picks for 2026-11-20",
+    "notes": "No qualifying Bundesliga picks for 2026-11-21",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "91e42f78602fdd8fb833b0041fcdf4d3e9b2935f",
+    "source_commit": "a0430f691fda3262cd0a11af6278b8d9535d66bd",
     "source_repo": "bundesliga",
     "source_url": "https://raw.githubusercontent.com/gmalbert/bundesliga/main/data_files/best_bets_today.json"
   },

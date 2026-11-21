@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Scotland",
-    "generated_at": "2026-11-20T16:33:25.833045+00:00",
+    "generated_at": "2026-11-21T15:30:10.807741+00:00",
     "model_version": "core-1.4.3",
     "season": "2026",
     "notes": "No qualifying Scottish Premiership picks",
@@ -9,7 +9,7 @@
     "status": "no_picks",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "146612b1d6679a8128c5f6ad95e45012e97f6e92",
+    "source_commit": "5640349ec618ebd7423d485c5d082db10dd35b39",
     "source_repo": "scotland-premiership",
     "source_url": "https://raw.githubusercontent.com/gmalbert/scotland-premiership/main/data_files/best_bets_today.json"
   },
