@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "sport": "WNBA",
+    "generated_at": "2026-08-26T01:30:53+00:00",
+    "tier_definition": "edge-v1",
+    "source_format": "wnba-web-v1",
+    "source_generated_at": "2026-09-28T01:16:55Z",
+    "withheld_games": 44,
+    "notes": "WNBA web predictions; paper-only, no-bet, unreleased, and unpriced rows are withheld",
+    "status": "stale",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "f54d6c87c1e51e7c21e6d9389582f5057b6bea0b",
+    "source_repo": "wnba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/wnba-predictions/main/frontend/public/data/predictions.json"
+  },
+  "bets": []
+}

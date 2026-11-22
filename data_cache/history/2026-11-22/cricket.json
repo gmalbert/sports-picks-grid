@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "sport": "Cricket",
+    "generated_at": "2026-11-21T14:28:11.546231+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "ad56e6e54ccbb4e9442ec23ca2a905ab1e3133c9",
+    "source_repo": "cricket",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/cricket/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
