@@ -1,27 +1,27 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-11-21T15:55:16.015154+00:00",
+    "generated_at": "2026-11-22T15:56:17.174173+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "dd7c1df8af3cd429603b02ebd9fc86d6f471fd5d",
+    "source_commit": "8b582f0fd7c58f506f7933e088c86031022e4c08",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
   "bets": [
     {
-      "game_date": "2026-11-21",
-      "game": "Adian Williamson vs Regan Glackin",
+      "game_date": "2026-11-26",
+      "game": "Takeshi Ishii vs Zyvyr John Medecilo",
       "game_time": "",
       "bet_type": "moneyline",
-      "pick": "Adian Williamson",
-      "confidence": 0.9667,
-      "edge": 0.4667,
-      "odds": 100,
+      "pick": "Zyvyr John Medecilo",
+      "confidence": 0.5,
+      "edge": 0.3113,
+      "odds": 430,
       "tier": "Elite",
       "notes": ""
     },
@@ -32,8 +32,8 @@
       "bet_type": "moneyline",
       "pick": "David Jimenez",
       "confidence": 0.9813,
-      "edge": 0.4886,
-      "odds": 103,
+      "edge": 0.4813,
+      "odds": 100,
       "tier": "Elite",
       "notes": ""
     },
@@ -82,6 +82,30 @@
       "confidence": 0.5,
       "edge": 0.17,
       "odds": 203,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-12-06",
+      "game": "Nikita Tszyu vs Roberto Valenzuela Jr",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Roberto Valenzuela Jr",
+      "confidence": 0.5,
+      "edge": 0.2727,
+      "odds": 340,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-12-06",
+      "game": "Emiliano Vargas vs Omar Juarez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Omar Juarez",
+      "confidence": 0.5793,
+      "edge": 0.4543,
+      "odds": 700,
       "tier": "Elite",
       "notes": ""
     }
