@@ -1,14 +1,14 @@
 {
   "meta": {
     "sport": "Boxing",
-    "generated_at": "2026-11-22T15:56:17.174173+00:00",
+    "generated_at": "2026-11-23T19:51:25.728889+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "ok",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "8b582f0fd7c58f506f7933e088c86031022e4c08",
+    "source_commit": "",
     "source_repo": "boxing",
     "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
   },
@@ -44,8 +44,8 @@
       "bet_type": "moneyline",
       "pick": "Seiya Tsutsumi",
       "confidence": 0.5,
-      "edge": 0.1254,
-      "odds": 167,
+      "edge": 0.1047,
+      "odds": 153,
       "tier": "Elite",
       "notes": ""
     },
