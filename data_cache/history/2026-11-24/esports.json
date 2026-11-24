@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "Esports",
-    "generated_at": "2026-11-24T22:42:32.883992+00:00",
+    "generated_at": "2026-11-24T23:43:46.853449+00:00",
     "total_bets": 1,
     "status": "ok",
     "tier_definition": "edge-v1",
@@ -33,7 +33,7 @@
       "tier": "Elite",
       "odds": 244.83,
       "model": "history-elo-v3-decay-365",
-      "generated_at": "2026-11-24T22:42:32.883992+00:00",
+      "generated_at": "2026-11-24T23:43:46.853449+00:00",
       "source_match_id": "1830660",
       "market_ticker": "KXVALORANTGAME-26NOV242000STACHE-STA",
       "quote_captured_at": "2026-11-24T12:00:42.873658+00:00",
