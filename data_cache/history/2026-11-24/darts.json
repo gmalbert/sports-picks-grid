@@ -1,13 +1,13 @@
 {
   "meta": {
     "sport": "Darts",
-    "generated_at": "2026-11-23T19:03:08.073527+00:00",
+    "generated_at": "2026-11-24T18:43:04.685212+00:00",
     "model_version": "1.0.0",
     "season": "2026",
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
-    "source_commit": "00828aacba1a4a87965da869848224c5b2c27062",
+    "source_commit": "ef7ab366e813177777230b24d1d957ddfd561338",
     "total_bets": 0,
     "dashboard_lookahead_days": 7,
     "source_repo": "darts",
