@@ -9,7 +9,7 @@
     "status": "no_picks",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "548e35be3437d93ef8d0e6fcde8ffa78ab4d3058",
     "source_repo": "portugal-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/portugal-soccer/main/data_files/best_bets_today.json"
   },
