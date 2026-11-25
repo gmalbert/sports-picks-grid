@@ -19,17 +19,21 @@ export async function loadPicks(env, ctx, cache) {
   const sources = {};
   const picks = await Promise.all(Object.entries(SOURCES).map(async ([sport, { key, repo: sourceRepo, picksUrl, path = 'data_files/best_bets_today.json' }]) => {
     const cacheKey = new Request(`https://sports-picks-grid.internal/last-valid/${key}`);
-    let candidate = await optionalJSON(raw(repo, `data_cache/${key}.json`, branch));
-    candidate = normalizeSource(candidate, sourceRepo);
+    const sourceUrl = picksUrl || raw(`gmalbert/${sourceRepo}`, path);
+    // NCAAF must verify the release at the source on each refresh.
+    const requiresLiveRelease = sport === 'NCAAF';
+    let candidate = normalizeSource(await optionalJSON(
+      requiresLiveRelease ? sourceUrl : raw(repo, `data_cache/${key}.json`, branch)
+    ), sourceRepo);
     let record = validateExport(candidate, sport);
-    if (record.errors.length) {
-      candidate = normalizeSource(await optionalJSON(picksUrl || raw(`gmalbert/${sourceRepo}`, path)), sourceRepo);
+    if (record.errors.length && !requiresLiveRelease) {
+      candidate = normalizeSource(await optionalJSON(sourceUrl), sourceRepo);
       record = validateExport(candidate, sport);
     }
     const live = record.errors.length === 0;
-    if (live) {
+    if (live && !requiresLiveRelease) {
       ctx.waitUntil(cache.put(cacheKey, Response.json(candidate, { headers: { 'Cache-Control': 'public, max-age=604800' } })));
-    } else {
+    } else if (!live && !requiresLiveRelease) {
       const retained = await cache.match(cacheKey);
       const cached = retained ? await retained.json() : null;
       const retainedRecord = validateExport(cached, sport);
@@ -37,12 +41,15 @@ export async function loadPicks(env, ctx, cache) {
     }
     const manifestRecord = manifest?.sources?.[key] || {};
     // Source failures in the aggregator remain visible even when it retained valid rows.
-    const manifestFailure = liveManifest && ['fetch_failed', 'pipeline_failed', 'export_missing'].includes(manifestRecord.status);
+    const manifestFailure = !requiresLiveRelease && liveManifest && ['fetch_failed', 'pipeline_failed', 'export_missing'].includes(manifestRecord.status);
     sources[sport] = {
       ...manifestRecord, ...record, bets: undefined, repo: sourceRepo,
       status: !live ? 'fetch_failed' : manifestFailure ? manifestRecord.status : record.status,
-      errors: !live ? ['Live sources unavailable; showing the last valid snapshot.', ...record.errors] : manifestFailure ? manifestRecord.errors || [] : record.errors,
-      last_valid_cache: !live, bets_count: record.bets.length,
+      errors: !live ? [
+        requiresLiveRelease ? 'NCAAF release status unavailable. Picks withheld.' : 'Live sources unavailable; showing the last valid snapshot.',
+        ...record.errors,
+      ] : manifestFailure ? manifestRecord.errors || [] : record.errors,
+      last_valid_cache: !live && !requiresLiveRelease, bets_count: record.bets.length,
     };
     return record.bets;
   }));
@@ -65,7 +72,7 @@ export default {
     if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
     if (!['/api/picks', '/api/performance'].includes(url.pathname)) return json({ error: 'Not found' }, 404);
     const cache = caches.default;
-    const cacheKey = new Request(`${url.origin}${url.pathname}`);
+    const cacheKey = new Request(`${url.origin}${url.pathname}${url.pathname === '/api/picks' ? '?release=v2' : ''}`);
     const existing = url.searchParams.get('refresh') !== '1' ? await cache.match(cacheKey) : null;
     if (existing) {
       const response = new Response(existing.body, existing);
@@ -76,9 +83,14 @@ export default {
       const data = url.pathname === '/api/picks' ? await loadPicks(env, ctx, cache) : await loadPerformance(env);
       // Never cache a recommendation beyond its quote expiry or match start.
       let maxAge = 3600;
-      for (const pick of data.picks || []) if (pick.sport === 'Esports') {
-        const expiry = Math.min(Date.parse(pick.quote_observed_at) + 13 * 3600000, Date.parse(pick.game_time));
-        maxAge = Math.min(maxAge, Math.max(0, Math.floor((expiry - Date.now()) / 1000)));
+      for (const pick of data.picks || []) {
+        const quoteExpiry = pick.sport === 'Esports'
+          ? Date.parse(pick.quote_observed_at) + 13 * 3600000
+          : pick.sport === 'NCAAF' ? Date.parse(pick.price_captured_at) + 24 * 3600000 : null;
+        if (quoteExpiry === null) continue;
+        const expiry = Math.min(quoteExpiry, Date.parse(pick.game_time));
+        maxAge = Math.min(pick.sport === 'NCAAF' ? 300 : maxAge, maxAge,
+          Math.max(0, Math.floor((expiry - Date.now()) / 1000)));
       }
       const response = Response.json(data, { headers: { 'Cache-Control': `public, max-age=${maxAge}`, 'X-Content-Type-Options': 'nosniff' } });
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
