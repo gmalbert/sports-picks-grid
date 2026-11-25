@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "Turkey",
+    "generated_at": "2026-11-24T18:59:25.534544+00:00",
+    "model_version": "core-1.4.3",
+    "season": "2026",
+    "notes": "No qualifying Süper Lig picks",
+    "tier_definition": "edge-v1",
+    "status": "no_picks",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "e8e9cf06232995c94e5de809a9ec9d5a58e7cf8b",
+    "source_repo": "turkey-soccer",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/turkey-soccer/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

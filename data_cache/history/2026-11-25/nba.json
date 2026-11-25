@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-24T20:30:28.900261+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "8b8ab0ae0dacac9af62778de184e1ded4fb1b030",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-24",
+      "game_time": null,
+      "game": "Detroit Pistons @ Orlando Magic",
+      "home_team": "Orlando Magic",
+      "away_team": "Detroit Pistons",
+      "bet_type": "Moneyline",
+      "pick": "Orlando Magic",
+      "confidence": 0.535,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-24",
+      "game_time": null,
+      "game": "Boston Celtics @ Washington Wizards",
+      "home_team": "Washington Wizards",
+      "away_team": "Boston Celtics",
+      "bet_type": "Moneyline",
+      "pick": "Boston Celtics",
+      "confidence": 0.761,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    },
+    {
+      "game_date": "2026-11-24",
+      "game_time": null,
+      "game": "Dallas Mavericks @ Denver Nuggets",
+      "home_team": "Denver Nuggets",
+      "away_team": "Dallas Mavericks",
+      "bet_type": "Moneyline",
+      "pick": "Denver Nuggets",
+      "confidence": 0.763,
+      "edge": null,
+      "tier": "Standard",
+      "odds": null,
+      "line": null,
+      "notes": null
+    }
+  ]
+}
