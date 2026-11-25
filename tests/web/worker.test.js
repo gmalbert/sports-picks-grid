@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker, { loadPicks, loadPerformance } from '../../worker/index.js';
-import { SOURCES } from '../../shared/picks.js';
+import { SOURCES, validateExport } from '../../shared/picks.js';
 
 function harness() {
   const values = new Map();
@@ -12,10 +12,19 @@ function harness() {
 }
 const exportData = (sport = 'MLB') => ({ meta: { generated_at: new Date().toISOString(), sport }, bets: [{ game_date: '2026-10-23', pick: 'Home', confidence: .7, edge: .08, odds: 120, tier: 'Elite', quote_observed_at: new Date().toISOString(), game_time: new Date(Date.now() + 86400000).toISOString() }] });
 
+const ncaafExport = (releaseStatus = 'promote') => {
+  const data = exportData('NCAAF');
+  data.meta.release_status = releaseStatus;
+  data.meta.publication_mode = releaseStatus === 'promote' ? 'validated' : 'provisional_research';
+  data.bets[0].price_captured_at = data.meta.generated_at;
+  return data;
+};
+const isNcaafSource = url => String(url).includes('/college-football-predictions/');
+
 test('live data is normalized, ordered, validated, and retained; failures reuse the last valid snapshot', async () => {
   const originalFetch = globalThis.fetch;
   const { cache, ctx, pending } = harness();
-  globalThis.fetch = async url => String(url).includes('status_manifest') ? Response.json({ sources: {}, aggregation_completed_at: '2026-10-23T16:00:00Z' }) : Response.json(exportData());
+  globalThis.fetch = async url => String(url).includes('status_manifest') ? Response.json({ sources: {}, aggregation_completed_at: '2026-10-23T16:00:00Z' }) : Response.json(isNcaafSource(url) ? ncaafExport() : exportData());
   try {
     const live = await loadPicks({}, ctx, cache);
     assert.equal(live.picks.length, Object.keys(SOURCES).length);
@@ -26,12 +35,39 @@ test('live data is normalized, ordered, validated, and retained; failures reuse 
     await Promise.all(pending);
     globalThis.fetch = async () => { throw new Error('Network unavailable'); };
     const offline = await loadPicks({}, ctx, cache);
-    assert.equal(offline.picks.length, Object.keys(SOURCES).length);
+    assert.equal(offline.picks.length, Object.keys(SOURCES).length - 1);
+    assert.equal(offline.sources.NCAAF.bets_count, 0);
     assert.equal(offline.sources.MLB.status, 'fetch_failed');
     assert.equal(offline.sources.MLB.last_valid_cache, true);
     assert.match(offline.sources.MLB.errors[0], /last valid snapshot/);
   } finally { globalThis.fetch = originalFetch; }
 });
+test('NCAAF uses the live hold even when the aggregate has picks', async () => {
+  const originalFetch = globalThis.fetch;
+  const { cache, ctx } = harness();
+  globalThis.fetch = async url => {
+    if (String(url).includes('status_manifest')) return Response.json({ sources: { ncaaf: { status: 'ok', bets_count: 72 } } });
+    return Response.json(isNcaafSource(url) ? ncaafExport('hold') : ncaafExport());
+  };
+  try {
+    const result = await loadPicks({}, ctx, cache);
+    assert.equal(result.sources.NCAAF.status, 'release_hold');
+    assert.equal(result.sources.NCAAF.bets_count, 0);
+    assert.ok(!result.picks.some(pick => pick.sport === 'NCAAF'));
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test('NCAAF withholds a promoted pick when its quote expires or kickoff passes', () => {
+  const data = ncaafExport();
+  const now = new Date();
+  assert.equal(validateExport(data, 'NCAAF', now).bets.length, 1);
+  data.bets[0].price_captured_at = new Date(now.getTime() - 25 * 3600000).toISOString();
+  assert.equal(validateExport(data, 'NCAAF', now).bets.length, 0);
+  data.bets[0].price_captured_at = now.toISOString();
+  data.bets[0].game_time = now.toISOString();
+  assert.equal(validateExport(data, 'NCAAF', now).bets.length, 0);
+});
+
 test('invalid new exports do not replace retained valid picks', async () => {
   const originalFetch = globalThis.fetch;
   const { cache, ctx } = harness();
@@ -80,7 +116,7 @@ test('API dispatch preserves JSON 404s, method restrictions, caching and refresh
     assert.equal((await worker.fetch(new Request('http://localhost/api/missing'), env, ctx)).status, 404);
     assert.equal((await worker.fetch(new Request('http://localhost/api/picks', { method: 'POST' }), env, ctx)).status, 405);
     assert.equal(await (await worker.fetch(new Request('http://localhost/'), env, ctx)).text(), 'Frontend');
-    await cache.put(new Request('http://localhost/api/picks'), Response.json({ sentinel: true }));
+    await cache.put(new Request('http://localhost/api/picks?release=v2'), Response.json({ sentinel: true }));
     assert.deepEqual(await (await worker.fetch(new Request('http://localhost/api/picks'), env, ctx)).json(), { sentinel: true });
     const refreshed = await worker.fetch(new Request('http://localhost/api/picks?refresh=1'), env, ctx);
     assert.equal(refreshed.status, 200); assert.equal(refreshed.headers.get('cache-control'), 'no-store');

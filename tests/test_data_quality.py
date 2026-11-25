@@ -5,6 +5,7 @@ from utils.data_quality import (
     STATUS_NO_PICKS,
     STATUS_OFF_SEASON,
     STATUS_PIPELINE_PENDING,
+    STATUS_RELEASE_HOLD,
     STATUS_STALE,
     validate_export,
 )
@@ -42,3 +43,22 @@ class DataQualityTests(unittest.TestCase):
         result = validate_export(export(bets=[{"game_date": "2026-07-22", "pick": "A"}]), "Test", now=NOW)
         self.assertEqual(result["status"], "pipeline_failed")
         self.assertTrue(any("missing confidence" in error for error in result["errors"]))
+
+    def test_ncaaf_hold_withholds_rows(self):
+        data = export(bets=[{"pick": "Old pick"}])
+        data["meta"].update(release_status="hold", publication_mode="provisional_research")
+        result = validate_export(data, "NCAAF", now=NOW)
+        self.assertEqual(result["status"], STATUS_RELEASE_HOLD)
+        self.assertEqual(result["errors"], [])
+        self.assertEqual(result["data"]["bets"], [])
+
+    def test_ncaaf_price_expires_before_kickoff(self):
+        data = export(bets=[{
+            "game_date": "2026-07-22", "game_time": "2026-07-22T12:00:00Z",
+            "pick": "Home", "confidence": .65, "edge": .08, "odds": -110,
+            "tier": "Elite", "price_captured_at": "2026-07-21T10:00:00Z",
+        }])
+        data["meta"].update(release_status="promote", publication_mode="validated")
+        self.assertEqual(validate_export(data, "NCAAF", now=NOW)["bets_count"], 1)
+        data["bets"][0]["price_captured_at"] = "2026-07-20T12:00:00Z"
+        self.assertEqual(validate_export(data, "NCAAF", now=NOW)["bets_count"], 0)

@@ -6,6 +6,7 @@ export const BADGES = { Elite: '🔥', Strong: '✅', Good: '➡', Standard: '�
 export const DEFAULT_SETTINGS = { min_confidence: 0, min_edge: 0, tiers: TIERS.slice(0, 3), max_picks: { __default__: 50, TableTennis: 20, Cricket: 20, Darts: 15, Boxing: 15, Tennis: 30 } };
 export const STATUS_LABELS = {
   ok: 'Current', no_picks: 'No qualifying picks today', off_season: 'Off-season',
+  release_hold: 'Research only. Public picks are on hold.',
   pipeline_pending: "Pipeline has not produced today's data", pipeline_failed: 'Pipeline failed',
   export_missing: 'Export file missing', fetch_failed: 'Fetch failed; last valid snapshot retained', stale: 'Source is stale',
 };
@@ -54,6 +55,10 @@ export function validateExport(data, sport, now = new Date()) {
   if (!Array.isArray(data.bets)) errors.push('bets must be an array');
   const generated = Date.parse(meta.generated_at);
   if (!Number.isFinite(generated)) errors.push('meta.generated_at must be a valid ISO-8601 timestamp');
+  const ncaafHold = sport === 'NCAAF' && (
+    meta.release_status !== 'promote' || meta.publication_mode !== 'validated' || meta.release_failed_gates?.length
+  );
+  if (ncaafHold) bets = [];
   bets.forEach((bet, i) => {
     if (!bet || typeof bet !== 'object' || Array.isArray(bet)) { errors.push(`bets[${i}] must be an object`); return; }
     for (const field of ['game_date', 'pick', 'confidence', 'edge', 'odds', 'tier']) if (!(field in bet)) errors.push(`bets[${i}] missing ${field}`);
@@ -64,6 +69,12 @@ export function validateExport(data, sport, now = new Date()) {
       const expected = n >= .06 ? 'Elite' : n >= .03 ? 'Strong' : n >= .01 ? 'Good' : 'Standard';
       if (bet.tier !== expected) errors.push(`bets[${i}].tier=${bet.tier} disagrees with edge-v1 (${expected})`);
     }
+  });
+  if (sport === 'NCAAF') bets = bets.filter(bet => {
+    const quote = Date.parse(bet?.price_captured_at);
+    const kickoff = Date.parse(bet?.game_time);
+    return quote <= now.getTime() && quote > now.getTime() - 24 * 3600000 && kickoff > now.getTime()
+      && (meta.totals_publication !== 'research_only' || bet.bet_type !== 'Total');
   });
   const notes = String(meta.notes || '').toLowerCase();
   // A daily export can outlive its quote or its match. Never display those
@@ -76,6 +87,8 @@ export function validateExport(data, sport, now = new Date()) {
   let status = STATUS_LABELS[meta.status] ? meta.status : /off[- ]season/.test(notes) ? 'off_season' : /not found|pending|may not have run/.test(notes) ? 'pipeline_pending' : /failed|error/.test(notes) ? 'pipeline_failed' : bets.length ? 'ok' : 'no_picks';
   const age_hours = Number.isFinite(generated) ? Math.max(0, (now.getTime() - generated) / 3600000) : null;
   if (['ok', 'no_picks'].includes(status) && age_hours > (['TableTennis', 'Cricket', 'Darts', 'Tennis'].includes(sport) ? 18 : 36)) status = 'stale';
+  if (sport === 'NCAAF' && status === 'ok' && !bets.length) status = 'no_picks';
+  if (ncaafHold) status = 'release_hold';
   if (errors.length) status = 'pipeline_failed';
   return { sport, status, errors, age_hours, generated_at: meta.generated_at || '', bets: errors.length ? [] : bets.map(bet => ({ ...bet, sport, generated_at: bet.generated_at || meta.generated_at })) };
 }
