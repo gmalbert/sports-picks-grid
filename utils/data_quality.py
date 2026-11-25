@@ -7,11 +7,12 @@ status, freshness, and validation decisions explicit and testable.
 
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any
 
 STATUS_OK = "ok"
 STATUS_NO_PICKS = "no_picks"
+STATUS_RELEASE_HOLD = "release_hold"
 STATUS_OFF_SEASON = "off_season"
 STATUS_PIPELINE_PENDING = "pipeline_pending"
 STATUS_PIPELINE_FAILED = "pipeline_failed"
@@ -22,6 +23,7 @@ STATUS_STALE = "stale"
 VALID_STATUSES = {
     STATUS_OK,
     STATUS_NO_PICKS,
+    STATUS_RELEASE_HOLD,
     STATUS_OFF_SEASON,
     STATUS_PIPELINE_PENDING,
     STATUS_PIPELINE_FAILED,
@@ -113,6 +115,14 @@ def validate_export(
     if generated_at is None:
         errors.append("meta.generated_at must be a valid ISO-8601 timestamp")
 
+    ncaaf_hold = sport == "NCAAF" and (
+        meta.get("release_status") != "promote"
+        or meta.get("publication_mode") != "validated"
+        or bool(meta.get("release_failed_gates"))
+    )
+    if ncaaf_hold:
+        bets = []
+
     for index, bet in enumerate(bets):
         if not isinstance(bet, dict):
             errors.append(f"bets[{index}] must be an object")
@@ -139,7 +149,22 @@ def validate_export(
                     f"bets[{index}].tier={bet.get('tier')} disagrees with edge-v1 ({expected})"
                 )
 
-    status = infer_status(meta, bets)
+    if sport == "NCAAF" and not errors:
+        current_bets = []
+        for bet in bets:
+            quote = parse_timestamp(bet.get("price_captured_at"))
+            kickoff = parse_timestamp(bet.get("game_time"))
+            if (
+                quote is not None and now - timedelta(hours=24) < quote <= now
+                and kickoff is not None and kickoff > now
+                and (meta.get("totals_publication") != "research_only" or bet.get("bet_type") != "Total")
+            ):
+                current_bets.append(bet)
+        bets = current_bets
+
+    status = STATUS_RELEASE_HOLD if ncaaf_hold else infer_status(meta, bets)
+    if sport == "NCAAF" and status == STATUS_OK and not bets:
+        status = STATUS_NO_PICKS
     age_hours: float | None = None
     if generated_at is not None:
         age_hours = max(0.0, (now - generated_at).total_seconds() / 3600)
@@ -175,6 +200,7 @@ def status_label(status: str) -> str:
     return {
         STATUS_OK: "Current",
         STATUS_NO_PICKS: "No qualifying picks today",
+        STATUS_RELEASE_HOLD: "Research only. Public picks are on hold.",
         STATUS_OFF_SEASON: "Off-season",
         STATUS_PIPELINE_PENDING: "Pipeline has not produced today's data",
         STATUS_PIPELINE_FAILED: "Pipeline failed",
