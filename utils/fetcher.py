@@ -82,7 +82,7 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
     """Load bets for one sport repo.
 
     Priority:
-      1. data_cache/{key}.json  — committed by the aggregator GitHub Action
+      1. data_cache/{key}.json  — committed by the aggregator GitHub Action (except NCAAF)
       2. GitHub raw URL         — live fetch (authoritative; pipelines push here)
     """
     sport = next((name for name, (key, _) in REPOS.items() if key == cache_key), cache_key)
@@ -90,7 +90,7 @@ def _load_sport(cache_key: str, repo: str) -> list[dict]:
 
     # 1. Local data_cache file (committed by the aggregator GitHub Action)
     local = CACHE_DIR / f"{cache_key}.json"
-    if local.exists():
+    if sport != "NCAAF" and local.exists():
         try:
             data = json.loads(local.read_text(encoding="utf-8"))
         except Exception:
