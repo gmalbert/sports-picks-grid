@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "f11182718452acaec12c0ca2f29718ffdf76f697",
+    "source_commit": "",
     "source_repo": "bundesliga",
     "source_url": "https://raw.githubusercontent.com/gmalbert/bundesliga/main/data_files/best_bets_today.json"
   },

@@ -8,7 +8,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "fec9a515fb8e23a74e1b27b557d6907d9f20d7ca",
+    "source_commit": "",
     "source_repo": "table-tennis",
     "source_url": "https://raw.githubusercontent.com/gmalbert/table-tennis/main/data_files/best_bets_today.json"
   },

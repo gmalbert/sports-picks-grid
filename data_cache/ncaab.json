@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "f1db0e6d957ed9091ef8dda5041213b52f070acb",
+    "source_commit": "",
     "source_repo": "march-madness",
     "source_url": "https://raw.githubusercontent.com/gmalbert/march-madness/main/data_files/best_bets_today.json"
   },

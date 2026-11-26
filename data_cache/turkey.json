@@ -9,7 +9,7 @@
     "status": "no_picks",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "130d308a2fe036cc8cb851e2a9bb2eed7fa29d78",
+    "source_commit": "",
     "source_repo": "turkey-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/turkey-soccer/main/data_files/best_bets_today.json"
   },

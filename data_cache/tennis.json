@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "726bbf3e82381a6820d6f2e87c97e248a54ec797",
+    "source_commit": "",
     "source_repo": "tennis-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/tennis-predictions/main/data_files/best_bets_today.json"
   },

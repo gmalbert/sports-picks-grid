@@ -9,7 +9,7 @@
     "status": "pipeline_pending",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "9c6d958fb39ddda7ae48b35eb4cad94805190143",
+    "source_commit": "",
     "source_repo": "belgium-soccer",
     "source_url": "https://raw.githubusercontent.com/gmalbert/belgium-soccer/main/data_files/best_bets_today.json"
   },
