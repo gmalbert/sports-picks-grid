@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "90275955a0a2419a96b45b202822f01b2d1f88d2",
+    "source_commit": "",
     "source_repo": "nfl-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/nfl-predictions/main/data_files/best_bets_today.json"
   },
