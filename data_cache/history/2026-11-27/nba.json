@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "generated_at": "2026-11-26T19:24:13.167601+00:00",
+    "model_version": "1.0.0",
+    "season": "2026-27",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "notes": "No NBA games in prediction artifact for 2026-11-26",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "a37ec3e435528b0dcd1da76f4a2176f34d96cfa3",
+    "source_repo": "nba-predictions",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/nba-predictions/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}

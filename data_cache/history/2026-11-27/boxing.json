@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "sport": "Boxing",
+    "generated_at": "2026-11-26T18:08:18.136290+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "status": "ok",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "d66a0dc84326474484409b21dadc7b75176b75a0",
+    "source_repo": "boxing",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/boxing/main/data_files/best_bets_today.json"
+  },
+  "bets": [
+    {
+      "game_date": "2026-11-27",
+      "game": "Slawa Spomer vs Eddy Colmenares",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Eddy Colmenares",
+      "confidence": 0.455,
+      "edge": 0.0846,
+      "odds": 170,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-27",
+      "game": "Emanuel Odiase vs Mike Perez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Emanuel Odiase",
+      "confidence": 0.9302,
+      "edge": 0.1655,
+      "odds": -325,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-28",
+      "game": "Charlie Senior vs James Chereji",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "James Chereji",
+      "confidence": 0.5,
+      "edge": 0.4215,
+      "odds": 1175,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "David Jimenez vs Seigo Yuri Akui",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "David Jimenez",
+      "confidence": 0.9813,
+      "edge": 0.5427,
+      "odds": 128,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "Riku Masuda vs Seiya Tsutsumi",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Seiya Tsutsumi",
+      "confidence": 0.5,
+      "edge": 0.1,
+      "odds": 150,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-11-29",
+      "game": "Kenshiro Teraji vs Jassiel Amador",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Jassiel Amador",
+      "confidence": 0.8155,
+      "edge": 0.644,
+      "odds": 483,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-12-05",
+      "game": "Conah Walker vs Alexis Rocha",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Conah Walker",
+      "confidence": 0.5,
+      "edge": 0.17,
+      "odds": 203,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-12-06",
+      "game": "Nikita Tszyu vs Roberto Valenzuela Jr",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Roberto Valenzuela Jr",
+      "confidence": 0.5,
+      "edge": 0.3,
+      "odds": 400,
+      "tier": "Elite",
+      "notes": ""
+    },
+    {
+      "game_date": "2026-12-06",
+      "game": "Emiliano Vargas vs Omar Juarez",
+      "game_time": "",
+      "bet_type": "moneyline",
+      "pick": "Omar Juarez",
+      "confidence": 0.5793,
+      "edge": 0.418,
+      "odds": 520,
+      "tier": "Elite",
+      "notes": ""
+    }
+  ]
+}

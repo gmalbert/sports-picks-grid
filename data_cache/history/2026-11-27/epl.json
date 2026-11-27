@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "sport": "EPL",
+    "generated_at": "2026-11-26T17:43:48.620418+00:00",
+    "model_version": "1.0.0",
+    "season": "2026",
+    "notes": "No predictions_log.csv — run automation/generate_predictions.py first",
+    "status": "no_picks",
+    "tier_definition": "edge-v1",
+    "lookahead_days": 7,
+    "dashboard_lookahead_days": 7,
+    "source_commit": "4ef47a7b1dbe98af9f11ec138532176ab1b114a1",
+    "source_repo": "premier-league",
+    "source_url": "https://raw.githubusercontent.com/gmalbert/premier-league/main/data_files/best_bets_today.json"
+  },
+  "bets": []
+}
