@@ -1,7 +1,7 @@
 {
   "meta": {
     "sport": "NCAAF",
-    "generated_at": "2026-11-27T06:35:23.292475+00:00",
+    "generated_at": "2026-11-27T20:32:13.273130+00:00",
     "model_version": "2.3.0",
     "tier_definition": "edge-v1",
     "edge_definition": "pick probability minus displayed price break-even probability",
@@ -54,7 +54,7 @@
     "status": "release_hold",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "69c5b12a83af38c8c646ff0697b508b203960fff",
+    "source_commit": "cf72f3d8d85bc5576e8b358e785c5e060d7fe1c7",
     "source_repo": "college-football-predictions",
     "source_url": "https://raw.githubusercontent.com/gmalbert/college-football-predictions/main/data_files/best_bets_today.json"
   },
