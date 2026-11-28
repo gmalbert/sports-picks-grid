@@ -7,7 +7,7 @@
     "status": "no_picks",
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "9a1597af0db9433dbf9bc11dcacf1f70fd0aeffe",
     "total_bets": 0,
     "dashboard_lookahead_days": 7,
     "source_repo": "darts",

@@ -9,7 +9,7 @@
     "tier_definition": "edge-v1",
     "lookahead_days": 7,
     "dashboard_lookahead_days": 7,
-    "source_commit": "",
+    "source_commit": "948f38846a4169a362797a73ed2fac31213459b7",
     "source_repo": "la-liga",
     "source_url": "https://raw.githubusercontent.com/gmalbert/la-liga/main/data_files/best_bets_today.json"
   },
